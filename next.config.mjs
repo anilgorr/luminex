@@ -16,6 +16,8 @@ const nextConfig = {
       { source: "/services.php", destination: "/windows", permanent: true },
       { source: "/blog.php", destination: "/blog", permanent: true },
       { source: "/blog-single.php", destination: "/blog", permanent: true },
+      { source: "/service-single.php", destination: "/windows", permanent: true },
+      { source: "/team-single.php", destination: "/about", permanent: true },
     ];
   },
 };
