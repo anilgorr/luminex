@@ -67,8 +67,8 @@ export default function About() {
         <div className="container grid-2">
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-              <Image src="/images/luminex-whywork1.jpg" alt="Luminex window installation" width={350} height={400} />
-              <Image src="/images/luminex-whywork2.jpg" alt="Luminex uPVC window" width={350} height={400} style={{ marginTop: 60 }} />
+              <div className="shine"><Image src="/images/luminex-whywork1.jpg" alt="Luminex window installation" width={350} height={400} /></div>
+              <div className="shine" style={{ marginTop: 60 }}><Image src="/images/luminex-whywork2.jpg" alt="Luminex uPVC window" width={350} height={400} /></div>
             </div>
           </Reveal>
           <div>

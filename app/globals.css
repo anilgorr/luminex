@@ -336,3 +336,38 @@ textarea.field { min-height: 150px; resize: vertical; }
   .avatars img { width: 46px; height: 46px; margin-left: -12px; }
   .hero-btns .btn { padding: 15px 24px; }
 }
+
+/* ---------- Image hover shine ----------
+   A soft diagonal light band that opens out from the centre of an image on hover. */
+.shine,
+.about-images .arch,
+.faq-img,
+.post figure,
+.product-card,
+.info-card figure,
+.gallery-grid figure,
+.article figure { position: relative; overflow: hidden; }
+.shine::after,
+.about-images .arch::after,
+.faq-img::after,
+.post figure::after,
+.product-card::after,
+.info-card figure::after,
+.gallery-grid figure::after {
+  content: ""; position: absolute; left: 50%; top: 50%; z-index: 1; pointer-events: none;
+  width: 200%; height: 0; background: rgba(255, 255, 255, .3);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.shine:hover::after,
+.about-images .arch:hover::after,
+.faq-img:hover::after,
+.post:hover figure::after,
+.product-card:hover::after,
+.info-card:hover figure::after,
+.gallery-grid figure:hover::after {
+  height: 250%; background: transparent; transition: height .6s linear, background-color .6s linear;
+}
+.faq-img { border-radius: 0 400px 400px 0; }
+.product-card .overlay { z-index: 2; }
+.gallery-grid figcaption { z-index: 2; }
+@media (prefers-reduced-motion: reduce) { .shine:hover::after { transition: none; } }

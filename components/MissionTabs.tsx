@@ -24,7 +24,7 @@ export default function MissionTabs() {
       </div>
       <div className="grid-2" role="tabpanel">
         <div><p>{t.text}</p><ul className="check-list">{points.map((p) => <li key={p}>{p}</li>)}</ul></div>
-        <Image src={t.img} alt={t.label} width={590} height={337} style={{ width: "100%", aspectRatio: "590/337", objectFit: "cover" }} />
+        <div className="shine"><Image src={t.img} alt={t.label} width={590} height={337} style={{ width: "100%", aspectRatio: "590/337", objectFit: "cover" }} /></div>
       </div>
     </div>
   );
