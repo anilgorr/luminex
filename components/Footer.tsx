@@ -7,16 +7,6 @@ import Newsletter from "./Newsletter";
 export default function Footer() {
   return (
     <>
-      <div className="ticker" aria-hidden="true">
-        <div className="ticker-track">
-          {[0, 1].map((k) => (
-            <div className="ticker-move" key={k}>
-              <span>Schedule a Free Consultation for Window and Door Replacement</span>
-              <span>Schedule a Free Consultation for Window and Door Replacement</span>
-            </div>
-          ))}
-        </div>
-      </div>
       <footer className="footer">
         <div className="container">
           <div className="footer-head">
