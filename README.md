@@ -24,7 +24,7 @@ npm run build && npm start   # production check
 - next/image (AVIF/WebP), next/font (no layout shift)
 
 ## Before going live (Vercel)
-1. Set env `NEXT_PUBLIC_SITE_URL=https://www.luminexwindow.com`
+1. Set env `NEXT_PUBLIC_SITE_URL=https://www.luminexwindow.com` and `NEXT_PUBLIC_SITE_ENV=production` (without it the site is hidden from Google — right for preview links, wrong for launch)
 2. Forms post to `/api/contact`. Set `LEAD_WEBHOOK_URL` (n8n / Zapier / Sheets webhook) to receive leads — otherwise they are only logged.
 3. Confirm phone numbers + emails in `lib/site.ts` (live site shows two different sets).
 4. Replace placeholder blog posts, gallery photos and the stock "craftsman" images.

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: { type: "website", siteName: site.name, locale: "en_IN", url: site.url, images: [{ url: "/images/luminex-banner.jpg", width: 2400, height: 1600, alt: "Luminex premium windows and doors" }] },
   twitter: { card: "summary_large_image" },
   icons: { icon: "/images/web/Luminex.png" },
-  robots: { index: true, follow: true },
+  robots: process.env.NEXT_PUBLIC_SITE_ENV === "production" ? { index: true, follow: true } : { index: false, follow: false },
 };
 
 export const viewport: Viewport = { themeColor: "#1c4722", width: "device-width", initialScale: 1 };
