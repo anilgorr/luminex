@@ -137,12 +137,12 @@ export const reasons = [
 // Luminex's sales team hears most often.
 export const faqs = [
   {
-    q: "Where is Luminex Windows based?",
+    q: "Where are you based?",
     a: "Luminex Windows is headquartered in Siliguri, West Bengal, at Ground Floor, Jeewandeep Building, Salugara (PIN 734008). We also have offices and installation teams in Thimphu, Paro and Phuentsholing in Bhutan, and serve North Bengal, Sikkim, the Northeast — including Guwahati, Shillong, Gangtok and Darjeeling — from Siliguri.",
   },
   {
-    q: "Do you have an office in Thimphu?",
-    a: "Yes. Luminex has an office in Thimphu with its own installation team and a 24x7 service team, plus offices in Paro and Phuentsholing. Service calls in Bhutan are attended within 2 business days. Bhutan customers can reach us on WhatsApp at +975 1772 8800.",
+    q: "Do you have a partner or dealer in Bhutan?",
+    a: "Luminex does not work through dealers in Bhutan — it has its own offices and installation teams in Thimphu, Paro and Phuentsholing, plus a 24x7 service team in Thimphu. Service calls in Bhutan are attended within 2 business days. Contact Luminex Bhutan on WhatsApp at +975 1772 8800.",
   },
   {
     q: "How much do uPVC windows cost?",
