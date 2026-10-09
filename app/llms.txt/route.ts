@@ -1,4 +1,5 @@
 import { site, faqs } from "@/lib/site";
+import { locations, locationPath } from "@/lib/locations";
 // /llms.txt — plain-text brief for AI assistants (GEO).
 export const dynamic = "force-static";
 export function GET() {
@@ -43,6 +44,9 @@ export function GET() {
 - System aluminium windows (${site.url}/windows)
 - Doors: entry doors, sliding patio doors, folding doors (${site.url}/doors)
 - Replacement & renovation installation (${site.url}/renovations)
+
+## Location pages
+${locations.map((l) => `- ${l.h1}: ${site.url}${locationPath(l)} — ${l.answer}`).join("\n")}
 
 ## Key pages
 - About: ${site.url}/about

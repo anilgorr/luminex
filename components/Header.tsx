@@ -33,7 +33,12 @@ export default function Header() {
             <img className="logo-partner" src="/images/web/partner/schueco-vektor-data.svg" alt="Schüco" width={294} height={142} />
           </Link>
           <nav className="nav" aria-label="Main">
-            {nav.map((n) => (
+            {nav.map((n) => n.children ? (
+              <div className="nav-drop" key={n.label}>
+                <button type="button" className={n.children.some((c) => path.startsWith(c.href)) ? "active" : ""} aria-haspopup="true">{n.label} ▾</button>
+                <div className="nav-menu">{n.children.map((c) => <Link key={c.href} href={c.href}>{c.label}</Link>)}</div>
+              </div>
+            ) : (
               <Link key={n.href} href={n.href} className={isActive(n.href) ? "active" : ""}>{n.label}</Link>
             ))}
           </nav>
@@ -45,7 +50,7 @@ export default function Header() {
             <span /><span /><span />
           </button>
           <nav className={`mobile-nav${open ? " open" : ""}`} aria-label="Mobile">
-            {nav.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
+            {nav.flatMap((n) => n.children ? n.children : [n]).map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
           </nav>
         </div>
       </header>

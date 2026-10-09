@@ -69,12 +69,22 @@ export const site = {
 export const waLink = (region: "india" | "bhutan", text = "Hi Luminex, I'd like a quote for windows / doors.") =>
   `https://wa.me/${site.whatsapp[region].number}?text=${encodeURIComponent(text)}`;
 
-export const nav = [
+export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };
+export const nav: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/windows", label: "Windows" },
   { href: "/doors", label: "Doors" },
-  { href: "/renovations", label: "Renovations" },
-  { href: "/gallery", label: "Gallery" },
+  {
+    href: "/siliguri/upvc-windows",
+    label: "Locations",
+    children: [
+      { href: "/siliguri/upvc-windows", label: "Siliguri — uPVC windows" },
+      { href: "/siliguri/aluminium-windows", label: "Siliguri — aluminium windows" },
+      { href: "/siliguri/window-replacement", label: "Siliguri — window replacement" },
+      { href: "/guwahati/upvc-windows", label: "Guwahati — uPVC windows" },
+      { href: "/guwahati/aluminium-windows-price", label: "Guwahati — aluminium prices" },
+    ],
+  },
   { href: "/luminex-difference", label: "Luminex Difference" },
   { href: "/contact", label: "Contact Us" },
 ];
