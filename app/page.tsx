@@ -1,7 +1,6 @@
 import Link from "next/link";
 import HeroSlider from "@/components/HeroSlider";
-import ExplodedSection from "@/components/ExplodedSection";
-import FactsArch from "@/components/FactsArch";
+import ProfileExplode from "@/components/ProfileExplode";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import { reasons, partners } from "@/lib/site";
@@ -10,13 +9,15 @@ export default function Home() {
   return (
     <>
       <HeroSlider />
-      <ExplodedSection />
 
       {/* About */}
       <section className="section section-bg-lines">
         <div className="container grid-2">
           <Reveal>
-            <FactsArch />
+            <div className="about-images explode-wrap">
+              <ProfileExplode />
+              <div className="customer-badge"><strong>98%</strong><span>Happy Customer</span></div>
+            </div>
           </Reveal>
           <div>
             <SectionTitle eyebrow="About us" title="Expertise in windows & doors for every style" />
