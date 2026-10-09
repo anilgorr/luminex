@@ -13,14 +13,9 @@ export const metadata: Metadata = {
 // TODO(client): replace with real project photos + locations.
 const items = [
   ["/images/luminex-about.jpg", "uPVC bay window"],
-  ["/images/web/doors/aluminum-clad-exterior.jpg", "Aluminium-clad entry door"],
   ["/images/luminex-whywork1.jpg", "Sliding window"],
-  ["/images/web/doors/hybrid.jpg", "Hybrid patio door"],
   ["/images/luminex-whywork2.jpg", "Casement window"],
-  ["/images/web/doors/pivot.jpg", "Pivot door"],
   ["/images/our-faqs-img.jpg", "Window detail"],
-  ["/images/web/doors/pvc.jpg", "PVC sliding door"],
-  ["/images/web/doors/tesoro.jpg", "Folding door system"],
 ];
 
 export default function Gallery() {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { site, telHref } from "@/lib/site";
+import { site, telHref, waLink } from "@/lib/site";
 import { FacebookIcon, InstagramIcon } from "./Icons";
 import Newsletter from "./Newsletter";
 
@@ -38,10 +38,11 @@ export default function Footer() {
               <div className="contact-row">
                 <img src="/images/icon-phone.svg" alt="" />
                 <div>
-                  <p><strong>India</strong></p>
+                  <p><strong>India</strong> · <a href={waLink("india")} target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
                   {site.phones.india.map((p) => <p key={p}><a href={telHref(p)}>{p}</a></p>)}
-                  <p><strong>Bhutan</strong></p>
+                  <p><strong>Bhutan</strong> · <a href={waLink("bhutan")} target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
                   {site.phones.bhutan.map((p) => <p key={p}><a href={telHref(p)}>{p}</a></p>)}
+                  <p style={{ marginTop: 10 }}>Offices: {site.offices.map((o) => o.city).join(" · ")}</p>
                 </div>
               </div>
               <div className="contact-row">

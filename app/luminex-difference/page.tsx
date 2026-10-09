@@ -7,7 +7,7 @@ import { reasons } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "The Luminex Difference – Why Choose Luminex Windows",
-  description: "Professional installation, a complete product range, weather-proof multi-chamber profiles and a 15-year limited warranty — what sets Luminex windows and doors apart.",
+  description: "Professional installation, a complete product range, weather-proof multi-chamber profiles, Schüco partnership and up to 25-year profile warranties — what sets Luminex windows and doors apart.",
   alternates: { canonical: "/luminex-difference" },
 };
 
@@ -16,7 +16,8 @@ const compare = [
   ["Thermal insulation", "Excellent (multi-chamber)", "Good", "Poor without thermal break"],
   ["Sound insulation", "Excellent", "Moderate", "Moderate"],
   ["Maintenance", "Wipe clean", "Regular polishing / treatment", "Low"],
-  ["Warranty", "15 years (limited)", "Varies", "Varies"],
+  ["Warranty", "Profiles 15–25 yrs, glass 15 yrs, hardware 5 yrs", "Varies", "Varies"],
+  ["Price (standard sizes)", "uPVC from ₹495/sq ft", "Varies", "System aluminium from ₹950/sq ft"],
 ];
 
 export default function Difference() {

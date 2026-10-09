@@ -27,8 +27,10 @@ export default function Header() {
       </div>
       <header className={`header${scrolled ? " scrolled" : ""}`}>
         <div className="container">
-          <Link href="/" className="logo" aria-label="Luminex Windows home">
+          <Link href="/" className="logo" aria-label="Luminex × Schüco — Luminex Windows home">
             <Image src="/images/web/Luminex.png" alt="Luminex – windows, doors, facade" width={600} height={220} priority />
+            <span className="logo-x" aria-hidden="true">×</span>
+            <img className="logo-partner" src="/images/web/partner/schueco-vektor-data.svg" alt="Schüco" width={294} height={142} />
           </Link>
           <nav className="nav" aria-label="Main">
             {nav.map((n) => (

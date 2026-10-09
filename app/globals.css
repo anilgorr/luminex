@@ -371,3 +371,25 @@ textarea.field { min-height: 150px; resize: vertical; }
 .product-card .overlay { z-index: 2; }
 .gallery-grid figcaption { z-index: 2; }
 @media (prefers-reduced-motion: reduce) { .shine:hover::after { transition: none; } }
+
+/* ---------- Luminex × Schüco lockup ---------- */
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-x { font-size: 22px; font-weight: 300; color: var(--text); line-height: 1; }
+.logo .logo-partner { width: 92px; height: auto; }
+@media (max-width: 991px) {
+  .logo { gap: 8px; }
+  .logo img:first-child { width: 100px; }
+  .logo .logo-partner { width: 70px; }
+  .logo-x { font-size: 18px; }
+}
+
+/* ---------- WhatsApp (primary enquiry channel) ---------- */
+.wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 200; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.wa-btn { width: 60px; height: 60px; border-radius: 50%; border: 0; background: #25d366; color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.2); transition: transform .2s; }
+.wa-btn:hover { transform: scale(1.06); }
+.wa-menu { background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,.18); padding: 16px; min-width: 250px; }
+.wa-menu p { margin: 0 0 10px; font-size: 14px; font-weight: 600; color: var(--primary); }
+.wa-menu a { display: flex; align-items: center; gap: 10px; padding: 10px 12px; color: var(--black); border: 1px solid var(--divider); margin-top: 8px; font-size: 15px; }
+.wa-menu a svg { color: #25d366; flex-shrink: 0; }
+.wa-menu a:hover { background: var(--secondary); }
+@media (max-width: 767px) { .wa-float { right: 14px; bottom: 14px; } .wa-btn { width: 54px; height: 54px; } }

@@ -30,7 +30,7 @@ export default function Renovations() {
               <p>Old wooden frames swell and rot; basic aluminium lets in heat, noise and dust. Luminex replacement windows and doors fit into your existing openings and immediately make rooms quieter, cooler and easier to maintain.</p>
             </SectionTitle>
             <ul className="check-list">
-              <li>Fits existing wall openings</li><li>Minimal dust and disruption</li><li>Better insulation and soundproofing</li><li>15-year limited warranty</li>
+              <li>Fits existing wall openings</li><li>Minimal dust and disruption</li><li>Better insulation and soundproofing</li><li>Up to 25-year profile warranty</li><li>Installed in 15–30 days</li>
             </ul>
             <div style={{ marginTop: 30 }}><Link href="/request-quote" className="btn">Request A Quote</Link></div>
           </div>

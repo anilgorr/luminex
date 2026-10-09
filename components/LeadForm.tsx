@@ -1,20 +1,26 @@
 "use client";
 import { useState } from "react";
+import { waLink } from "@/lib/site";
 
 type Field = { name: string; label: string; type?: string; required?: boolean; full?: boolean; options?: string[]; textarea?: boolean };
 
-export default function LeadForm({ fields, type, submitLabel = "Submit Message" }: { fields: Field[]; type: "contact" | "quote"; submitLabel?: string }) {
+export default function LeadForm({ fields, type, submitLabel = "Send on WhatsApp" }: { fields: Field[]; type: "contact" | "quote"; submitLabel?: string }) {
   const [state, setState] = useState<"idle" | "sending" | "ok" | "err">("idle");
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  // Enquiries go to WhatsApp first (client's primary channel); the API call only logs a copy.
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setState("sending");
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
-    try {
-      const r = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type, ...data }) });
-      if (!r.ok) throw new Error();
-      setState("ok");
-      e.currentTarget?.reset();
-    } catch { setState("err"); }
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    const region = data.region === "Bhutan" ? "bhutan" : "india";
+    const lines = fields
+      .filter((f) => f.name !== "region" && data[f.name])
+      .map((f) => `${f.label.replace(/\?$/, "")}: ${data[f.name]}`);
+    const text = `Hi Luminex, ${type === "quote" ? "I'd like a quote" : "I have an enquiry"}.\n\n${lines.join("\n")}`;
+    // Opened synchronously inside the submit handler so browsers don't block it as a pop-up.
+    window.open(waLink(region, text), "_blank", "noopener,noreferrer");
+    setState("ok");
+    fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type, ...data }) }).catch(() => {});
+    form.reset();
   }
   return (
     <form onSubmit={onSubmit} noValidate={false}>
@@ -40,7 +46,7 @@ export default function LeadForm({ fields, type, submitLabel = "Submit Message" 
         })}
         <div className="full"><button className="btn" type="submit" disabled={state === "sending"}>{state === "sending" ? "Sending…" : submitLabel}</button></div>
       </div>
-      {state === "ok" && <p className="form-msg ok">Thank you! Our team will get back to you shortly.</p>}
+      {state === "ok" && <p className="form-msg ok">WhatsApp has opened with your details — just press send.</p>}
       {state === "err" && <p className="form-msg err">Something went wrong. Please call us or try again.</p>}
     </form>
   );

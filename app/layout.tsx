@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
@@ -41,11 +42,25 @@ const orgSchema = {
       address: { "@type": "PostalAddress", streetAddress: site.address.street, addressLocality: site.address.locality, addressRegion: site.address.region, postalCode: site.address.postalCode, addressCountry: site.address.country },
       areaServed: site.areaServed.map((c) => ({ "@type": "Country", name: c })),
       sameAs: [site.social.facebook, site.social.instagram],
+      priceRange: "From ₹495 per sq ft",
+      knowsAbout: ["uPVC windows", "System aluminium windows", "Schüco window systems", "Double glazing", "Window installation"],
+      brand: [...new Set([...site.brands.profiles, ...site.brands.glass, ...site.brands.hardware])].map((b) => ({ "@type": "Brand", name: b })),
       contactPoint: [
         ...site.phones.india.map((t) => ({ "@type": "ContactPoint", telephone: t, contactType: "sales", areaServed: "IN" })),
-        ...site.phones.bhutan.map((t) => ({ "@type": "ContactPoint", telephone: t, contactType: "sales", areaServed: "BT" })),
+        ...site.phones.bhutan.map((t) => ({ "@type": "ContactPoint", telephone: t, contactType: "customer service", areaServed: "BT" })),
       ],
-      makesOffer: ["uPVC windows", "uPVC doors", "System aluminium windows", "Sliding patio doors", "Folding doors", "Window and door installation"].map((n) => ({ "@type": "Offer", itemOffered: { "@type": "Product", name: n } })),
+      makesOffer: [
+        { name: "uPVC windows", price: site.pricing.upvcFrom },
+        { name: "System aluminium windows", price: site.pricing.aluminiumFrom },
+        { name: "uPVC doors" },
+        { name: "Sliding patio doors" },
+        { name: "Folding doors" },
+        { name: "Window and door installation" },
+      ].map((o) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Product", name: o.name },
+        ...(o.price ? { priceSpecification: { "@type": "UnitPriceSpecification", minPrice: o.price, priceCurrency: "INR", unitText: "per sq ft" } } : {}),
+      })),
     },
     { "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, publisher: { "@id": `${site.url}/#organization` }, inLanguage: "en-IN" },
   ],
@@ -58,6 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
+        <WhatsAppButton />
         <JsonLd data={orgSchema} />
       </body>
     </html>

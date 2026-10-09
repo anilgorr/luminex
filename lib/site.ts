@@ -1,6 +1,8 @@
 // Central business data. Update here once and it flows to every page, the footer,
 // JSON-LD schema, sitemap and llms.txt.
-// TODO(client): confirm phone numbers + emails — the live site shows two different sets.
+// Facts below were confirmed by Luminex on 9 Oct 2026.
+// TODO(client): Bhutan office street addresses, Siliguri showroom + factory address,
+// warranty start point (manufacture vs installation), confirm website email.
 
 export const site = {
   name: "Luminex Windows",
@@ -8,14 +10,20 @@ export const site = {
   tagline: "Windows to the World, Doors to Your Dreams.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.luminexwindow.com",
   description:
-    "Luminex Windows manufactures premium uPVC and system aluminium windows and doors in India and Bhutan — sliding, casement and tilt & turn systems with professional installation and a 15-year limited warranty.",
-  topbarText: "There's no better time than now to upgrade your windows and doors",
+    "Luminex Windows, an official Schüco channel partner, supplies and installs premium uPVC and system aluminium windows and doors across North Bengal, the Northeast and Bhutan. uPVC windows from ₹495/sq ft, delivered and installed in 15–30 days.",
+  partner: "Official Schüco channel partner",
+  topbarText: "Official Schüco channel partner · Delivered and installed in 15–30 days",
   phones: {
-    india: ["+91 960 9988 749", "+91 993 3581 666"],
-    bhutan: ["+975 171 28800"],
+    india: ["+91 96099 88749", "+91 99335 81666"],
+    bhutan: ["+975 1772 8800"],
   },
-  primaryPhone: "+91 960 9988 749",
-  emails: ["info@allyunitygroup.com", "ally.unity.group@gmail.com"],
+  primaryPhone: "+91 96099 88749",
+  // WhatsApp is the primary enquiry channel (client instruction).
+  whatsapp: {
+    india: { number: "919609988749", label: "India", display: "+91 96099 88749" },
+    bhutan: { number: "97517728800", label: "Bhutan", display: "+975 1772 8800" },
+  },
+  emails: ["info@allyunitygroup.com"],
   address: {
     street: "Ground Floor, Jeewandeep Building, Salugara",
     locality: "Siliguri",
@@ -24,13 +32,42 @@ export const site = {
     country: "IN",
     countryName: "India",
   },
+  // Offices with their own staff and installation teams (Guwahati is served from Siliguri).
+  offices: [
+    { city: "Siliguri", country: "India", role: "Head office" },
+    { city: "Thimphu", country: "Bhutan", role: "Office, installation team and 24x7 service team" },
+    { city: "Paro", country: "Bhutan", role: "Office and installation team" },
+    { city: "Phuentsholing", country: "Bhutan", role: "Office and installation team" },
+  ],
   areaServed: ["India", "Bhutan"],
   social: {
     facebook: "https://www.facebook.com/luminex.ind",
     instagram: "https://www.instagram.com/luminex.india/",
   },
-  warrantyYears: 15,
+  pricing: {
+    upvcFrom: 495,
+    aluminiumFrom: 950,
+    note: "Starting price per sq ft for standard sizes; the final price depends on size, window type, glass and hardware. Same price in India and Bhutan, quoted in rupees or ngultrum.",
+  },
+  leadTime: "15–30 days",
+  warranty: {
+    profile: "15–25 years, depending on the profile brand",
+    hardware: "5 years",
+    glass: "15 years",
+    exclusions: "Physical damage, modification and mishandling are not covered.",
+    summary: "Up to 25 years on profiles, 15 years on glass, 5 years on hardware",
+  },
+  brands: {
+    profiles: ["Schüco", "Luminex", "Fenova"],
+    glass: ["Saint-Gobain"],
+    hardware: ["Schüco", "Pego", "Luminex", "Kinlong"],
+  },
+  glassOptions: ["Double glazing", "Low-E glass", "Toughened glass", "Acoustic glass"],
+  bhutanService: "A 24x7 service team in Thimphu; service calls are attended within 2 business days.",
 };
+
+export const waLink = (region: "india" | "bhutan", text = "Hi Luminex, I'd like a quote for windows / doors.") =>
+  `https://wa.me/${site.whatsapp[region].number}?text=${encodeURIComponent(text)}`;
 
 export const nav = [
   { href: "/", label: "Home" },
@@ -46,79 +83,88 @@ export const telHref = (p: string) => "tel:" + p.replace(/[^\d+]/g, "");
 
 export const reasons = [
   {
+    icon: "/images/I3.png",
+    title: "Official Schüco Channel Partner",
+    text: "Luminex is an official channel partner of Schüco, the German window and façade brand. We combine Schüco, Luminex and Fenova profiles with Saint-Gobain glass and Schüco, Pego and Kinlong hardware.",
+  },
+  {
     icon: "/images/I1.png",
     title: "Professional Installation",
-    text: "Even the highest quality windows and doors will underperform if they are installed incorrectly; this can lead to exposure to the elements, thermal heat loss, or issues with structural integrity.",
-  },
-  {
-    icon: "/images/I3.png",
-    title: "Product Diversity",
-    text: "Luminex Windows offers the most complete line of windows and doors, customized to suit your home, style and budget. From classic to modern, you are sure to find the right products for you.",
+    text: "Even the highest quality windows and doors underperform if installed incorrectly. Our own installation teams in Siliguri, Thimphu, Paro and Phuentsholing fit every window, so the warranty and the performance hold.",
   },
   {
     icon: "/images/I1.png",
-    title: "Best Value For Money",
-    text: "We are confident that our product offers the best value for money in terms of quality, performance, and price.",
+    title: "Clear Pricing",
+    text: "uPVC windows start at ₹495 per sq ft and system aluminium windows at ₹950 per sq ft for standard sizes. The price is the same in India and Bhutan, and we quote in rupees or ngultrum.",
   },
   {
     icon: "/images/I2.png",
     title: "Peace Of Mind Warranties",
-    text: "Luminex customers enjoy total peace-of-mind, confident our products and services will stand the test of time. Luminex Windows offers an industry-leading 15 YEARS Limited WARRANTY from the date of manufacture.",
+    text: "Profiles carry a 15–25 year warranty depending on the brand, glass 15 years and hardware 5 years. In Bhutan, a 24x7 service team in Thimphu attends service calls within 2 business days.",
   },
   {
     icon: "/images/I4.png",
     title: "Excellent Weather Insulation",
-    text: "Luminex windows provide excellent weather insulation, making homes more comfortable in all seasons. The multi-chambered design of Luminex windows reduces heat transfer, helping keep interiors cool during summer and warm during winter.",
+    text: "Multi-chamber profiles and double, low-E or acoustic glass keep homes cool in summer, warm in winter and quiet all year. Our systems have tested U-values and acoustic ratings.",
   },
   {
     icon: "/images/I2.png",
-    title: "Sound & Dust Protection",
-    text: "Airtight multi-point sealing and multi-chamber profiles keep out traffic noise, dust and driving rain — ideal for Indian city homes and monsoon conditions.",
+    title: "Delivered In 15–30 Days",
+    text: "From order to installation in 15–30 days across North Bengal, Sikkim, the Northeast and Bhutan. Bhutan customers need no extra paperwork — we deliver to site.",
   },
 ];
 
-// FAQ answers rewritten as short, self-contained answers (40–80 words) so search
-// engines and AI assistants can quote them directly. Questions match the live site.
+// FAQ answers are short and self-contained (40–80 words) so search engines and
+// AI assistants can quote them directly. The first eight follow the questions
+// Luminex's sales team hears most often.
 export const faqs = [
   {
+    q: "Where is Luminex Windows based?",
+    a: "Luminex Windows is headquartered in Siliguri, West Bengal, at Ground Floor, Jeewandeep Building, Salugara (PIN 734008). We also have offices and installation teams in Thimphu, Paro and Phuentsholing in Bhutan, and serve North Bengal, Sikkim, the Northeast — including Guwahati, Shillong, Gangtok and Darjeeling — from Siliguri.",
+  },
+  {
+    q: "Do you have an office in Thimphu?",
+    a: "Yes. Luminex has an office in Thimphu with its own installation team and a 24x7 service team, plus offices in Paro and Phuentsholing. Service calls in Bhutan are attended within 2 business days. Bhutan customers can reach us on WhatsApp at +975 1772 8800.",
+  },
+  {
+    q: "How much do uPVC windows cost?",
+    a: "Luminex uPVC windows start at ₹495 per sq ft and system aluminium windows start at ₹950 per sq ft for standard sizes. The final price depends on the size, window type, glass and hardware you choose. Prices are the same in India and Bhutan, and we quote in rupees or ngultrum.",
+  },
+  {
+    q: "What warranty do Luminex windows come with?",
+    a: "Window profiles carry a 15 to 25 year warranty depending on the profile brand, glass is covered for 15 years and hardware for 5 years. The warranty does not cover physical damage, modification or mishandling. In Bhutan, our Thimphu service team attends warranty calls within 2 business days.",
+  },
+  {
+    q: "How is Luminex different from other window brands?",
+    a: "Luminex is an official Schüco channel partner and builds with Schüco, Luminex and Fenova profiles, Saint-Gobain glass and Schüco, Pego and Kinlong hardware. Our systems have tested U-values and acoustic ratings, we install with our own teams, and we have offices in both India and Bhutan.",
+  },
+  {
+    q: "Can I see a sample before ordering?",
+    a: "Yes. You can see window and door samples at our Siliguri office, or message us on WhatsApp — India +91 96099 88749, Bhutan +975 1772 8800 — to arrange a sample viewing near you before you order.",
+  },
+  {
+    q: "Where is your showroom in Siliguri?",
+    a: "Our Siliguri office is at Ground Floor, Jeewandeep Building, Salugara, Siliguri, West Bengal 734008. Message us on WhatsApp at +91 96099 88749 before you visit so the team can have samples ready for you.",
+  },
+  {
+    q: "How long do delivery and installation take?",
+    a: "Delivery and installation take 15 to 30 days from order, depending on the size of the project. This applies across North Bengal, the Northeast and Bhutan. Bhutan customers do not need any extra paperwork — Luminex delivers to the site.",
+  },
+  {
+    q: "Which glass options do you offer?",
+    a: "Luminex offers double glazing, low-E glass, toughened glass and acoustic glass, using Saint-Gobain glass. Our window systems have tested U-values and acoustic ratings, so we can match the glass to your climate, noise level and budget.",
+  },
+  {
     q: "What exactly are uPVC windows and doors?",
-    a: "uPVC (unplasticized polyvinyl chloride) is a rigid, lead-free plastic used to make window and door frames. It does not rust, rot, swell or need painting, and its multi-chamber profiles insulate against heat and noise. That combination of durability, insulation and low maintenance is why uPVC has replaced wood and plain aluminium in most modern Indian homes.",
+    a: "uPVC (unplasticized polyvinyl chloride) is a rigid, lead-free material used to make window and door frames. It does not rust, rot, swell or need painting, and its multi-chamber profiles insulate against heat and noise. That combination of durability, insulation and low maintenance is why uPVC has replaced wood and plain aluminium in most modern homes.",
   },
   {
-    q: "Types of uPVC frames: what are the options?",
-    a: "Luminex makes uPVC sliding windows, casement windows, tilt & turn windows, fixed and combination windows, French and balcony doors, sliding patio doors and entrance doors. Frames can be fitted into existing wall openings for renovations or into new construction, and are made to custom sizes, colours and glazing specifications.",
-  },
-  {
-    q: "Are uPVC windows and doors good for me?",
-    a: "For most homes, yes. uPVC gives strong thermal and acoustic insulation, handles rain and humidity well and needs almost no upkeep. Very large openings or extremely sun-exposed façades may need reinforced profiles or a system-aluminium option — our team will recommend the right system after a site visit.",
-  },
-  {
-    q: "Why do uPVC windows get condensation and mold?",
-    a: "Condensation after installing new windows usually means the home is now well sealed, so indoor moisture from cooking, bathing and breathing has nowhere to go. Airing each room for a few minutes two or three times a day, using tilt ventilation, or choosing windows with micro-ventilation prevents it.",
-  },
-  {
-    q: "Curtains and shading systems: what works best?",
-    a: "Avoid drilling into uPVC frames. Use wall- or ceiling-mounted curtain rods and roller blinds, pressure-fit or adhesive brackets on the sash, blinds integrated inside the glass unit, or external roller shutters. Each protects the frame's seals and warranty while giving you privacy and sun control.",
-  },
-  {
-    q: "How long do uPVC doors and windows last?",
-    a: "Good-quality uPVC windows and doors typically last 25 years or more. Luminex backs its products with a 15-year limited warranty from the date of manufacture. Periodic cleaning, checking seals and lubricating hardware once a year keeps them performing like new.",
-  },
-  {
-    q: "What is the best energy rating for uPVC windows?",
-    a: "Energy performance depends on the whole window — frame, glass and installation — and is measured by its U-value (lower is better). Multi-chamber uPVC frames with double glazing and warm-edge spacers deliver the best results, cutting air-conditioning load in summer and heat loss in winter.",
-  },
-  {
-    q: "Why does professional installation matter?",
-    a: "A window only performs as well as it is installed. Correct installation means preparing the wall opening, levelling and anchoring the frame precisely, sealing with certified insulating materials and meeting thermal and acoustic standards. Every Luminex project is installed by our own trained team.",
+    q: "Should I choose uPVC or system aluminium windows?",
+    a: "uPVC is the best value for most homes: strong insulation and almost no maintenance from ₹495 per sq ft. System aluminium, from ₹950 per sq ft, suits very large openings, slim frames and commercial façades. Our team recommends the right system after seeing your openings.",
   },
   {
     q: "How to maintain uPVC windows and doors?",
     a: "Clean frames every six months with a soft cloth and mild detergent — never abrasives or solvents. Wipe glass monthly with an ammonia-free cleaner, keep drainage slots and seals free of dust, and lubricate hinges, locks and sliding tracks once a year.",
-  },
-  {
-    q: "How much should uPVC windows cost?",
-    a: "Price depends on the window type and opening style, size, profile system, glass specification, hardware, colour and installation conditions, so it is quoted per project rather than a flat rate per square foot. Request a free quote and Luminex will measure your openings and send a detailed estimate.",
   },
 ];
 

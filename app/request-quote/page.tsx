@@ -19,7 +19,8 @@ export default function Quote() {
             <SectionTitle eyebrow="Reach us" title="Request a free quote" center>
               <p>Tell us about your project and our team will call you to schedule a free site measurement.</p>
             </SectionTitle>
-            <LeadForm type="quote" submitLabel="Request My Quote" fields={[
+            <LeadForm type="quote" submitLabel="Send Quote Request on WhatsApp" fields={[
+              { name: "region", label: "Where is your project?", options: ["India", "Bhutan"], required: true, full: true },
               { name: "firstName", label: "First Name", required: true },
               { name: "lastName", label: "Last Name", required: true },
               { name: "email", label: "Email", type: "email", required: true },

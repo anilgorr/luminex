@@ -12,9 +12,9 @@ export const doorGroups: ProductGroup[] = [
     intro:
       "Choose an aluminium-clad, fibreglass or pivot entrance door that matches your taste, budget and security needs. Every Luminex entry door is made to your exact opening, sealed against rain and dust, and fitted with multi-point locking hardware.",
     items: [
-      { title: "Aluminum Clad", image: "/images/web/doors/aluminum-clad-exterior.jpg", text: "A slim aluminium skin over an insulated core — strong, weatherproof and available in powder-coated colours." },
-      { title: "Fiberglass", image: "/images/web/doors/fibreglass.jpg", text: "Warp-free, dent-resistant and low maintenance, with the look of painted timber." },
-      { title: "Pivot Doors", image: "/images/web/doors/pivot.jpg", text: "Oversized statement entrances that swing on a central pivot for a modern façade." },
+      { title: "Aluminum Clad", image: "/images/hero-bg.jpg", text: "A slim aluminium skin over an insulated core — strong, weatherproof and available in powder-coated colours." },
+      { title: "Fiberglass", image: "/images/page-header-bg.jpg", text: "Warp-free, dent-resistant and low maintenance, with the look of painted timber." },
+      { title: "Pivot Doors", image: "/images/cta-bg.jpg", text: "Oversized statement entrances that swing on a central pivot for a modern façade." },
     ],
   },
   {
@@ -23,9 +23,9 @@ export const doorGroups: ProductGroup[] = [
     intro:
       "Bring in daylight and open up balconies, terraces and gardens with an aluminium-clad, hybrid or uPVC sliding door. Smooth-rolling tracks, secure locks and weather seals are built for Indian monsoons and summers alike.",
     items: [
-      { title: "Aluminum Clad Patio", image: "/images/web/doors/aluminum-clad-patio.jpg", text: "Slim sightlines and large glass panels for maximum view." },
-      { title: "Hybrid", image: "/images/web/doors/hybrid.jpg", text: "uPVC insulation inside, aluminium durability outside." },
-      { title: "PVC", image: "/images/web/doors/pvc.jpg", text: "Excellent value with strong thermal and acoustic insulation." },
+      { title: "Aluminum Clad Patio", image: "/images/luminex-banner.jpg", text: "Slim sightlines and large glass panels for maximum view." },
+      { title: "Hybrid", image: "/images/mission-vision-bg.jpg", text: "uPVC insulation inside, aluminium durability outside." },
+      { title: "PVC", image: "/images/our-testimonial-bg.jpg", text: "Excellent value with strong thermal and acoustic insulation." },
     ],
   },
   {
@@ -34,7 +34,7 @@ export const doorGroups: ProductGroup[] = [
     intro:
       "Open an entire wall to the outdoors. Folding (bi-fold) door panels glide and stack neatly to one side, turning living rooms, lounges and restaurants into seamless indoor–outdoor spaces.",
     items: [
-      { title: "Bi-Fold Door System", image: "/images/web/doors/tesoro.jpg", text: "Multi-panel folding doors with low thresholds and concealed hardware." },
+      { title: "Bi-Fold Door System", image: "/images/our-service-bg.jpg", text: "Multi-panel folding doors with low thresholds and concealed hardware." },
     ],
   },
 ];
@@ -44,7 +44,7 @@ export const windowGroups: ProductGroup[] = [
     id: "upvc-windows",
     title: "uPVC Window Systems",
     intro:
-      "Luminex uPVC windows use multi-chamber profiles, airtight gaskets and quality hardware to deliver thermal insulation, soundproofing, dust protection and rainwater resistance — engineered for Indian weather. They never warp, rust or swell, and need almost no maintenance.",
+      "Luminex uPVC windows use multi-chamber profiles, airtight gaskets and quality hardware to deliver thermal insulation, soundproofing, dust protection and rainwater resistance — engineered for Indian weather. They never warp, rust or swell, and need almost no maintenance. uPVC windows start at ₹495 per sq ft for standard sizes and are delivered and installed in 15–30 days.",
     items: [
       { title: "Sliding Windows", image: "/images/luminex-whywork1.jpg", text: "Space-saving sashes that glide horizontally — ideal for balconies and wide openings." },
       { title: "Casement Windows", image: "/images/luminex-about.jpg", text: "Side-hinged sashes that open fully for ventilation and seal tightly when closed." },
@@ -55,7 +55,7 @@ export const windowGroups: ProductGroup[] = [
     id: "aluminium-windows",
     title: "System Aluminium Windows",
     intro:
-      "For large spans, slim sightlines and contemporary façades, Luminex system aluminium windows combine structural strength with thermal-break profiles and premium European hardware partners.",
+      "For large spans, slim sightlines and contemporary façades, Luminex system aluminium windows combine structural strength with thermal-break profiles, Schüco systems and Schüco, Pego and Kinlong hardware. System aluminium windows start at ₹950 per sq ft.",
     items: [
       { title: "Slim Sliding Systems", image: "/images/mission-image.jpg", text: "Minimal frames for floor-to-ceiling glass." },
       { title: "Fixed & Combination Windows", image: "/images/vision-image.jpg", text: "Fixed lights combined with opening sashes for custom elevations." },

@@ -8,7 +8,7 @@ import MissionTabs from "@/components/MissionTabs";
 
 export const metadata: Metadata = {
   title: "About Us – uPVC Window & Door Manufacturer",
-  description: "Luminex Windows manufactures premium uPVC and system aluminium windows and doors for homes and businesses across India and Bhutan, with professional installation and a 15-year limited warranty.",
+  description: "Luminex Windows manufactures premium uPVC and system aluminium windows and doors for homes and businesses across India and Bhutan. Official Schüco channel partner with offices in Siliguri, Thimphu, Paro and Phuentsholing.",
   alternates: { canonical: "/about" },
 };
 
@@ -16,7 +16,7 @@ const facilities = [
   ["icon-about-facility-1.svg", "Energy saving technologies"],
   ["icon-about-facility-2.svg", "Excellent sound insulation"],
   ["icon-about-facility-3.svg", "High light transmission"],
-  ["icon-about-facility-4.svg", "15-year limited warranty"],
+  ["icon-about-facility-4.svg", "Up to 25-year profile warranty"],
   ["icon-about-facility-5.svg", "Eco-friendly, lead-free materials"],
   ["icon-about-facility-6.svg", "Modern thoughtful design"],
 ];
