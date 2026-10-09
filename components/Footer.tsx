@@ -33,6 +33,8 @@ export default function Footer() {
                 <li><Link href="/gallery">Gallery</Link></li>
                 <li><Link href="/siliguri/upvc-windows">uPVC windows Siliguri</Link></li>
                 <li><Link href="/guwahati/upvc-windows">uPVC windows Guwahati</Link></li>
+                <li><Link href="/bhutan">Windows in Bhutan</Link></li>
+                <li><Link href="/warranty">Warranty</Link></li>
                 <li><Link href="/blog">Blog</Link></li>
                 <li><Link href="/contact">Contact Us</Link></li>
               </ul>

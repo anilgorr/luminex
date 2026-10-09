@@ -6,19 +6,19 @@ import PageHeader from "@/components/PageHeader";
 import JsonLd from "@/components/JsonLd";
 import Reveal from "@/components/Reveal";
 import { ArrowDown } from "@/components/Icons";
-import { locations, getLocation, locationPath } from "@/lib/locations";
+import { locations, getLocationByPath, locationPath } from "@/lib/locations";
 import { site, waLink } from "@/lib/site";
 
-type Params = { params: Promise<{ city: string; slug: string }> };
+type Params = { params: Promise<{ loc: string[] }> };
 
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return locations.map((l) => ({ city: l.citySlug, slug: l.slug }));
+  return locations.map((l) => ({ loc: locationPath(l).slice(1).split("/") }));
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const { city, slug } = await params;
-  const l = getLocation(city, slug);
+  const { loc } = await params;
+  const l = getLocationByPath(loc);
   if (!l) return {};
   return {
     title: { absolute: `${l.metaTitle} | Luminex Windows` },
@@ -29,30 +29,34 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 export default async function LocationPageView({ params }: Params) {
-  const { city, slug } = await params;
-  const l = getLocation(city, slug);
+  const { loc } = await params;
+  const l = getLocationByPath(loc);
   if (!l) notFound();
   const url = site.url + locationPath(l);
   const updated = "October 2026";
-  const isBhutan = l.region === "Bhutan";
+  const isBhutan = l.country === "Bhutan" || l.region === "Bhutan";
+  const minPrice = l.price === "aluminium" ? site.pricing.aluminiumFrom : l.price === "upvc" ? site.pricing.upvcFrom : undefined;
+  const place = l.placeType === "Country"
+    ? { "@type": "Country", name: l.city }
+    : { "@type": "City", name: l.city, containedInPlace: { "@type": l.region === "Bhutan" ? "Country" : "AdministrativeArea", name: l.region } };
 
   return (
     <>
-      <PageHeader title={l.h1} crumbs={[{ label: l.city }, { label: l.product }]} />
+      <PageHeader title={l.h1} crumbs={l.crumbs ?? [{ label: l.city }, { label: l.product }]} />
 
       <section className="section section-bg-lines">
         <div className="container grid-2" style={{ alignItems: "start" }}>
           <div>
-            <span className="eyebrow">{l.city} · {l.product}</span>
+            <span className="eyebrow">{l.kind === "guide" ? l.product : `${l.city} · ${l.product}`}</span>
             <p className="answer-block">{l.answer}</p>
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap", margin: "28px 0" }}>
-              <a href={waLink(isBhutan ? "bhutan" : "india", `Hi Luminex, I'd like a quote for ${l.product.toLowerCase()} in ${l.city}.`)} target="_blank" rel="noopener noreferrer" className="btn">Get a quote on WhatsApp</a>
+              <a href={waLink(isBhutan ? "bhutan" : "india", `Hi Luminex, I'm enquiring about ${l.product.toLowerCase()} — ${l.city}.`)} target="_blank" rel="noopener noreferrer" className="btn">Get a quote on WhatsApp</a>
               <Link href="/request-quote" className="btn btn-light">Request a quote</Link>
             </div>
             <p className="meta">Prices and details updated {updated}</p>
           </div>
           <div>
-            <h2 className="facts-title">Key facts — {l.product} in {l.city}</h2>
+            <h2 className="facts-title">{l.kind === "guide" ? "Key facts" : `Key facts — ${l.product} in ${l.city}`}</h2>
             <table className="facts">
               <tbody>
                 {l.facts.map(([k, v]) => (<tr key={k}><th scope="row">{k}</th><td>{v}</td></tr>))}
@@ -88,7 +92,7 @@ export default async function LocationPageView({ params }: Params) {
           <div className="dark">
             <div className="section-title">
               <span className="eyebrow">Frequently asked questions</span>
-              <h2>{l.product} in {l.city}: your questions answered</h2>
+              <h2>{l.kind === "guide" ? "Your questions answered" : `${l.product} in ${l.city}: your questions answered`}</h2>
             </div>
             {l.faqs.map((f, i) => (
               <details className="faq-item" key={f.q} open={i === 0}>
@@ -103,26 +107,30 @@ export default async function LocationPageView({ params }: Params) {
       <JsonLd data={{
         "@context": "https://schema.org",
         "@graph": [
-          {
-            "@type": "Service",
-            "@id": `${url}#service`,
-            name: `${l.product} in ${l.city}`,
-            serviceType: l.product,
-            description: l.answer,
-            url,
-            provider: { "@id": `${site.url}/#organization` },
-            areaServed: { "@type": "City", name: l.city, containedInPlace: { "@type": "AdministrativeArea", name: l.region } },
-            brand: site.brands.profiles.map((b) => ({ "@type": "Brand", name: b })),
-            offers: {
-              "@type": "Offer",
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                minPrice: l.product === "System aluminium windows" ? site.pricing.aluminiumFrom : site.pricing.upvcFrom,
-                priceCurrency: "INR",
-                unitText: "per sq ft",
+          l.kind === "guide"
+            ? {
+                "@type": "Article",
+                "@id": `${url}#article`,
+                headline: l.h1,
+                description: l.answer,
+                url,
+                dateModified: "2026-10-09",
+                author: { "@id": `${site.url}/#organization` },
+                publisher: { "@id": `${site.url}/#organization` },
+                about: place,
+              }
+            : {
+                "@type": "Service",
+                "@id": `${url}#service`,
+                name: `${l.product} in ${l.city}`,
+                serviceType: l.product,
+                description: l.answer,
+                url,
+                provider: { "@id": `${site.url}/#organization` },
+                areaServed: place,
+                brand: site.brands.profiles.map((b) => ({ "@type": "Brand", name: b })),
+                ...(minPrice ? { offers: { "@type": "Offer", priceSpecification: { "@type": "UnitPriceSpecification", minPrice, priceCurrency: "INR", unitText: "per sq ft" } } } : {}),
               },
-            },
-          },
           {
             "@type": "FAQPage",
             "@id": `${url}#faq`,

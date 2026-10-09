@@ -3,43 +3,14 @@
 // or be general, verifiable knowledge. Add Bhutan and hill-town pages here in later phases.
 
 import { site } from "./site";
+import { bhutanPages } from "./locations-bhutan";
+import { hillPages } from "./locations-hills";
 
-export type Section = { h2: string; body: string[]; bullets?: string[] };
-export type LocationPage = {
-  city: string;
-  citySlug: string;
-  slug: string;
-  region: string; // state / country, for schema
-  product: "uPVC windows" | "System aluminium windows" | "Window replacement";
-  h1: string;
-  metaTitle: string;
-  metaDescription: string;
-  answer: string; // 40–60 word answer block under the H1
-  facts: [string, string][];
-  sections: Section[];
-  faqs: { q: string; a: string }[];
-  related: { href: string; label: string }[];
-  image: string;
-};
-
-const P = site.pricing;
+import { P, example, sharedFacts, type LocationPage } from "./location-common";
+export type { LocationPage, Section } from "./location-common";
 const wa = "WhatsApp +91 96099 88749";
 
-// Indicative starting price for a common window size, so answers can quote a rupee figure.
-const example = (rate: number, w = 4, h = 5) => `₹${(rate * w * h).toLocaleString("en-IN")}`;
-
-const sharedFacts = (served: string): [string, string][] => [
-  ["Partner status", site.partner],
-  ["Delivery and installation", `${site.leadTime} from order`],
-  ["Warranty", "Profiles 15–25 years (by brand) · glass 15 years · hardware 5 years"],
-  ["Profiles", site.brands.profiles.join(", ")],
-  ["Glass", `${site.brands.glass.join(", ")} — double glazing, low-E, toughened, acoustic`],
-  ["Hardware", site.brands.hardware.join(", ")],
-  ["Served from", served],
-  ["Enquiries", `${wa} or call +91 99335 81666`],
-];
-
-export const locations: LocationPage[] = [
+const phase1: LocationPage[] = [
   // ---------------------------------------------------------------- Siliguri
   {
     city: "Siliguri",
@@ -47,6 +18,7 @@ export const locations: LocationPage[] = [
     slug: "upvc-windows",
     region: "West Bengal",
     product: "uPVC windows",
+    price: "upvc",
     h1: "uPVC Windows in Siliguri",
     metaTitle: "uPVC Windows in Siliguri — Prices from ₹495/sq ft",
     metaDescription:
@@ -124,6 +96,7 @@ export const locations: LocationPage[] = [
     slug: "aluminium-windows",
     region: "West Bengal",
     product: "System aluminium windows",
+    price: "aluminium",
     h1: "Aluminium Windows in Siliguri",
     metaTitle: "Aluminium Windows in Siliguri — System Aluminium from ₹950/sq ft",
     metaDescription:
@@ -196,6 +169,7 @@ export const locations: LocationPage[] = [
     slug: "window-replacement",
     region: "West Bengal",
     product: "Window replacement",
+    price: "upvc",
     h1: "Window Replacement in Siliguri",
     metaTitle: "Window Replacement in Siliguri — uPVC & Aluminium",
     metaDescription:
@@ -262,6 +236,7 @@ export const locations: LocationPage[] = [
     slug: "upvc-windows",
     region: "Assam",
     product: "uPVC windows",
+    price: "upvc",
     h1: "uPVC Windows in Guwahati",
     metaTitle: "uPVC Windows in Guwahati — From ₹495/sq ft, Installed in 15–30 Days",
     metaDescription:
@@ -328,6 +303,7 @@ export const locations: LocationPage[] = [
     slug: "aluminium-windows-price",
     region: "Assam",
     product: "System aluminium windows",
+    price: "aluminium",
     h1: "Aluminium Window Prices in Guwahati",
     metaTitle: "Aluminium Window Price in Guwahati — From ₹950/sq ft (2026)",
     metaDescription:
@@ -394,7 +370,8 @@ export const locations: LocationPage[] = [
   },
 ];
 
-export const getLocation = (city: string, slug: string) =>
-  locations.find((l) => l.citySlug === city && l.slug === slug);
+export const locationPath = (l: LocationPage) => l.path ?? `/${l.citySlug}/${l.slug}`;
+export const getLocationByPath = (segments: string[]) => all().find((l) => locationPath(l) === "/" + segments.join("/"));
 
-export const locationPath = (l: LocationPage) => `/${l.citySlug}/${l.slug}`;
+function all(): LocationPage[] { return [...phase1, ...bhutanPages, ...hillPages]; }
+export const locations: LocationPage[] = all();

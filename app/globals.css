@@ -426,3 +426,8 @@ textarea.field { min-height: 150px; resize: vertical; }
 .nav-menu a:hover { background: var(--secondary); }
 @media (max-width: 1199px) { .nav-drop > button { padding: 10px 9px; font-size: 15px; } }
 .breadcrumb { list-style: none; padding: 0; margin: 0; flex-wrap: wrap; }
+.nav-menu { display: grid; grid-template-columns: 1fr 1fr; min-width: 480px; }
+@media (max-width: 1199px) { .nav-menu { min-width: 420px; } }
+.nav-menu { min-width: 500px; left: 50%; transform: translate(-50%, 8px); white-space: nowrap; }
+.nav-drop:hover .nav-menu, .nav-drop:focus-within .nav-menu { transform: translate(-50%, 0); }
+@media (max-width: 1199px) { .nav-menu { min-width: 460px; } }
