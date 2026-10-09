@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroSlider from "@/components/HeroSlider";
+import WindowExplode3D from "@/components/WindowExplode3D";
 import ProfileExplode from "@/components/ProfileExplode";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <>
       <HeroSlider />
+      <WindowExplode3D />
 
       {/* About */}
       <section className="section section-bg-lines">
