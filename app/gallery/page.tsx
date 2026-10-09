@@ -15,7 +15,6 @@ const items = [
   ["/images/luminex-about.jpg", "uPVC bay window"],
   ["/images/luminex-whywork1.jpg", "Sliding window"],
   ["/images/luminex-whywork2.jpg", "Casement window"],
-  ["/images/our-faqs-img.jpg", "Window detail"],
 ];
 
 export default function Gallery() {

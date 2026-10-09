@@ -431,3 +431,20 @@ textarea.field { min-height: 150px; resize: vertical; }
 .nav-menu { min-width: 500px; left: 50%; transform: translate(-50%, 8px); white-space: nowrap; }
 .nav-drop:hover .nav-menu, .nav-drop:focus-within .nav-menu { transform: translate(-50%, 0); }
 @media (max-width: 1199px) { .nav-menu { min-width: 460px; } }
+
+/* ---------- Exploded-view illustration (about section) ---------- */
+.explode { --p: 0; position: relative; background: var(--primary); border-radius: 300px 300px 0 0; padding: 70px 18px 20px 40px; max-width: 520px; margin: 0 auto; overflow: hidden; }
+.explode svg { width: 100%; height: auto; display: block; overflow: visible; }
+.ex-layer { transition: transform .08s linear; }
+.ex-labels { opacity: var(--p); }
+.ex-label { fill: #ffffff; font-family: var(--font); font-size: 15px; font-weight: 600; }
+.about-images.explode-wrap { padding: 0; }
+.about-images.explode-wrap::before { display: none; }
+.about-images.explode-wrap .customer-badge { left: -10px; right: auto; bottom: -40px; width: 160px; height: 160px; }
+.about-images.explode-wrap { padding-bottom: 30px; }
+@media (max-width: 767px) { .ex-label { font-size: 17px; } }
+
+/* ---------- Blog covers (designed, no stock photos) ---------- */
+.faq-page .faq-item summary { color: var(--black); }
+.faq-page .faq-item { border-bottom-color: var(--divider); }
+.faq-page .faq-item .answer { color: var(--text); }

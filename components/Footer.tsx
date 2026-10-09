@@ -48,7 +48,7 @@ export default function Footer() {
                   {site.phones.india.map((p) => <p key={p}><a href={telHref(p)}>{p}</a></p>)}
                   <p><strong>Bhutan</strong> · <a href={waLink("bhutan")} target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
                   {site.phones.bhutan.map((p) => <p key={p}><a href={telHref(p)}>{p}</a></p>)}
-                  <p style={{ marginTop: 10 }}>Offices: {site.offices.map((o) => o.city).join(" · ")}</p>
+                  <p style={{ marginTop: 10 }}>Siliguri · Bhutan Liaison &amp; Coordination Desk, Changbangdu, Thimphu</p>
                 </div>
               </div>
               <div className="contact-row">

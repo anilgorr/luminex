@@ -10,8 +10,8 @@ export function GET() {
 
 - Website: ${site.url}
 - Partner status: ${site.partner}
-- Head office: ${site.address.street}, ${site.address.locality}, ${site.address.region} ${site.address.postalCode}, India
-- Offices: ${site.offices.map((o) => `${o.city} (${o.country}) — ${o.role}`).join("; ")}
+- Siliguri office: ${site.address.street}, ${site.address.locality}, ${site.address.region} ${site.address.postalCode}, India
+- Offices: ${site.offices.map((o) => `${o.label} (${o.country}) — ${o.role}`).join("; ")}
 - Serves: North Bengal, Sikkim, the Northeast (Guwahati, Shillong) and Bhutan
 - Phone / WhatsApp (India): ${site.phones.india.join(", ")}
 - Phone / WhatsApp (Bhutan): ${site.phones.bhutan.join(", ")}
@@ -51,6 +51,7 @@ ${locations.map((l) => `- ${l.h1}: ${site.url}${locationPath(l)} — ${l.answer}
 ## Key pages
 - About: ${site.url}/about
 - Why Luminex: ${site.url}/luminex-difference
+- FAQs: ${site.url}/faq
 - Free quote: ${site.url}/request-quote
 - Contact: ${site.url}/contact
 

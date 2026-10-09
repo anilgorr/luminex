@@ -1,5 +1,5 @@
 // Step 4 — North Bengal / Northeast hill towns and the two Bhutan guides.
-// Hill towns are served from the Siliguri head office (no local offices).
+// Hill towns are served from the Siliguri office (no local offices).
 
 import { site } from "./site";
 import { P, example, sharedFacts, type LocationPage } from "./location-common";
@@ -11,7 +11,7 @@ const hillFaqs = (city: string) => [
   },
   {
     q: `Who installs uPVC windows in ${city}?`,
-    a: `Luminex Windows, an official Schüco channel partner, supplies and installs uPVC windows and doors in ${city} with its own team, served from its head office in Siliguri. Delivery and installation take 15–30 days from order.`,
+    a: `Luminex Windows, an official Schüco channel partner, supplies and installs uPVC windows and doors in ${city} with its own team, served from its office in Siliguri. Delivery and installation take 15–30 days from order.`,
   },
   {
     q: `Does Luminex make uPVC doors for ${city}?`,
@@ -47,7 +47,7 @@ const hill = (
   answer,
   facts: [
     ["Price", `uPVC windows from ₹${P.upvcFrom}/sq ft · system aluminium from ₹${P.aluminiumFrom}/sq ft`],
-    ...sharedFacts("Luminex head office, Siliguri"),
+    ...sharedFacts("Luminex office, Siliguri"),
   ],
   sections: [
     {
@@ -78,7 +78,7 @@ export const hillPages: LocationPage[] = [
     "Meghalaya",
     "uPVC Windows in Shillong — Rain-Tight, From ₹495/sq ft",
     "uPVC windows and doors in Shillong from ₹495 per sq ft. Rain-tight, double-glazed options from Luminex, an official Schüco channel partner, installed in 15–30 days.",
-    "Luminex Windows supplies and installs uPVC windows and doors in Shillong, served from its Siliguri head office. Standard uPVC windows start at ₹495 per sq ft and are installed by Luminex's own team within 15–30 days of order. Luminex is an official Schüco channel partner using Schüco, Luminex and Fenova profiles.",
+    "Luminex Windows supplies and installs uPVC windows and doors in Shillong, served from its Siliguri office. Standard uPVC windows start at ₹495 per sq ft and are installed by Luminex's own team within 15–30 days of order. Luminex is an official Schüco channel partner using Schüco, Luminex and Fenova profiles.",
     {
       h2: "Windows for Shillong's rain and cold",
       body: "Meghalaya is one of the wettest regions in India, and Shillong's hill climate brings cool, damp nights. Windows there should keep water out and warmth in:",
@@ -92,11 +92,11 @@ export const hillPages: LocationPage[] = [
       {
         h2: "uPVC window manufacturers serving Shillong",
         body: [
-          "Luminex is an official Schüco channel partner headquartered in Siliguri. It supplies and installs uPVC windows in Shillong with its own team, so the same company measures, installs and stands behind the warranty.",
+          "Luminex is an official Schüco channel partner based in Siliguri. It supplies and installs uPVC windows in Shillong with its own team, so the same company measures, installs and stands behind the warranty.",
         ],
       },
     ],
-    "/images/our-faqs-img.jpg",
+    "/images/mission-image.jpg",
     [
       { href: "/guwahati/upvc-windows", label: "uPVC windows in Guwahati" },
       { href: "/gangtok", label: "uPVC windows in Gangtok" },
@@ -109,7 +109,7 @@ export const hillPages: LocationPage[] = [
     "Sikkim",
     "uPVC Windows & Doors in Gangtok — From ₹495/sq ft",
     "uPVC windows and doors in Gangtok from ₹495 per sq ft, double glazed for hill winters. Supplied and installed by Luminex, an official Schüco channel partner, in 15–30 days.",
-    "Luminex Windows supplies and installs uPVC windows and doors in Gangtok from its Siliguri head office. Standard uPVC windows start at ₹495 per sq ft, double glazing is available for cold winters, and Luminex's own team installs within 15–30 days. Luminex is an official Schüco channel partner.",
+    "Luminex Windows supplies and installs uPVC windows and doors in Gangtok from its Siliguri office. Standard uPVC windows start at ₹495 per sq ft, double glazing is available for cold winters, and Luminex's own team installs within 15–30 days. Luminex is an official Schüco channel partner.",
     {
       h2: "Windows for Gangtok's hill climate",
       body: "Gangtok sits on steep hillsides at well over 1,000 m, with cold winters and a long monsoon. The right windows make a noticeable difference to comfort:",
@@ -133,7 +133,7 @@ export const hillPages: LocationPage[] = [
     "West Bengal",
     "uPVC Windows & Doors in Darjeeling — From ₹495/sq ft",
     "uPVC windows, doors and sliding windows in Darjeeling from ₹495 per sq ft. Replace old timber windows with double-glazed uPVC from Luminex, an official Schüco channel partner.",
-    "Luminex Windows supplies and installs uPVC windows, sliding windows and doors in Darjeeling, served from its Siliguri head office. Standard uPVC windows start at ₹495 per sq ft, with double glazing for Darjeeling's cold, damp weather, installed by Luminex's own team within 15–30 days.",
+    "Luminex Windows supplies and installs uPVC windows, sliding windows and doors in Darjeeling, served from its Siliguri office. Standard uPVC windows start at ₹495 per sq ft, with double glazing for Darjeeling's cold, damp weather, installed by Luminex's own team within 15–30 days.",
     {
       h2: "Windows for Darjeeling's cold and damp",
       body: "At around 2,000 m, Darjeeling is cold, foggy and damp for much of the year, and many homes, hotels and homestays still have old timber windows. Replacing them with uPVC brings:",
@@ -163,8 +163,8 @@ export const hillPages: LocationPage[] = [
     "jalpaiguri",
     "West Bengal",
     "uPVC Windows & Doors in Jalpaiguri — Near Siliguri, From ₹495/sq ft",
-    "uPVC windows, sliding windows and doors in Jalpaiguri from ₹495 per sq ft, from Luminex's nearby Siliguri head office. Official Schüco channel partner, installed in 15–30 days.",
-    "Luminex Windows supplies and installs uPVC windows, sliding windows and doors in Jalpaiguri from its nearby head office in Siliguri. Standard uPVC windows start at ₹495 per sq ft and Luminex's own team installs within 15–30 days of order. Luminex is an official Schüco channel partner.",
+    "uPVC windows, sliding windows and doors in Jalpaiguri from ₹495 per sq ft, from Luminex's nearby Siliguri office. Official Schüco channel partner, installed in 15–30 days.",
+    "Luminex Windows supplies and installs uPVC windows, sliding windows and doors in Jalpaiguri from its nearby office in Siliguri. Standard uPVC windows start at ₹495 per sq ft and Luminex's own team installs within 15–30 days of order. Luminex is an official Schüco channel partner.",
     {
       h2: "Windows for Jalpaiguri's humid plains climate",
       body: "Jalpaiguri is hot and humid, with a heavy monsoon and river flooding in some areas. Windows there need to handle moisture:",
@@ -178,7 +178,7 @@ export const hillPages: LocationPage[] = [
       {
         h2: "uPVC window manufacturers near Jalpaiguri",
         body: [
-          "Luminex's head office is in Salugara, Siliguri, close to Jalpaiguri. Customers can see samples there, and Luminex's own team measures, supplies and installs.",
+          "Luminex's office is in Salugara, Siliguri, close to Jalpaiguri. Customers can see samples there, and Luminex's own team measures, supplies and installs.",
         ],
       },
       {
@@ -305,9 +305,9 @@ export const hillPages: LocationPage[] = [
         ],
       },
       {
-        h2: "Why buy from a supplier with offices in Bhutan",
+        h2: "Why buy from a supplier with its own team in Bhutan",
         body: [
-          "Buying from a supplier that only sells across the border leaves you to arrange transport, installation and service yourself. Luminex has offices and installation teams in Thimphu, Paro and Phuentsholing, so one company is responsible from quote to service.",
+          "Buying from a supplier that only sells across the border leaves you to arrange transport, installation and service yourself. Luminex has a liaison and coordination desk in Changbangdu, Thimphu, and installation teams serving Thimphu, Paro and Phuentsholing, so one company is responsible from quote to service.",
         ],
       },
       {

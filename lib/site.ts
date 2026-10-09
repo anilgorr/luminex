@@ -23,7 +23,7 @@ export const site = {
     india: { number: "919609988749", label: "India", display: "+91 96099 88749" },
     bhutan: { number: "97517728800", label: "Bhutan", display: "+975 1772 8800" },
   },
-  emails: ["info@allyunitygroup.com"],
+  emails: ["info@allyunitygroup.com", "ally.unity.group@gmail.com"],
   address: {
     street: "Ground Floor, Jeewandeep Building, Salugara",
     locality: "Siliguri",
@@ -34,10 +34,8 @@ export const site = {
   },
   // Offices with their own staff and installation teams (Guwahati is served from Siliguri).
   offices: [
-    { city: "Siliguri", country: "India", role: "Head office" },
-    { city: "Thimphu", country: "Bhutan", role: "Office, installation team and 24x7 service team" },
-    { city: "Paro", country: "Bhutan", role: "Office and installation team" },
-    { city: "Phuentsholing", country: "Bhutan", role: "Office and installation team" },
+    { city: "Siliguri", country: "India", label: "Siliguri", role: "Office and samples" },
+    { city: "Thimphu", country: "Bhutan", label: "Bhutan Liaison & Coordination Desk — Changbangdu, Thimphu", role: "Coordination desk, installation team and 24x7 service team" },
   ],
   areaServed: ["India", "Bhutan"],
   social: {
@@ -94,6 +92,7 @@ export const nav: NavItem[] = [
     ],
   },
   { href: "/luminex-difference", label: "Luminex Difference" },
+  { href: "/faq", label: "FAQs" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -138,11 +137,11 @@ export const reasons = [
 export const faqs = [
   {
     q: "Where are you based?",
-    a: "Luminex Windows is headquartered in Siliguri, West Bengal, at Ground Floor, Jeewandeep Building, Salugara (PIN 734008). We also have offices and installation teams in Thimphu, Paro and Phuentsholing in Bhutan, and serve North Bengal, Sikkim, the Northeast — including Guwahati, Shillong, Gangtok and Darjeeling — from Siliguri.",
+    a: "Luminex Windows is based in Siliguri, West Bengal, at Ground Floor, Jeewandeep Building, Salugara (PIN 734008). We also have a liaison and coordination desk in Changbangdu, Thimphu, and installation teams serving Thimphu, Paro and Phuentsholing in Bhutan, and serve North Bengal, Sikkim, the Northeast — including Guwahati, Shillong, Gangtok and Darjeeling — from Siliguri.",
   },
   {
     q: "Do you have a partner or dealer in Bhutan?",
-    a: "Luminex does not work through dealers in Bhutan — it has its own offices and installation teams in Thimphu, Paro and Phuentsholing, plus a 24x7 service team in Thimphu. Service calls in Bhutan are attended within 2 business days. Contact Luminex Bhutan on WhatsApp at +975 1772 8800.",
+    a: "Luminex does not work through dealers in Bhutan — it has its own Bhutan Liaison & Coordination Desk in Changbangdu, Thimphu, and installation teams serving Thimphu, Paro and Phuentsholing, plus a 24x7 service team in Thimphu. Service calls in Bhutan are attended within 2 business days. Contact Luminex Bhutan on WhatsApp at +975 1772 8800.",
   },
   {
     q: "How much do uPVC windows cost?",

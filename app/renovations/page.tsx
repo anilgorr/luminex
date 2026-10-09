@@ -34,7 +34,7 @@ export default function Renovations() {
             </ul>
             <div style={{ marginTop: 30 }}><Link href="/request-quote" className="btn">Request A Quote</Link></div>
           </div>
-          <Reveal><div className="shine"><Image src="/images/our-faqs-img.jpg" alt="Renovated home with new Luminex windows" width={585} height={730} /></div></Reveal>
+          <Reveal><div className="shine"><Image src="/images/luminex-banner.jpg" alt="Modern home with new Luminex windows" width={585} height={730} /></div></Reveal>
         </div>
       </section>
       <section className="section reasons">

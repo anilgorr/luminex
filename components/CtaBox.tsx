@@ -7,7 +7,7 @@ export default function CtaBox() {
       <div className="container">
         <div>
           <h2>Have Questions? Call us <a href={telHref(site.primaryPhone)}>{site.primaryPhone}</a></h2>
-          <p>Official Schüco channel partner with offices in Siliguri, Thimphu, Paro and Phuentsholing. uPVC windows from ₹{site.pricing.upvcFrom}/sq ft, delivered and installed in {site.leadTime}.</p>
+          <p>Official Schüco channel partner with an office in Siliguri and a Bhutan liaison desk in Thimphu. uPVC windows from ₹{site.pricing.upvcFrom}/sq ft, delivered and installed in {site.leadTime}.</p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a href={waLink("india")} target="_blank" rel="noopener noreferrer" className="btn btn-light">WhatsApp India</a>
             <a href={waLink("bhutan")} target="_blank" rel="noopener noreferrer" className="btn btn-light">WhatsApp Bhutan</a>

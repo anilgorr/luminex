@@ -24,10 +24,10 @@ const phase1: LocationPage[] = [
     metaDescription:
       "uPVC windows in Siliguri from ₹495 per sq ft. Luminex, an official Schüco channel partner headquartered in Salugara, supplies and installs sliding and casement uPVC windows in 15–30 days.",
     answer:
-      "Luminex Windows supplies and installs uPVC windows in Siliguri from its head office in Salugara. Standard uPVC windows start at ₹495 per sq ft, are installed by Luminex's own team within 15–30 days of order, and carry a 15–25 year profile warranty. Luminex is an official Schüco channel partner.",
+      "Luminex Windows supplies and installs uPVC windows in Siliguri from its office in Salugara. Standard uPVC windows start at ₹495 per sq ft, are installed by Luminex's own team within 15–30 days of order, and carry a 15–25 year profile warranty. Luminex is an official Schüco channel partner.",
     facts: [
       ["Price", `uPVC windows from ₹${P.upvcFrom} per sq ft (standard sizes)`],
-      ...sharedFacts("Luminex head office, Salugara, Siliguri"),
+      ...sharedFacts("Luminex office, Salugara, Siliguri"),
     ],
     sections: [
       {
@@ -68,7 +68,7 @@ const phase1: LocationPage[] = [
       },
       {
         q: "Where can I buy uPVC windows in Siliguri?",
-        a: "Luminex Windows is headquartered at Ground Floor, Jeewandeep Building, Salugara, Siliguri 734008. You can see samples there and order directly — Luminex measures, supplies and installs the windows with its own team.",
+        a: "Luminex Windows is based at Ground Floor, Jeewandeep Building, Salugara, Siliguri 734008. You can see samples there and order directly — Luminex measures, supplies and installs the windows with its own team.",
       },
       {
         q: "How long does uPVC window installation take in Siliguri?",
@@ -105,7 +105,7 @@ const phase1: LocationPage[] = [
       "Luminex Windows supplies and installs system aluminium windows in Siliguri, including Schüco systems. Prices start at ₹950 per sq ft for standard sizes, installation by Luminex's own team takes 15–30 days from order, and profiles carry a 15–25 year warranty. Luminex is an official Schüco channel partner based in Salugara.",
     facts: [
       ["Price", `System aluminium windows from ₹${P.aluminiumFrom} per sq ft (standard sizes)`],
-      ...sharedFacts("Luminex head office, Salugara, Siliguri"),
+      ...sharedFacts("Luminex office, Salugara, Siliguri"),
     ],
     sections: [
       {
@@ -124,7 +124,7 @@ const phase1: LocationPage[] = [
       {
         h2: "Aluminium window dealers and manufacturers in Siliguri",
         body: [
-          "Luminex is an official Schüco channel partner headquartered in Siliguri. It supplies system aluminium windows and doors directly and installs them with its own team, so you deal with one company from measurement to warranty.",
+          "Luminex is an official Schüco channel partner based in Siliguri. It supplies system aluminium windows and doors directly and installs them with its own team, so you deal with one company from measurement to warranty.",
         ],
       },
       {
@@ -145,7 +145,7 @@ const phase1: LocationPage[] = [
       },
       {
         q: "Who supplies Schüco aluminium windows in Siliguri?",
-        a: "Luminex Windows is an official Schüco channel partner headquartered in Salugara, Siliguri. It supplies and installs Schüco and other system aluminium windows across Siliguri, North Bengal and Bhutan.",
+        a: "Luminex Windows is an official Schüco channel partner based in Salugara, Siliguri. It supplies and installs Schüco and other system aluminium windows across Siliguri, North Bengal and Bhutan.",
       },
       {
         q: "Are aluminium windows better than uPVC?",
@@ -178,7 +178,7 @@ const phase1: LocationPage[] = [
       "Luminex Windows replaces old wooden, steel and aluminium windows in Siliguri with uPVC or system aluminium windows made to the size of your existing openings. uPVC replacements start at ₹495 per sq ft, and Luminex's own team completes the job within 15–30 days of order.",
     facts: [
       ["Price", `uPVC from ₹${P.upvcFrom}/sq ft · system aluminium from ₹${P.aluminiumFrom}/sq ft`],
-      ...sharedFacts("Luminex head office, Salugara, Siliguri"),
+      ...sharedFacts("Luminex office, Salugara, Siliguri"),
     ],
     sections: [
       {
@@ -227,7 +227,7 @@ const phase1: LocationPage[] = [
       { href: "/renovations", label: "Renovations" },
       { href: "/request-quote", label: "Request a quote" },
     ],
-    image: "/images/our-faqs-img.jpg",
+    image: "/images/mission-vision-bg.jpg",
   },
   // ---------------------------------------------------------------- Guwahati
   {
@@ -242,10 +242,10 @@ const phase1: LocationPage[] = [
     metaDescription:
       "uPVC windows in Guwahati from ₹495 per sq ft, supplied and installed in 15–30 days by Luminex Windows, an official Schüco channel partner serving Assam from Siliguri.",
     answer:
-      "Luminex Windows supplies and installs uPVC windows in Guwahati, served from its head office in Siliguri. Standard uPVC windows start at ₹495 per sq ft, delivery and installation take 15–30 days from order, and profiles carry a 15–25 year warranty. Luminex is an official Schüco channel partner.",
+      "Luminex Windows supplies and installs uPVC windows in Guwahati, served from its office in Siliguri. Standard uPVC windows start at ₹495 per sq ft, delivery and installation take 15–30 days from order, and profiles carry a 15–25 year warranty. Luminex is an official Schüco channel partner.",
     facts: [
       ["Price", `uPVC windows from ₹${P.upvcFrom} per sq ft (standard sizes)`],
-      ...sharedFacts("Luminex head office, Siliguri (no Guwahati office)"),
+      ...sharedFacts("Luminex office, Siliguri (no Guwahati office)"),
     ],
     sections: [
       {
@@ -257,7 +257,7 @@ const phase1: LocationPage[] = [
       {
         h2: "How Luminex serves Guwahati",
         body: [
-          "Luminex does not have an office in Guwahati. Orders are handled from the Siliguri head office: share your requirements on WhatsApp, the team confirms sizes and specifications, and the windows are delivered and installed within 15–30 days.",
+          "Luminex does not have an office in Guwahati. Orders are handled from the Siliguri office: share your requirements on WhatsApp, the team confirms sizes and specifications, and the windows are delivered and installed within 15–30 days.",
         ],
       },
       {
@@ -279,7 +279,7 @@ const phase1: LocationPage[] = [
       },
       {
         q: "Does Luminex have an office in Guwahati?",
-        a: "No. Luminex serves Guwahati from its head office in Siliguri, West Bengal. Enquiries are handled on WhatsApp and phone, and windows are delivered and installed within 15–30 days of order.",
+        a: "No. Luminex serves Guwahati from its office in Siliguri, West Bengal. Enquiries are handled on WhatsApp and phone, and windows are delivered and installed within 15–30 days of order.",
       },
       {
         q: "How long does delivery to Guwahati take?",
@@ -312,7 +312,7 @@ const phase1: LocationPage[] = [
       "System aluminium windows in Guwahati start at ₹950 per sq ft with Luminex Windows, so a 4 ft × 5 ft window starts at about ₹19,000. Size, profile system, glass and hardware decide the final price. Luminex, an official Schüco channel partner, delivers and installs in Guwahati within 15–30 days.",
     facts: [
       ["Price", `System aluminium windows from ₹${P.aluminiumFrom} per sq ft (standard sizes)`],
-      ...sharedFacts("Luminex head office, Siliguri (no Guwahati office)"),
+      ...sharedFacts("Luminex office, Siliguri (no Guwahati office)"),
     ],
     sections: [
       {

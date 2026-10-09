@@ -5,10 +5,11 @@ import PageHeader from "@/components/PageHeader";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import MissionTabs from "@/components/MissionTabs";
+import ProfileExplode from "@/components/ProfileExplode";
 
 export const metadata: Metadata = {
   title: "About Us – uPVC Window & Door Manufacturer",
-  description: "Luminex Windows manufactures premium uPVC and system aluminium windows and doors for homes and businesses across India and Bhutan. Official Schüco channel partner with offices in Siliguri, Thimphu, Paro and Phuentsholing.",
+  description: "Luminex Windows manufactures premium uPVC and system aluminium windows and doors for homes and businesses across India and Bhutan. Official Schüco channel partner with an office in Siliguri and a Bhutan liaison desk in Thimphu.",
   alternates: { canonical: "/about" },
 };
 
@@ -28,8 +29,8 @@ export default function About() {
       <section className="section section-bg-lines">
         <div className="container grid-2">
           <Reveal>
-            <div className="about-images">
-              <div className="arch"><Image src="/images/luminex-about.jpg" alt="Luminex uPVC bay window" width={430} height={623} /></div>
+            <div className="about-images explode-wrap">
+              <ProfileExplode />
               <div className="customer-badge"><strong>98%</strong><span>Happy Customer</span></div>
             </div>
           </Reveal>

@@ -32,12 +32,6 @@ export default function HeroSlider() {
             <Link href="/request-quote" className="btn">Get A Quote</Link>
             <Link href="/about" className="btn btn-light">Learn More</Link>
           </div>
-          <div className="hero-proof">
-            <div className="avatars">
-              {[1, 2, 3, 4].map((n) => <img key={n} src={`/images/satisfy-client-img-${n}.jpg`} alt="" width={60} height={60} />)}
-            </div>
-            <p>More than 1K+ trusted customers</p>
-          </div>
         </div>
       </div>
       <div className="hero-dots">

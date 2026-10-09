@@ -22,9 +22,9 @@ export default function Contact() {
           <SectionTitle eyebrow="Contact details" title="Happy to answer all your questions" center />
           <div className="grid-3">
             <Reveal><div className="info-card"><figure><Image src="/images/contact-info-img-1.jpg" alt="" width={413} height={400} /></figure><h3>Our Offices:</h3>
-              <address style={{ fontStyle: "normal" }}><p><strong>Siliguri (head office):</strong> {a.street}, {a.locality}, {a.region} {a.postalCode}, {a.countryName}</p>
-              <p><strong>Bhutan:</strong> Thimphu · Paro · Phuentsholing</p></address></div></Reveal>
-            <Reveal delay={100}><div className="info-card"><figure><Image src="/images/contact-info-img-2.jpg" alt="" width={413} height={400} /></figure><h3>Email:</h3>
+              <address style={{ fontStyle: "normal" }}><p><strong>Siliguri:</strong> {a.street}, {a.locality}, {a.region} {a.postalCode}, {a.countryName}</p>
+              <p><strong>Bhutan Liaison &amp; Coordination Desk:</strong> Changbangdu, Thimphu</p></address></div></Reveal>
+            <Reveal delay={100}><div className="info-card"><figure><Image src="/images/contact-info-img-2.jpg" alt="" width={413} height={400} /></figure><h3>Emails:</h3>
               {site.emails.map((e) => <p key={e}><a href={`mailto:${e}`}>{e}</a></p>)}</div></Reveal>
             <Reveal delay={200}><div className="info-card"><figure><Image src="/images/contact-info-img-3.jpg" alt="" width={413} height={400} /></figure><h3>Phone &amp; WhatsApp:</h3>
               {site.phones.india.map((p) => <p key={p}>India: <a href={telHref(p)}>{p}</a></p>)}

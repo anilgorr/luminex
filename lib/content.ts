@@ -79,7 +79,7 @@ export const posts: Post[] = [
     slug: "energy-efficient-door-design",
     title: "Enhancing Energy Efficiency in Door Design",
     excerpt: "Discover eco-friendly door solutions that improve insulation and reduce energy costs…",
-    image: "/images/post-1.jpg",
+    image: "/images/blog/cover-energy.svg",
     date: "2026-01-15",
     body: [
       { p: "Doors are one of the biggest sources of heat gain and air leakage in a home. Choosing an insulated door system with proper seals can noticeably reduce air-conditioning load." },
@@ -91,7 +91,7 @@ export const posts: Post[] = [
     slug: "window-aesthetics-trends",
     title: "Exploring the Latest Trends in Window Aesthetics and Styles",
     excerpt: "From classic to contemporary, see how different styles enhance your home's appeal…",
-    image: "/images/post-2.jpg",
+    image: "/images/blog/cover-trends.svg",
     date: "2026-02-10",
     body: [
       { p: "Windows shape how a home looks from the street and how it feels inside. Today's trends favour larger glass, slimmer frames and colours beyond plain white." },
@@ -103,7 +103,7 @@ export const posts: Post[] = [
     slug: "durable-window-frame-materials",
     title: "Durable Materials for Lasting Window Frames",
     excerpt: "Learn about materials like aluminum and wood, each bringing unique benefits…",
-    image: "/images/post-3.jpg",
+    image: "/images/blog/cover-materials.svg",
     date: "2026-03-05",
     body: [
       { p: "The frame material decides how long a window lasts, how much maintenance it needs and how well it insulates." },
