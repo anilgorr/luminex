@@ -5,6 +5,8 @@ import WindowExplode3D from "@/components/WindowExplode3D";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import Faq from "@/components/Faq";
+import { posts } from "@/lib/content";
+import { ArrowRight } from "@/components/Icons";
 import { reasons, partners, site } from "@/lib/site";
 
 export default function Home() {
@@ -68,15 +70,15 @@ export default function Home() {
             <aside className="faq-facts" aria-labelledby="facts-title">
               <span className="eyebrow">Quick facts</span>
               <h3 id="facts-title">Luminex at a glance</h3>
-              <dl>
-                <div><dt>uPVC windows</dt><dd>from ₹{site.pricing.upvcFrom}/sq ft</dd></div>
-                <div><dt>System aluminium</dt><dd>from ₹{site.pricing.aluminiumFrom}/sq ft</dd></div>
-                <div><dt>Delivery &amp; installation</dt><dd>{site.leadTime}</dd></div>
-                <div><dt>Warranty</dt><dd>up to 25 yrs profile · 15 yrs glass · 5 yrs hardware</dd></div>
-                <div><dt>Profiles</dt><dd>{site.brands.profiles.join(" · ")}</dd></div>
-                <div><dt>Glass</dt><dd>{site.brands.glass.join(" · ")}</dd></div>
-                <div><dt>Serving</dt><dd>Siliguri · Guwahati · North East · Bhutan</dd></div>
+              <dl className="facts-grid">
+                <div><dd>₹{site.pricing.upvcFrom}</dd><dt>uPVC windows, per sq ft</dt></div>
+                <div><dd>₹{site.pricing.aluminiumFrom}</dd><dt>System aluminium, per sq ft</dt></div>
+                <div><dd>15–30</dd><dt>Days to deliver &amp; install</dt></div>
+                <div><dd>25 yrs</dd><dt>Profile warranty (up to)</dt></div>
+                <div className="t"><dd>Schüco</dd><dt>Official channel partner</dt></div>
+                <div className="t"><dd>Saint-Gobain</dd><dt>Glass partner</dt></div>
               </dl>
+              <p className="facts-note">Serving Siliguri, Guwahati, the North East and Bhutan.</p>
               <Link href="/faq" className="btn btn-light">See all FAQs</Link>
             </aside>
           </Reveal>
@@ -96,6 +98,28 @@ export default function Home() {
           </div>
           <div className="partner-row">
             {partners.map((p) => <Reveal key={p.alt}><img src={p.src} alt={p.alt} loading="lazy" /></Reveal>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Blog */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-row">
+            <SectionTitle eyebrow="Latest news" title="Expert tips and insights for windows and doors" />
+            <p className="section-side">Stay informed with professional advice, design trends, and practical solutions for enhancing your home&apos;s windows and doors.</p>
+          </div>
+          <div className="grid-3">
+            {posts.slice(0, 3).map((p, i) => (
+              <Reveal key={p.slug} delay={i * 100}>
+                <article className="post">
+                  <Link href={`/blog/${p.slug}`}><figure><Image src={p.image} alt={p.title} width={1366} height={768} sizes="(max-width: 767px) 100vw, 33vw" /></figure></Link>
+                  <h3><Link href={`/blog/${p.slug}`}>{p.title}</Link></h3>
+                  <p>{p.excerpt}</p>
+                  <Link href={`/blog/${p.slug}`} className="read-more">Read more <span className="circle"><ArrowRight /></span></Link>
+                </article>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>

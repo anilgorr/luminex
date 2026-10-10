@@ -496,3 +496,28 @@ textarea.field { min-height: 150px; resize: vertical; }
   .w3-steps li { opacity: 1; display: grid; }
   .w3-steps li p { max-height: none; margin-top: 6px; }
 }
+
+/* ---------- Home FAQ: facts panel in place of the stock photo ---------- */
+.faqs .grid-2 { align-items: center; }
+.faq-facts { position: relative; overflow: hidden; color: #fff; background: var(--primary);
+  border-radius: 0 320px 320px 0; margin-left: calc((100vw - var(--container)) / -2 - 15px);
+  padding: 80px 120px 80px calc((100vw - var(--container)) / 2 + 15px); }
+.faq-facts::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(circle at 85% 20%, rgba(255,255,255,.10), transparent 45%),
+              repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 64px); }
+.faq-facts > * { position: relative; }
+.faq-facts .eyebrow { color: #fff; }
+.faq-facts .eyebrow::before { background: #fff; }
+.faq-facts h3 { color: #fff; font-size: 34px; line-height: 1.2; margin: 12px 0 30px; }
+.facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 22px; }
+.facts-grid > div { display: flex; flex-direction: column; gap: 6px; padding: 20px 18px; border-radius: 14px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); transition: background .3s ease, transform .3s ease; }
+.facts-grid > div:hover { background: rgba(255,255,255,.13); transform: translateY(-3px); }
+.facts-grid dd { margin: 0; font-size: 26px; font-weight: 700; line-height: 1.1; color: #fff; }
+.facts-grid dt { font-size: 14px; line-height: 1.35; color: rgba(255,255,255,.75); }
+.facts-note { color: rgba(255,255,255,.8); margin: 0 0 26px; font-size: 15px; }
+@media (max-width: 1199px) { .faq-facts { padding-right: 80px; } .facts-grid dd { font-size: 22px; } }
+@media (max-width: 991px) { .faq-facts { margin-left: -15px; padding: 56px 70px 56px 30px; border-radius: 0 220px 220px 0; } }
+@media (max-width: 575px) { .faq-facts { padding: 48px 34px 48px 20px; border-radius: 0 90px 90px 0; } .facts-grid { gap: 10px; } .facts-grid > div { padding: 14px 12px; } .facts-grid dd { font-size: 19px; } .facts-grid dt { font-size: 13px; } .faq-facts h3 { font-size: 26px; } }
+.facts-grid > div.t dd { font-size: 21px; white-space: nowrap; }
+@media (max-width: 575px) { .facts-grid > div.t dd { font-size: 16px; } }
