@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import HeroSlider from "@/components/HeroSlider";
 import WindowExplode3D from "@/components/WindowExplode3D";
-import ProfileExplode from "@/components/ProfileExplode";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import { reasons, partners } from "@/lib/site";
@@ -16,8 +16,10 @@ export default function Home() {
       <section className="section section-bg-lines">
         <div className="container grid-2">
           <Reveal>
-            <div className="about-images explode-wrap">
-              <ProfileExplode />
+            <div className="about-images about-photo">
+              <div className="arch">
+                <Image src="/images/luminex-banner.jpg" alt="Floor-to-ceiling glazed wall and double doors with slim black frames, filling a modern hallway with daylight" width={2400} height={1600} sizes="(max-width: 991px) 90vw, 430px" />
+              </div>
               <div className="customer-badge"><strong>98%</strong><span>Happy Customer</span></div>
             </div>
           </Reveal>

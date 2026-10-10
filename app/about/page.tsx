@@ -5,7 +5,6 @@ import PageHeader from "@/components/PageHeader";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import MissionTabs from "@/components/MissionTabs";
-import ProfileExplode from "@/components/ProfileExplode";
 
 export const metadata: Metadata = {
   title: "About Us – uPVC Window & Door Manufacturer",
@@ -29,8 +28,10 @@ export default function About() {
       <section className="section section-bg-lines">
         <div className="container grid-2">
           <Reveal>
-            <div className="about-images explode-wrap">
-              <ProfileExplode />
+            <div className="about-images about-photo">
+              <div className="arch">
+                <Image src="/images/luminex-banner.jpg" alt="Floor-to-ceiling glazed wall and double doors with slim black frames, filling a modern hallway with daylight" width={2400} height={1600} sizes="(max-width: 991px) 90vw, 430px" />
+              </div>
               <div className="customer-badge"><strong>98%</strong><span>Happy Customer</span></div>
             </div>
           </Reveal>
