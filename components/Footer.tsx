@@ -63,7 +63,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="copyright">
-          <div className="container"><p>Copyright © {new Date().getFullYear()} {site.name}. All Rights Reserved.</p></div>
+          <div className="container"><p>Copyright © {new Date().getFullYear()} {site.name}. All Rights Reserved. · <Link href="/privacy-policy">Privacy Policy</Link></p></div>
         </div>
       </footer>
     </>

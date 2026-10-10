@@ -521,3 +521,12 @@ textarea.field { min-height: 150px; resize: vertical; }
 @media (max-width: 575px) { .faq-facts { padding: 48px 34px 48px 20px; border-radius: 0 90px 90px 0; } .facts-grid { gap: 10px; } .facts-grid > div { padding: 14px 12px; } .facts-grid dd { font-size: 19px; } .facts-grid dt { font-size: 13px; } .faq-facts h3 { font-size: 26px; } }
 .facts-grid > div.t dd { font-size: 21px; white-space: nowrap; }
 @media (max-width: 575px) { .facts-grid > div.t dd { font-size: 16px; } }
+
+/* ---------- Legal pages ---------- */
+.legal h2 { font-size: 26px; margin: 40px 0 14px; }
+.legal p, .legal li { line-height: 1.75; }
+.legal ul { padding-left: 20px; margin: 0 0 16px; }
+.legal li { margin-bottom: 8px; }
+.legal a { color: var(--primary); text-decoration: underline; }
+.legal-updated { font-size: 14px; color: var(--text); opacity: .8; }
+.copyright a { color: inherit; text-decoration: underline; }
