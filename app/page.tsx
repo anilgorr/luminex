@@ -4,7 +4,8 @@ import HeroSlider from "@/components/HeroSlider";
 import WindowExplode3D from "@/components/WindowExplode3D";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
-import { reasons, partners } from "@/lib/site";
+import Faq from "@/components/Faq";
+import { reasons, partners, site } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -56,6 +57,32 @@ export default function Home() {
                 </div>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section faqs" id="faq">
+        <div className="container grid-2">
+          <Reveal>
+            <aside className="faq-facts" aria-labelledby="facts-title">
+              <span className="eyebrow">Quick facts</span>
+              <h3 id="facts-title">Luminex at a glance</h3>
+              <dl>
+                <div><dt>uPVC windows</dt><dd>from ₹{site.pricing.upvcFrom}/sq ft</dd></div>
+                <div><dt>System aluminium</dt><dd>from ₹{site.pricing.aluminiumFrom}/sq ft</dd></div>
+                <div><dt>Delivery &amp; installation</dt><dd>{site.leadTime}</dd></div>
+                <div><dt>Warranty</dt><dd>up to 25 yrs profile · 15 yrs glass · 5 yrs hardware</dd></div>
+                <div><dt>Profiles</dt><dd>{site.brands.profiles.join(" · ")}</dd></div>
+                <div><dt>Glass</dt><dd>{site.brands.glass.join(" · ")}</dd></div>
+                <div><dt>Serving</dt><dd>Siliguri · Guwahati · North East · Bhutan</dd></div>
+              </dl>
+              <Link href="/faq" className="btn btn-light">See all FAQs</Link>
+            </aside>
+          </Reveal>
+          <div className="dark">
+            <SectionTitle eyebrow="Frequently asked questions" title="Answers to your most asked questions" />
+            <Faq limit={8} schema={false} />
           </div>
         </div>
       </section>
