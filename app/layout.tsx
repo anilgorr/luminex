@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
+import ChromeGate from "@/components/ChromeGate";
 import { site } from "@/lib/site";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"], variable: "--font-jakarta", display: "swap" });
@@ -71,10 +72,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-IN" className={jakarta.variable}>
       <body>
-        <Header />
+        <ChromeGate><Header /></ChromeGate>
         <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <ChromeGate><Footer /></ChromeGate>
+        <ChromeGate><WhatsAppButton /></ChromeGate>
         <JsonLd data={orgSchema} />
         <Analytics />
       </body>

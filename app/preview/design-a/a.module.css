@@ -1,0 +1,125 @@
+/* Design A — Atelier
+   Paper #F5F6F4 · Graphite #22262A · Steel #5D646B · Hairline #D8DCDA · Glass #E6ECEC · Luminex green #1C4722
+   Display: Instrument Serif 400 (headlines only). Text: Plus Jakarta Sans. Left-aligned, wide margins. */
+.root {
+  --pv-bg: #f5f6f4; --pv-ink: #22262a; --pv-muted: #5d646b; --pv-line: #d8dcda; --pv-brand: #1c4722; --pv-brand-hover: #143619;
+  --pv-display: var(--font-a-display), Georgia, serif; --pv-display-weight: 400; --pv-radius: 2px; --pv-foot-bg: #22262a;
+  --gutter: max(24px, calc((100vw - 1192px) / 2));
+  background: var(--pv-bg); color: var(--pv-ink); font-size: 16px; line-height: 1.65;
+}
+.root :where(h1, h2, h3, h4) { color: var(--pv-ink); }
+.root :focus-visible { outline: 2px solid var(--pv-brand); outline-offset: 3px; }
+.wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 112px 0; }
+.h2 { font-family: var(--pv-display); font-weight: 400; font-size: clamp(34px, 3.8vw, 52px); line-height: 1.05; letter-spacing: -.01em; margin: 0 0 24px; color: var(--pv-ink); }
+.h3 { font-size: 15px; font-weight: 500; color: var(--pv-muted); margin: 0 0 28px; }
+.lede { font-size: 18px; color: var(--pv-muted); max-width: 60ch; margin: 0 0 32px; }
+.note { font-size: 14px; color: var(--pv-muted); margin: 24px 0 0; }
+.textLink { display: inline-block; margin-top: 8px; font-weight: 600; color: var(--pv-ink); text-decoration: underline; text-decoration-color: var(--pv-brand); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.textLink:hover { color: var(--pv-brand); }
+.btn, .btnGhost { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: var(--pv-radius); font-weight: 600; font-size: 15px; text-decoration: none; transition: background .2s, border-color .2s, color .2s; }
+.btn { background: var(--pv-brand); color: #fff; }
+.btn:hover { background: var(--pv-brand-hover); }
+.btnGhost { border: 1px solid var(--pv-ink); color: var(--pv-ink); }
+.btnGhost:hover { background: var(--pv-ink); color: #fff; }
+
+/* Hero: copy in the left five columns, photography bleeding to the right edge. */
+.hero { display: grid; grid-template-columns: var(--gutter) minmax(0, 5fr) minmax(0, 7fr); column-gap: 0; min-height: min(calc(100vh - 120px), 860px); }
+.heroCopy { grid-column: 2; align-self: center; padding: 72px 56px 72px 0; }
+.heroCopy h1 { font-family: var(--pv-display); font-weight: 400; font-size: clamp(42px, 5vw, 74px); line-height: .98; letter-spacing: -.02em; margin: 0 0 28px; color: var(--pv-ink); text-wrap: balance; }
+.answer { font-size: 18px; line-height: 1.65; color: var(--pv-muted); max-width: 46ch; margin: 0 0 36px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.heroMedia { grid-column: 3; display: flex; flex-direction: column; gap: 14px; padding: 32px 0 32px 0; }
+.heroFrame { position: relative; flex: 1; min-height: 520px; overflow: hidden; background: #dfe3e2; }
+.heroSlide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; }
+.heroSlide img { object-fit: cover; }
+.heroActive { opacity: 1; }
+.thumbs { display: flex; gap: 10px; }
+.thumbs button { width: 96px; height: 60px; padding: 0; border: 0; cursor: pointer; opacity: .5; background: none; outline-offset: 2px; transition: opacity .2s; position: relative; }
+.thumbs button img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumbs button:hover { opacity: .85; }
+.thumbs .thumbOn { opacity: 1; box-shadow: 0 0 0 2px var(--pv-ink); }
+
+.root .explode { --x-bg: #e6ecec; --x-ink: #22262a; --x-muted: #5d646b; --x-accent: #1c4722; --x-display: var(--pv-display); --x-display-weight: 400; }
+
+/* About: rectangular photo, the 98% figure as a caption rather than a badge. */
+.about { display: grid; grid-template-columns: 5fr 6fr; gap: 88px; align-items: center; }
+.aboutFig { margin: 0; }
+.aboutFig img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.aboutFig figcaption { display: flex; align-items: baseline; gap: 12px; padding-top: 16px; border-top: 1px solid var(--pv-line); margin-top: 16px; color: var(--pv-muted); }
+.aboutFig figcaption strong { font-family: var(--pv-display); font-weight: 400; font-size: 44px; line-height: 1; color: var(--pv-ink); }
+.aboutText p { color: var(--pv-muted); font-size: 17px; max-width: 58ch; }
+
+/* Schüco: white panel, logo at full weight. */
+.schuco { background: #fff; border-top: 1px solid var(--pv-line); border-bottom: 1px solid var(--pv-line); }
+.schucoGrid { display: grid; grid-template-columns: 7fr 4fr; gap: 80px; align-items: center; }
+.schucoLogo { width: 150px; height: auto; margin-bottom: 36px; display: block; }
+.schucoList { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.schucoList li { border-top: 2px solid var(--pv-ink); padding-top: 16px; }
+.schucoList h3 { font-size: 17px; margin: 0 0 6px; color: var(--pv-ink); }
+.schucoList p { margin: 0; font-size: 15px; color: var(--pv-muted); }
+.schucoImg { background: var(--pv-bg); padding: 40px; }
+.schucoImg img { width: 100%; height: auto; display: block; }
+
+/* Products: images carry no text; labels sit underneath. */
+.products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 16px; }
+.product { color: var(--pv-ink); text-decoration: none; }
+.productImg { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; margin-bottom: 20px; background: #dfe3e2; }
+.productImg img { object-fit: cover; transition: transform .8s ease; }
+.product:hover .productImg img { transform: scale(1.04); }
+.product h3 { font-family: var(--pv-display); font-weight: 400; font-size: 30px; margin: 0 0 6px; }
+.product p { margin: 0; color: var(--pv-muted); font-size: 15px; max-width: 40ch; }
+
+.reasons { background: #fff; }
+.reasonsGrid { display: grid; grid-template-columns: 4fr 7fr; gap: 80px; align-items: start; }
+.reasonsHead { position: sticky; top: 120px; }
+.reasonsHead .btn { margin-top: 8px; }
+.reasonList { list-style: none; margin: 0; padding: 0; }
+.reasonList li { display: grid; grid-template-columns: 2fr 3fr; gap: 32px; padding: 26px 0; border-top: 1px solid var(--pv-line); }
+.reasonList li:last-child { border-bottom: 1px solid var(--pv-line); }
+.reasonList h3 { margin: 0; font-size: 18px; color: var(--pv-ink); }
+.reasonList p { margin: 0; color: var(--pv-muted); font-size: 15px; }
+
+.faqGrid { display: grid; grid-template-columns: 4fr 7fr; gap: 80px; align-items: start; }
+.glance { margin: 8px 0 28px; display: grid; gap: 0; }
+.glance div { padding: 14px 0; border-top: 1px solid var(--pv-line); }
+.glance dt { font-size: 13px; color: var(--pv-muted); }
+.glance dd { margin: 2px 0 0; font-size: 16px; font-weight: 600; color: var(--pv-ink); }
+
+.partners { padding: 64px 0; border-top: 1px solid var(--pv-line); }
+.partnerRow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 40px; align-items: center; }
+.partnerRow img { width: 100%; height: 48px; object-fit: contain; filter: grayscale(1); opacity: .75; mix-blend-mode: multiply; transition: filter .3s, opacity .3s; }
+.partnerRow img:hover { filter: none; opacity: 1; }
+
+.rowHead { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 24px; }
+.posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.postImg { display: block; overflow: hidden; margin-bottom: 18px; }
+.postImg img { filter: grayscale(1) brightness(1.15); width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.posts h3 { font-size: 19px; line-height: 1.35; margin: 0 0 8px; }
+.posts h3 a { color: var(--pv-ink); text-decoration: none; }
+.posts h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.posts p { margin: 0; color: var(--pv-muted); font-size: 15px; }
+
+@media (max-width: 1080px) {
+  .schucoList { grid-template-columns: 1fr; }
+  .partnerRow { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .section { padding: 72px 0; }
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .heroCopy { grid-column: 1; padding: 40px 24px 32px; }
+  .heroMedia { grid-column: 1; padding: 0; order: -1; }
+  .heroFrame { min-height: 0; aspect-ratio: 4 / 3; flex: none; }
+  .thumbs { padding: 0 24px; }
+  .thumbs button { width: 72px; height: 46px; }
+  .about, .schucoGrid, .reasonsGrid, .faqGrid { grid-template-columns: 1fr; gap: 40px; }
+  .reasonsHead { position: static; }
+  .reasonList li { grid-template-columns: 1fr; gap: 6px; }
+  .products, .posts { grid-template-columns: 1fr; gap: 40px; }
+  .productImg { aspect-ratio: 16 / 11; }
+  .schucoImg { max-width: 360px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .heroSlide { transition: none; }
+  .productImg img { transition: none; }
+}
