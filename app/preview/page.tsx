@@ -40,14 +40,14 @@ export default function PreviewIndex() {
       <ul className={s.grid}>
         {options.map((o) => (
           <li key={o.id}>
-            <Link href={`/preview/design-${o.id}`} className={s.card}>
+            <a href={`/preview/design-${o.id}`} className={s.card}>
               <Image src={`/preview-thumbs/${o.id}.jpg`} alt={`Option ${o.id.toUpperCase()}, ${o.name}: top of the homepage`} width={720} height={450} sizes="(max-width: 860px) 100vw, 33vw" />
               <span className={s.cardText}>
                 <span className={s.letter}>Option {o.id.toUpperCase()}</span>
                 <h2>{o.name}</h2>
                 <p>{o.text}</p>
               </span>
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
