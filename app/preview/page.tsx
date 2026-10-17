@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import s from "./index.module.css";
 
@@ -7,16 +8,13 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const round2 = [
-  { href: "/preview/design-d", name: "D. Obsidian", text: "Warm black, ivory and anodised bronze. A full-screen cinematic photo slider with a slow push-in; Bodoni headlines on the dark band beneath. Dark, rich and image-led." },
-  { href: "/preview/design-e", name: "E. Anthracite", text: "Anthracite grey (RAL 7016), white and aluminium. The hero is a glazed wall: one panoramic photo seen through three tall panes, changing pane by pane. Precise and architectural." },
-  { href: "/preview/design-f", name: "F. Daylight", text: "Sky white, Himalayan navy and brass. A layered photo collage with a Schüco partner plaque; overlapping photographs and cards throughout. Light, airy, hotel-like." },
-];
-
-const designs = [
-  { href: "/preview/design-a", name: "A. Atelier", text: "Cool paper-white and graphite. One large serif headline beside photography that runs off the right edge; quiet, editorial sections." },
-  { href: "/preview/design-b", name: "B. Profile", text: "The language of window engineering. Photos framed by a white uPVC frame with a meeting rail, a sash-slide between photos, and specs set out like a data sheet." },
-  { href: "/preview/design-c", name: "C. Valley", text: "Stone and slate. A big type-led hero, then the photos as a sideways filmstrip; a dark band for the 3D window and the key facts." },
+const options = [
+  { id: "a", name: "Atelier", text: "Cool white and graphite. A large serif headline beside a photo that runs off the right edge; quiet and editorial." },
+  { id: "b", name: "Profile", text: "The photo sits inside a white uPVC window frame with a centre rail and slides across like a sash. Specs laid out like a data sheet." },
+  { id: "c", name: "Valley", text: "Stone and slate. A big type-led hero, then the photos as a sideways filmstrip; a dark band for the 3D window and key facts." },
+  { id: "d", name: "Obsidian", text: "Warm black, ivory and bronze. A full-screen photo slider that slowly zooms in, with the headline on a dark band beneath. Rich and image-led." },
+  { id: "e", name: "Anthracite", text: "Anthracite grey, white and aluminium. One wide photo seen through three tall panes like a glazed wall, changing pane by pane." },
+  { id: "f", name: "Daylight", text: "Sky white, deep navy and brass. Overlapping photos with a Schüco partner badge; light, airy and hotel-like." },
 ];
 
 const changes = [
@@ -34,27 +32,26 @@ const changes = [
 export default function PreviewIndex() {
   return (
     <div className={s.page}>
-      <h1>Luminex homepage designs</h1>
-      <p className={s.intro}>Same content in every design. The current homepage at <Link href="/">/</Link> is unchanged.</p>
-      <h2 className={s.sub}>Round 2: premium (17 October)</h2>
-      <ul className={s.list}>
-        {round2.map((d) => (
-          <li key={d.href}>
-            <Link href={d.href}><h2>{d.name}</h2></Link>
-            <p>{d.text}</p>
+      <header className={s.head}>
+        <p className={s.client}>Luminex Windows</p>
+        <h1>Homepage options A to F</h1>
+        <p className={s.intro}>Same content in every option. Open one and use the A–F bar at the bottom of the screen to switch between them. The current homepage at <Link href="/">/</Link> is unchanged.</p>
+      </header>
+      <ul className={s.grid}>
+        {options.map((o) => (
+          <li key={o.id}>
+            <Link href={`/preview/design-${o.id}`} className={s.card}>
+              <Image src={`/preview-thumbs/${o.id}.jpg`} alt={`Option ${o.id.toUpperCase()}, ${o.name}: top of the homepage`} width={720} height={450} sizes="(max-width: 860px) 100vw, 33vw" />
+              <span className={s.cardText}>
+                <span className={s.letter}>Option {o.id.toUpperCase()}</span>
+                <h2>{o.name}</h2>
+                <p>{o.text}</p>
+              </span>
+            </Link>
           </li>
         ))}
       </ul>
-      <h2 className={s.sub}>Round 1 (16 October)</h2>
-      <ul className={s.list}>
-        {designs.map((d) => (
-          <li key={d.href}>
-            <Link href={d.href}><h2>{d.name}</h2></Link>
-            <p>{d.text}</p>
-          </li>
-        ))}
-      </ul>
-      <h2 className={s.sub}>Changes from the 16 October call, in every design</h2>
+      <h2 className={s.sub}>Changes from the 16 October call, in every option</h2>
       <ul className={s.changes}>{changes.map((c) => <li key={c}>{c}</li>)}</ul>
     </div>
   );
