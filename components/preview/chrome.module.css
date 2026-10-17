@@ -2,7 +2,7 @@
 .wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 
 /* Green strip: the logo colour stays at the top of the page, as the client asked. */
-.strip { background: var(--pv-brand); color: #fff; font-size: 14px; }
+.strip { background: var(--pv-strip, #1c4722); color: #fff; font-size: 14px; }
 .strip .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 40px; }
 .stripLinks { display: flex; gap: 22px; }
 .strip a { color: #fff; text-decoration: none; opacity: .9; }
@@ -14,9 +14,9 @@
 .logo img { width: 128px; height: auto; display: block; }
 .nav { display: flex; gap: 4px; margin-left: auto; }
 .nav a { padding: 10px 12px; font-size: 15px; font-weight: 500; color: var(--pv-ink); text-decoration: none; }
-.nav a:hover { color: var(--pv-brand); }
-.cta { display: inline-flex; align-items: center; padding: 12px 22px; background: var(--pv-brand); color: #fff; border-radius: var(--pv-radius, 0); font-weight: 600; font-size: 15px; text-decoration: none; transition: background .2s; }
-.cta:hover { background: var(--pv-brand-hover, #143619); }
+.nav a:hover { color: var(--pv-nav-hover, var(--pv-brand)); }
+.cta { display: inline-flex; align-items: center; padding: 12px 22px; background: var(--pv-cta, #1c4722); color: var(--pv-cta-ink, #fff); border-radius: var(--pv-radius, 0); font-weight: 600; font-size: 15px; text-decoration: none; transition: background .2s; }
+.cta:hover { background: var(--pv-cta-hover, #143619); }
 .toggle { display: none; margin-left: auto; width: 44px; height: 44px; border: 1px solid var(--pv-line); background: transparent; border-radius: var(--pv-radius, 0); cursor: pointer; padding: 12px 10px; }
 .toggle span { display: block; height: 2px; background: var(--pv-ink); margin: 4px 0; }
 .mobileNav { display: none; }

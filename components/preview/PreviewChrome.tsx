@@ -12,7 +12,7 @@ import c from "./chrome.module.css";
 // Layout is identical in all three; each design themes them through CSS variables
 // (--pv-bg, --pv-ink, --pv-muted, --pv-line, --pv-brand, --pv-display, --pv-radius, --pv-foot-bg).
 
-export function PreviewHeader() {
+export function PreviewHeader({ logo = "green" }: { logo?: "green" | "white" }) {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -28,7 +28,7 @@ export function PreviewHeader() {
       <header className={c.header}>
         <div className={`${c.wrap} ${c.headerRow}`}>
           <Link href="/" className={c.logo} aria-label="Luminex Windows home">
-            <Image src="/images/web/Luminex.png" alt="Luminex" width={600} height={220} priority />
+            <Image src={logo === "white" ? "/images/web/luminex-white.png" : "/images/web/Luminex.png"} alt="Luminex" width={600} height={220} priority />
           </Link>
           <nav className={c.nav} aria-label="Main">
             {navV2.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}

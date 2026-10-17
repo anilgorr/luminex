@@ -171,3 +171,27 @@ export const contact = {
   address: `${site.address.street}, ${site.address.locality}, ${site.address.region} ${site.address.postalCode}`,
   social: site.social,
 };
+
+// From first visit to after-sales: a real sequence, so the designs may number it.
+export const process = [
+  { title: "Site visit and measurement", text: "Our team sees your openings, measures them and recommends uPVC or system aluminium for each one." },
+  { title: "Made in Siliguri", text: "Frames are fabricated to your sizes with Schüco, Luminex or Fenova profiles and Saint-Gobain glass." },
+  { title: "Delivered and installed", text: "Our own installers fit every window and door, 30–45 days from order, in India and Bhutan." },
+  { title: "Looked after", text: "Up to 25 years on profiles, and a 24x7 service team in Thimphu for Bhutan customers." },
+];
+
+// Body-copy internal links to the location pages (helps crawlers and AI engines map coverage).
+// Guwahati is left out on purpose (client: large projects only).
+export const regions = [
+  { href: "/siliguri/upvc-windows", place: "Siliguri", note: "Office, samples and installation" },
+  { href: "/jalpaiguri", place: "Jalpaiguri", note: "Served from Siliguri" },
+  { href: "/darjeeling", place: "Darjeeling", note: "Hill homes and hotels" },
+  { href: "/gangtok", place: "Gangtok", note: "Sikkim homes and hotels" },
+  { href: "/bhutan/thimphu", place: "Thimphu", note: "Coordination desk and service team" },
+  { href: "/bhutan/paro", place: "Paro", note: "Installation team" },
+  { href: "/bhutan/phuentsholing", place: "Phuentsholing", note: "Installation team" },
+];
+
+// Extra photography for richer layouts (stock until Luminex project photos arrive).
+export const craftImage = { src: "/images/vision-image.jpg", alt: "Craftsman cutting a sheet of glass on a workshop table", w: 414, h: 337 };
+export const detailImage = { src: "/images/luminex-about.jpg", alt: "Corner of a house with white multi-pane uPVC casement windows", w: 430, h: 623 };
