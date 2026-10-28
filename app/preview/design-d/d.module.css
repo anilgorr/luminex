@@ -167,3 +167,36 @@
   .on img { animation: none; }
   .productImg img, .regions a { transition: none; }
 }
+
+/* ---------- Option D, white background (client request, 28 Oct) ----------
+   White #FFFFFF · Stone panel #F5F2ED · Warm ink #1A1918 · Taupe #6B645B · Bronze #8A6738 (AA on white) · Hairline rgba(26,25,24,.12)
+   Same layout, type and bronze accents; the Schüco band becomes the one dark section. */
+.root.light {
+  --pv-bg: #ffffff; --pv-ink: #1a1918; --pv-muted: #6b645b; --pv-line: rgba(26, 25, 24, .12);
+  --pv-brand: #8a6738; --pv-nav-hover: #8a6738; --pv-header-bg: #ffffff; --pv-foot-bg: #1a1918;
+  --bronze: #8a6738; --bronze-hi: #8a6738; --panel: #f5f2ed;
+}
+.root.light .btn { color: #fff; }
+.root.light .btn:hover { background: #6f5229; }
+.root.light .btnGhost { border-color: rgba(26, 25, 24, .35); }
+.root.light .btnGhost:hover { border-color: var(--pv-ink); background: rgba(26, 25, 24, .04); }
+.root.light .stage { background: #e9e5df; }
+.root.light .stage::after { height: 22%; background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.35)); }
+.root.light .heroBand { border-bottom: 1px solid var(--pv-line); }
+.root.light .note { color: #8a837a; }
+.root.light .product { background: var(--panel); }
+.root.light .productImg img { filter: none; }
+.root.light .productMore { color: var(--bronze); }
+.root.light .photoSmall { border-color: #fff; box-shadow: 0 30px 60px -40px rgba(0,0,0,.45); }
+.root.light .explode { --x-bg: #f5f2ed; --x-ink: #1a1918; --x-muted: #6b645b; --x-accent: #8a6738; --x-panel: #ffffff; }
+.root.light .schuco { background: #1a1918; color: #ece7df; }
+.root.light .schuco :where(h2, h3) { color: #fff; }
+.root.light .schucoLogo { filter: brightness(0) invert(1); }
+.root.light .schucoIntro { color: #c9c2b8; }
+.root.light .schucoList li { border-top-color: rgba(236, 231, 223, .35); }
+.root.light .schucoList p { color: #a9a196; }
+.root.light .schuco .note { color: #8a837a; }
+.root.light .schucoVisual { box-shadow: none; }
+.root.light .regionsSection { background: var(--panel); }
+.root.light .partners { background: var(--panel); }
+.root.light .postImg img { filter: grayscale(1) contrast(1.05); }
