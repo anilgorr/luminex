@@ -5,7 +5,7 @@
 //
 // Changes requested on the call:
 // - No prices anywhere on the homepage (they stay on the dedicated price pages).
-// - Lead time is 30–45 days, not 15–30.
+// - Lead time is 30–60 days (client, 28 Oct; earlier 30–60, originally 15–30).
 // - Profile warranty headline: up to 25 years.
 // - Guwahati / "Northeast" not promoted on the homepage (location pages stay, linked from the footer).
 // - Schüco gets its own nav tab; no Luminex × Schüco lockup in the logo.
@@ -13,7 +13,6 @@
 // - No text on hero images; the grey third slide is replaced.
 // - The 3D window uses a uPVC-style handle.
 //
-// TODO(client): MJ's WhatsApp number for India (replaces the current India number).
 // TODO(client): handle reference photo; Schüco written OK + exact partner wording;
 //               real project photos to replace stock images.
 
@@ -21,26 +20,29 @@ import { nav, site, waLink } from "./site";
 import { posts } from "./content";
 
 export const facts = {
-  leadTime: "30–45 days",
+  leadTime: "30–60 days",
   warrantyHeadline: "Up to 25 years",
   warranty: { profile: "Up to 25 years", glass: "15 years", hardware: "5 years" },
   served: "Siliguri, North Bengal, Sikkim and Bhutan",
 };
 
-// India WhatsApp: swap the number here when MJ shares hers. Kept in one place on purpose.
+// WhatsApp: India link goes to +91 99335 81666 (client, 28 Oct). Labels show the country only.
+const WA_TEXT = encodeURIComponent("Hi Luminex, I'd like a quote for windows / doors.");
 export const whatsapp = {
-  india: { href: waLink("india"), display: site.whatsapp.india.display },
-  bhutan: { href: waLink("bhutan"), display: site.whatsapp.bhutan.display },
+  india: { href: `https://wa.me/919933581666?text=${WA_TEXT}`, display: "" },
+  bhutan: { href: waLink("bhutan"), display: "" },
 };
 
+// Header: the previous site menu, with Schüco in place of Renovations (client, 28 Oct).
 export const navV2 = [
+  { href: "/", label: "Home" },
   { href: "/windows", label: "Windows" },
   { href: "/doors", label: "Doors" },
   // Points at the homepage section until the dedicated /schuco page is built and Schüco signs off the wording.
   { href: "#schuco", label: "Schüco" },
-  { href: "/luminex-difference", label: "Luminex difference" },
-  { href: "/faq", label: "FAQs" },
-  { href: "/contact", label: "Contact" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/luminex-difference", label: "Luminex Difference" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export const quoteHref = "/request-quote";
@@ -55,7 +57,7 @@ export const hero = {
   h1: "uPVC and aluminium windows and doors for Siliguri, Sikkim and Bhutan",
   // 40–60 word answer block: the passage AI engines lift when asked "who makes windows in Siliguri / Bhutan".
   answer:
-    "Luminex Windows makes premium uPVC and system aluminium windows and doors at its Siliguri facility and installs them with its own teams across North Bengal, Sikkim and Bhutan. Luminex is an official Schüco channel partner, glazes with Saint-Gobain glass, and delivers and installs in 30–45 days.",
+    "Luminex Windows makes premium uPVC and system aluminium windows and doors at its Siliguri facility and installs them with its own teams across North Bengal, Sikkim and Bhutan. Luminex is an official Schüco channel partner, glazes with Saint-Gobain glass, and delivers and installs in 30–60 days.",
   // No text on these images (client request). The grey texture slide was removed.
   slides: [
     { src: "/images/luminex-banner.jpg", alt: "Double-height hallway with black-framed glazed wall and double doors opening to a garden" },
@@ -67,10 +69,10 @@ export const hero = {
 export const explodeSteps = [
   { title: "One window, built as a system", text: "Profile, seals, glass and hardware chosen to work together. Scroll to take a Luminex window apart." },
   { title: "Multi-chamber profile frame", text: "Schüco, Luminex and Fenova profiles with insulating chambers. They don't rust, rot or swell." },
-  { title: "Airtight weather seals", text: "Continuous seals keep monsoon rain, dust and draughts out." },
+  { title: "Enhanced Acoustic Comfort", text: "Helps reduce sound leakage through window joints, complementing the acoustic performance of the glass and overall window system." },
   { title: "Saint-Gobain glass", text: "Double glazing, low-E, toughened or acoustic, matched to your climate and the noise outside." },
   { title: "Sashes and uPVC hardware", text: "Sashes on smooth rollers, locked by Schüco, Pego and Kinlong handles and multi-point locks." },
-  { title: "Installed by our own team", text: "Delivered and installed in 30–45 days, with up to 25 years' warranty on profiles." },
+  { title: "Installed by our own team", text: "Delivered and installed in 30–60 days, with up to 25 years' warranty on profiles." },
 ];
 
 export const about = {
@@ -108,13 +110,13 @@ export const reasons = [
   { title: "Warranty you can read", text: "Up to 25 years on profiles, 15 years on glass and 5 years on hardware. Physical damage, modification and mishandling are excluded." },
   { title: "Built for this climate", text: "Multi-chamber profiles, airtight seals and double, low-E or acoustic glass for monsoon rain, hill winters and traffic noise." },
   { title: "Service in Bhutan", text: "A 24x7 service team in Thimphu attends service calls within 2 business days. No extra paperwork for Bhutan customers." },
-  { title: "30–45 days, order to install", text: "The same timeline across North Bengal, Sikkim and Bhutan, from order to installed windows." },
+  { title: "30–60 days, order to install", text: "The same timeline across North Bengal, Sikkim and Bhutan, from order to installed windows." },
 ];
 
 // Short, price-free fact list. Replaces the green "quick facts" panel.
 export const glance: [string, string][] = [
   ["Partner status", "Official Schüco channel partner"],
-  ["Delivery and installation", "30–45 days from order"],
+  ["Delivery and installation", "30–60 days from order"],
   ["Profile warranty", "Up to 25 years"],
   ["Glass", "Saint-Gobain: double glazing, low-E, toughened, acoustic"],
   ["Offices", "Siliguri, India and Thimphu, Bhutan"],
@@ -125,23 +127,19 @@ export const glance: [string, string][] = [
 export const faqs = [
   {
     q: "Where is Luminex Windows based?",
-    a: "Luminex Windows is based in Siliguri, West Bengal, at Ground Floor, Jeewandeep Building, Salugara (PIN 734008), where it also keeps window and door samples. It has a coordination desk in Changbangdu, Thimphu, and installation teams serving Thimphu, Paro and Phuentsholing.",
+    a: "Luminex Windows is headquartered in Siliguri, West Bengal.\n\nIn Bhutan, our coordination desk in Changbangdu, Thimphu, supports project coordination and customer communication, backed by dedicated installation teams serving across Bhutan.\n\nWith our base in Siliguri and an established on-ground presence in Bhutan, we are well-positioned to serve residential, commercial and architectural projects across the region.",
   },
   {
     q: "Is Luminex an official Schüco partner?",
-    a: "Yes. Luminex is an official Schüco channel partner and supplies and installs Schüco window, door and façade systems in North Bengal, Sikkim and Bhutan, alongside its own Luminex and Fenova profile ranges.",
+    a: "Yes. Luminex Windows is an official channel partner of Schüco, offering the supply and installation of premium Schüco window, door and façade systems across West Bengal, Sikkim, Guwahati and Bhutan.\n\nAlongside Schüco's advanced architectural systems, we offer our multiple profile ranges, providing solutions tailored to diverse architectural styles, project specifications and performance requirements.",
   },
   {
     q: "How long do delivery and installation take?",
-    a: "Delivery and installation take 30 to 45 days from order, depending on the size of the project. The same timeline applies in Siliguri, Sikkim and Bhutan, and Bhutan customers need no extra paperwork because Luminex delivers to site.",
+    a: "Our typical delivery and installation timeline is 30–60 days from order confirmation, depending on the project size, product specifications and site requirements.\n\nFor our customers in Bhutan, Luminex offers convenient direct-to-site delivery, simplifying the customs process and minimising the need for customers to coordinate transportation independently. Our team coordinates the delivery and installation process to ensure a smooth, hassle-free experience.",
   },
   {
     q: "What warranty do Luminex windows come with?",
-    a: "Profiles carry a warranty of up to 25 years depending on the profile brand, glass is covered for 15 years and hardware for 5 years. The warranty does not cover physical damage, modification or mishandling.",
-  },
-  {
-    q: "Do you have a dealer in Bhutan?",
-    a: "No dealer is involved. Luminex has its own coordination desk in Changbangdu, Thimphu, installation teams for Thimphu, Paro and Phuentsholing, and a 24x7 service team that attends calls within 2 business days. WhatsApp Luminex Bhutan on +975 1772 8800.",
+    a: "At Luminex, we stand behind the quality of our window and door systems with product-specific warranty coverage for added peace of mind.\n\nuPVC & Aluminium Profiles: Warranty coverage of up to 25 years, depending on the profile brand and applicable warranty terms.\n\nGlass: 15-year warranty, subject to the applicable product warranty conditions.\n\nHardware: 5-year warranty, covering eligible hardware components as specified in the warranty documentation.\n\nWarranty coverage is subject to the respective manufacturer's terms and conditions. Physical damage, unauthorised modifications, improper handling and damage resulting from misuse are excluded from coverage.",
   },
   {
     q: "Should I choose uPVC or system aluminium windows?",
@@ -174,10 +172,10 @@ export const contact = {
 
 // From first visit to after-sales: a real sequence, so the designs may number it.
 export const process = [
-  { title: "Site visit and measurement", text: "Our team sees your openings, measures them and recommends uPVC or system aluminium for each one." },
-  { title: "Made in Siliguri", text: "Frames are fabricated to your sizes with Schüco, Luminex or Fenova profiles and Saint-Gobain glass." },
-  { title: "Delivered and installed", text: "Our own installers fit every window and door, 30–45 days from order, in India and Bhutan." },
-  { title: "Looked after", text: "Up to 25 years on profiles, and a 24x7 service team in Thimphu for Bhutan customers." },
+  { title: "Site Visit & Precision Measurement", text: ["Our technical team visits your site to assess the openings, take accurate measurements and recommend the right uPVC or system aluminium windows and doors for your space. We consider your design preferences, functional requirements and site conditions to help determine the most suitable solution."] },
+  { title: "State-of-the-Art Manufacturing", text: ["Our state-of-the-art manufacturing facility in Siliguri is equipped with advanced German-engineered machinery, bringing exceptional precision, consistency and manufacturing excellence to uPVC and system aluminium windows and doors.", "Our investment in advanced German machinery reflects our commitment to raising manufacturing standards and delivering window and door solutions engineered for quality, performance and lasting reliability."] },
+  { title: "Delivery & Professional Installation", text: ["Our in-house installation team coordinates delivery and fitting to ensure your windows and doors are installed with care and precision. The typical delivery and installation timeline is 30–60 days, depending on the product type, specifications and project requirements."] },
+  { title: "After-Sales Service & Long-Term Support", text: ["Our relationship with you continues beyond installation. We provide after-sales assistance for our supplied window and door systems, with a dedicated service touchpoint in Thimphu supporting our customers in Bhutan. Eligible profile systems carry warranties of up to 25 years, subject to the applicable product, warranty terms and conditions."] },
 ];
 
 // Body-copy internal links to the location pages (helps crawlers and AI engines map coverage).
@@ -195,3 +193,32 @@ export const regions = [
 // Extra photography for richer layouts (stock until Luminex project photos arrive).
 export const craftImage = { src: "/images/vision-image.jpg", alt: "Craftsman cutting a sheet of glass on a workshop table", w: 414, h: 337 };
 export const detailImage = { src: "/images/luminex-about.jpg", alt: "Corner of a house with white multi-pane uPVC casement windows", w: 430, h: 623 };
+
+// Band under the hero photos (client, 28 Oct), replacing the headline block.
+export const trust = {
+  years: "20",
+  unit: "YEARS",
+  tagline: "of trust",
+  title: "A lifetime of possibilities",
+  body: [
+    "With over two decades of experience and established relationships in Bhutan, our leadership brings a deep understanding of the region's needs, expectations and evolving architectural landscape.",
+    "Today, that experience finds new expression through Luminex — a brand dedicated to premium system aluminium and uPVC doors and windows. Luminex combines years of industry insight with contemporary design, precision engineering and a commitment to lasting quality.",
+  ],
+  cta: { href: "/about", label: "Learn more" },
+};
+
+// "So many reasons to choose Luminex", restored from the previous site's design (client, 28 Oct).
+// Titles and copy follow the old site; the warranty line is updated and the duplicated
+// "Excellent Weather Insulation" card is replaced with the Schüco partnership.
+export const classicReasons = {
+  title: "So many reasons to choose Luminex",
+  intro: "Luminex is proud to offer the expert guidance and peace-of-mind warranties needed to make your project a \u201chappily ever after\u201d.",
+  items: [
+    { icon: "/images/I1.png", title: "Professional Installation", text: "Even the highest quality windows and doors will underperform if they are installed incorrectly; this can lead to exposure to the elements, thermal heat loss, or issues with structural integrity." },
+    { icon: "/images/I2.png", title: "Product Diversity", text: "Luminex Windows offers the most complete line of windows and doors, customized to suit your home, style and budget. From classic to modern, you are sure to find the right products for you." },
+    { icon: "/images/I1.png", title: "Best Value For Money", text: "We are confident that our product offers the best value for money in terms of quality, performance, and price." },
+    { icon: "/images/I3.png", title: "Peace Of Mind Warranties", text: "Luminex customers enjoy total peace of mind, confident our products and services will stand the test of time. Profiles carry warranties of up to 25 years depending on the profile brand, glass 15 years and hardware 5 years." },
+    { icon: "/images/I4.png", title: "Excellent Weather Insulation", text: "Luminex windows provide excellent weather insulation, making homes more comfortable in all seasons. The multi-chambered design of Luminex windows reduces heat transfer, helping keep interiors cool during summer and warm during winter." },
+    { icon: "/images/I3.png", title: "Official Schüco Channel Partner", text: "Luminex is an official channel partner of Schüco, the German window, door and façade systems company, supplying and installing premium Schüco systems alongside our own profile ranges." },
+  ],
+};

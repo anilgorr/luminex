@@ -20,8 +20,8 @@ export function PreviewHeader({ logo = "green" }: { logo?: "green" | "white" }) 
         <div className={c.wrap}>
           <span>Official Schüco channel partner</span>
           <span className={c.stripLinks}>
-            <a href={whatsapp.india.href} target="_blank" rel="noopener noreferrer">WhatsApp India<span className={c.stripNum}> {whatsapp.india.display}</span></a>
-            <a href={whatsapp.bhutan.href} target="_blank" rel="noopener noreferrer">WhatsApp Bhutan<span className={c.stripNum}> {whatsapp.bhutan.display}</span></a>
+            <a href={whatsapp.india.href} target="_blank" rel="noopener noreferrer">WhatsApp India</a>
+            <a href={whatsapp.bhutan.href} target="_blank" rel="noopener noreferrer">WhatsApp Bhutan</a>
           </span>
         </div>
       </div>
@@ -116,8 +116,8 @@ export function PreviewWhatsApp() {
       {open && (
         <div className={c.waMenu} id="pv-wa-menu">
           <p>Chat with Luminex on WhatsApp</p>
-          <a href={whatsapp.india.href} target="_blank" rel="noopener noreferrer"><WhatsAppIcon size={18} /> <span><strong>India</strong> {whatsapp.india.display}</span></a>
-          <a href={whatsapp.bhutan.href} target="_blank" rel="noopener noreferrer"><WhatsAppIcon size={18} /> <span><strong>Bhutan</strong> {whatsapp.bhutan.display}</span></a>
+          <a href={whatsapp.india.href} target="_blank" rel="noopener noreferrer"><WhatsAppIcon size={18} /> <span><strong>India</strong></span></a>
+          <a href={whatsapp.bhutan.href} target="_blank" rel="noopener noreferrer"><WhatsAppIcon size={18} /> <span><strong>Bhutan</strong></span></a>
         </div>
       )}
       <button className={c.waBtn} aria-label="Chat on WhatsApp" aria-expanded={open} aria-controls="pv-wa-menu" onClick={() => setOpen(!open)}>
@@ -134,7 +134,7 @@ export function PreviewFaq({ className = "" }: { className?: string }) {
       {faqs.map((f, i) => (
         <details key={f.q} open={i === 0}>
           <summary><h3>{f.q}</h3><span className={c.plus} aria-hidden="true" /></summary>
-          <p>{f.a}</p>
+          <div className={c.answer}>{f.a.split("\n\n").map((para) => <p key={para}>{para}</p>)}</div>
         </details>
       ))}
     </div>

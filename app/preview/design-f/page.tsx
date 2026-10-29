@@ -85,7 +85,7 @@ export default function DesignF() {
           <h2 id="f-process" className={s.h2}>From first visit to after-sales</h2>
           <ol className={s.process}>
             {process.map((p, i) => (
-              <li key={p.title}><span className={s.stepNum}>{i + 1}</span><h3>{p.title}</h3><p>{p.text}</p></li>
+              <li key={p.title}><span className={s.stepNum}>{i + 1}</span><h3>{p.title}</h3>{p.text.map((t) => <p key={t}>{t}</p>)}</li>
             ))}
           </ol>
           <dl className={s.glance}>

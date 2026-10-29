@@ -189,14 +189,45 @@
 .root.light .productMore { color: var(--bronze); }
 .root.light .photoSmall { border-color: #fff; box-shadow: 0 30px 60px -40px rgba(0,0,0,.45); }
 .root.light .explode { --x-bg: #f5f2ed; --x-ink: #1a1918; --x-muted: #6b645b; --x-accent: #8a6738; --x-panel: #ffffff; }
-.root.light .schuco { background: #1a1918; color: #ece7df; }
-.root.light .schuco :where(h2, h3) { color: #fff; }
-.root.light .schucoLogo { filter: brightness(0) invert(1); }
-.root.light .schucoIntro { color: #c9c2b8; }
-.root.light .schucoList li { border-top-color: rgba(236, 231, 223, .35); }
-.root.light .schucoList p { color: #a9a196; }
-.root.light .schuco .note { color: #8a837a; }
-.root.light .schucoVisual { box-shadow: none; }
+.root.light .schuco { background: #ffffff; border-top: 1px solid var(--pv-line); border-bottom: 1px solid var(--pv-line); }
+.root.light .explode { --x-eyebrow: #1c4722; }
 .root.light .regionsSection { background: var(--panel); }
 .root.light .partners { background: var(--panel); }
 .root.light .postImg img { filter: grayscale(1) contrast(1.05); }
+
+/* ---------- Client changes, 28 Oct ---------- */
+/* "20 years of trust" band under the hero photos, modelled on Schüco's anniversary band. */
+.trust { background: var(--panel); padding: 88px 0; }
+.root.light .trust { background: #e8e8e6; }
+.trustGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.trustMark { display: flex; align-items: center; gap: 22px; margin: 0; justify-content: center; color: var(--pv-ink); font-family: var(--font-jakarta), "Plus Jakarta Sans", sans-serif; }
+.trustNum { font-size: clamp(120px, 13vw, 190px); font-weight: 500; line-height: .8; letter-spacing: -.06em; }
+.trustWords { display: grid; gap: 4px; }
+.trustUnit { font-size: clamp(56px, 6.2vw, 92px); font-weight: 700; line-height: .9; letter-spacing: -.01em; }
+.trustTag { font-size: clamp(26px, 2.8vw, 40px); font-weight: 400; line-height: 1.1; }
+.trustCopy { max-width: 560px; font-family: var(--font-jakarta), "Plus Jakarta Sans", sans-serif; }
+.trustH1 { margin: 0 0 14px; font-size: 14px !important; font-weight: 600; line-height: 1.5; letter-spacing: .01em; color: var(--bronze) !important; font-family: inherit; }
+.trustTitle { margin: 0 0 16px; font-size: clamp(24px, 2.2vw, 30px); font-weight: 700; line-height: 1.2; color: var(--pv-ink); }
+.trustCopy p { margin: 0 0 14px; font-size: 16px; line-height: 1.7; color: var(--pv-muted); }
+.trustBtn { display: inline-flex; align-items: center; min-height: 46px; margin-top: 12px; padding: 0 24px; border: 1.5px solid var(--pv-ink); color: var(--pv-ink); font-weight: 600; font-size: 15px; text-decoration: none; transition: background .2s, color .2s; }
+.trustBtn:hover { background: var(--pv-ink); color: var(--pv-bg); }
+
+/* Classic "reasons" block keeps the previous site's styling (globals.css); only text colours are pinned here. */
+.root .classic { color: #474749; }
+.root .classic .section-title h2 { color: #000; }
+.root .classic .section-title p { color: #474749; }
+.root .classic .reason h3 { color: #1c4722; }
+
+/* Schüco: text-only until approved Schüco imagery arrives. */
+.schucoSolo { display: grid; gap: 28px; }
+.schucoSolo .schucoIntro { margin: 0; }
+.schucoHead .h2 { margin: 0; }
+.schucoSolo .note { margin: 0; }
+
+.process li p + p { margin-top: 10px; }
+
+@media (max-width: 900px) {
+  .trust { padding: 56px 0; }
+  .trustGrid { grid-template-columns: 1fr; gap: 32px; }
+  .trustMark { justify-content: flex-start; }
+}

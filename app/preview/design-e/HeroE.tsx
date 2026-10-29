@@ -27,7 +27,7 @@ export default function HeroE() {
             <p className={s.answer}>{hero.answer}</p>
             <div className={s.ctas}>
               <Link href={quoteHref} className={s.btn}>Request a quote</Link>
-              <a href={whatsapp.india.href} target="_blank" rel="noopener noreferrer" className={s.btnLine}>WhatsApp {whatsapp.india.display}</a>
+              <a href={whatsapp.india.href} target="_blank" rel="noopener noreferrer" className={s.btnLine}>Chat on WhatsApp</a>
             </div>
           </div>
         </div>

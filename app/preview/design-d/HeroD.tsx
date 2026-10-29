@@ -2,13 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { hero, quoteHref, whatsapp } from "@/lib/home-v2";
+import { hero, trust } from "@/lib/home-v2";
 import s from "./d.module.css";
 
 const INTERVAL = 7000;
 
 // Full-bleed cinematic slider: photographs only, slow push-in, segmented progress.
-// The headline sits on the dark band beneath the photo, never on it.
+// No text on the photos; the "20 years" band sits beneath them.
 export default function HeroD() {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -37,24 +37,23 @@ export default function HeroD() {
           ))}
         </div>
       </div>
-      <div className={s.heroBand}>
-        <div className={s.wrap}>
-          <div className={s.heroGrid}>
-            <h1 id="d-h1">{hero.h1}</h1>
-            <div>
-              <p className={s.answer}>{hero.answer}</p>
-              <div className={s.ctas}>
-                <Link href={quoteHref} className={s.btn}>Request a quote</Link>
-                <a href={whatsapp.india.href} target="_blank" rel="noopener noreferrer" className={s.btnGhost}>WhatsApp {whatsapp.india.display}</a>
-              </div>
-            </div>
+      {/* "20 years" band under the photos (client, 28 Oct), laid out like Schüco's anniversary band.
+          The keyword H1 stays as the small line above the title, for search and AI answers. */}
+      <div className={s.trust}>
+        <div className={`${s.wrap} ${s.trustGrid}`}>
+          <p className={s.trustMark} aria-label={`${trust.years} ${trust.unit.toLowerCase()} ${trust.tagline}`}>
+            <span className={s.trustNum} aria-hidden="true">{trust.years}</span>
+            <span className={s.trustWords} aria-hidden="true">
+              <span className={s.trustUnit}>{trust.unit}</span>
+              <span className={s.trustTag}>{trust.tagline}</span>
+            </span>
+          </p>
+          <div className={s.trustCopy}>
+            <h1 id="d-h1" className={s.trustH1}>{hero.h1}</h1>
+            <h2 className={s.trustTitle}>{trust.title}</h2>
+            {trust.body.map((p) => <p key={p}>{p}</p>)}
+            <Link href={trust.cta.href} className={s.trustBtn}>{trust.cta.label}</Link>
           </div>
-          <dl className={s.keyFacts}>
-            <div><dt>Partner</dt><dd>Official Schüco channel partner</dd></div>
-            <div><dt>Order to installation</dt><dd>30–45 days</dd></div>
-            <div><dt>Profile warranty</dt><dd>Up to 25 years</dd></div>
-            <div><dt>Installed by our own teams</dt><dd>India and Bhutan</dd></div>
-          </dl>
         </div>
       </div>
     </section>

@@ -57,7 +57,9 @@
 .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary h3 { margin: 0; font-size: 19px; line-height: 1.35; font-weight: 600; color: var(--pv-ink); }
-.faq p { margin: 0 0 24px; max-width: 68ch; color: var(--pv-muted); font-size: 16px; line-height: 1.7; }
+.answer { padding-bottom: 24px; }
+.answer p + p { margin-top: 12px !important; }
+.faq p { margin: 0; max-width: 68ch; color: var(--pv-muted); font-size: 16px; line-height: 1.7; }
 .plus { position: relative; flex: 0 0 18px; height: 18px; }
 .plus::before, .plus::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px; background: var(--pv-ink); transition: transform .25s ease; }
 .plus::after { transform: rotate(90deg); }

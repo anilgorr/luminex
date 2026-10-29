@@ -86,7 +86,7 @@ export default function DesignE() {
           </div>
           <ol className={s.timeline}>
             {process.map((p, i) => (
-              <li key={p.title}><span className={s.tlNum}>{i + 1}</span><div><h3>{p.title}</h3><p>{p.text}</p></div></li>
+              <li key={p.title}><span className={s.tlNum}>{i + 1}</span><div><h3>{p.title}</h3>{p.text.map((t) => <p key={t}>{t}</p>)}</div></li>
             ))}
           </ol>
         </div>

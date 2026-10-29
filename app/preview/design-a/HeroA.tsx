@@ -13,7 +13,7 @@ export default function HeroA() {
         <p className={s.answer}>{hero.answer}</p>
         <div className={s.ctas}>
           <Link href={quoteHref} className={s.btn}>Request a quote</Link>
-          <a href={whatsapp.india.href} target="_blank" rel="noopener noreferrer" className={s.btnGhost}>WhatsApp {whatsapp.india.display}</a>
+          <a href={whatsapp.india.href} target="_blank" rel="noopener noreferrer" className={s.btnGhost}>Chat on WhatsApp</a>
         </div>
       </div>
       <div className={s.heroMedia}>
