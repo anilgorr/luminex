@@ -214,9 +214,9 @@
 
 /* Classic "reasons" block keeps the previous site's styling (globals.css); only text colours are pinned here. */
 .root .classic { color: #474749; }
-.root .classic .section-title h2 { color: #000; }
-.root .classic .section-title p { color: #474749; }
-.root .classic .reason h3 { color: #1c4722; }
+.root .classic :global(.section-title) h2 { color: #000; }
+.root .classic :global(.section-title) p { color: #474749; }
+.root .classic :global(.reason) h3 { color: #1c4722; }
 
 /* Schüco: text-only until approved Schüco imagery arrives. */
 .schucoSolo { display: grid; gap: 28px; }
