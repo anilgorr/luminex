@@ -313,3 +313,66 @@
 .compare li::before { position: absolute; left: 0; top: 0; font-weight: 700; }
 .compareGood li::before { content: "✓"; color: #1c4722; }
 .compareBad li::before { content: "✕"; color: #b4453a; }
+
+/* ---------- Client changes, 29 Oct (evening) ---------- */
+/* One typeface across the page: Plus Jakarta Sans, as in the previous site's "reasons" block.
+   Headings smaller and bolder; brown accents replaced by black, with Luminex green for hovers. */
+.root.light {
+  --pv-display: var(--font-jakarta), "Plus Jakarta Sans", sans-serif; --pv-display-weight: 700;
+  --bronze: #1a1918; --bronze-hi: #1c4722; --pv-brand: #1c4722; --pv-nav-hover: #1c4722;
+}
+.root.light :is(.h2, .heroGrid h1, .keyFacts dd, .stat strong, .productText h3, .stepNum, .reasons h3, .place, .posts h3, .perfNum, .palette h3, .compareTitle) { font-weight: 700; letter-spacing: -.02em; }
+.root.light .h2 { font-size: clamp(28px, 2.5vw, 36px); line-height: 1.2; margin-bottom: 20px; }
+.root.light .explode { --x-display-weight: 700; }
+.root.light .explode h2 { font-size: clamp(28px, 2.5vw, 36px); line-height: 1.2; }
+.root.light .productText h3 { font-size: 24px; }
+.root.light .posts h3 { font-size: 19px; line-height: 1.35; }
+.root.light .palette h3 { font-size: 20px; }
+.root.light .compareTitle { font-size: 22px; }
+.root.light .perfNum { font-size: clamp(36px, 3.4vw, 52px); }
+.root.light .btn:hover { background: #1c4722; }
+.root.light .trustH1 { color: #1c4722 !important; }
+.root.light .link { text-decoration-color: currentColor; }
+.root.light .section { padding: 112px 0; }
+.root.light .schuco, .root.light .fenova { padding: 112px 0; }
+
+/* Process: black numerals, smaller. */
+.root.light .stepNum { font-size: 36px; color: #1a1918; margin-bottom: 16px; }
+.root.light .process h3 { font-size: 17px; line-height: 1.35; }
+
+/* Less empty space between the client logos and "What we make". */
+.root.light .clients { padding: 96px 0 56px; }
+.root.light .productsSection { padding-top: 56px; }
+
+/* FAQ: heading and link centred in the left half of the block. */
+.faqHead { align-self: center; text-align: center; }
+.faqHead .h2 { margin-bottom: 8px; }
+
+/* "Better in every way" band from brochure page 9. */
+.better { background: #06301b; color: #fff; overflow: hidden; }
+.betterGrid { display: grid; grid-template-columns: 4fr 5fr 3fr; align-items: center; gap: 56px; padding-top: 56px; padding-bottom: 56px; }
+.betterArt { display: block; width: 100%; max-width: 420px; height: auto; -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent); mask-image: linear-gradient(90deg, #000 70%, transparent); }
+.betterCopy { padding-left: 40px; border-left: 1px solid rgba(255, 255, 255, .45); }
+.root .betterCopy h2 { margin: 0 0 18px; font-size: clamp(26px, 2.4vw, 34px); font-weight: 700; line-height: 1.2; letter-spacing: -.02em; color: #fff; }
+.betterCopy h2 span { display: block; color: #6fbf8a; }
+.betterCopy p { margin: 0; font-size: 16px; line-height: 1.75; color: rgba(255, 255, 255, .82); }
+.betterList { list-style: none; margin: 0; padding: 0 0 0 40px; border-left: 1px solid rgba(255, 255, 255, .45); display: grid; gap: 14px; }
+.betterList li { font-size: 17px; font-weight: 600; }
+.betterList li + li::before { content: ""; display: block; width: 26px; height: 2px; background: #3f9a5e; margin-bottom: 14px; }
+
+/* Partners: full-colour logos under a proper heading. */
+.partners .h2 { color: #1a1918; margin-bottom: 6px; }
+.root .partners { padding: 72px 0; }
+.partners .partnersTitle { font-size: 15px; margin-bottom: 36px; }
+.partnerRow img { filter: none; opacity: 1; }
+
+@media (max-width: 900px) {
+  .root.light .section, .root.light .schuco, .root.light .fenova { padding: 80px 0; }
+  .root.light .clients { padding: 72px 0 40px; }
+  .root.light .productsSection { padding-top: 40px; }
+  .faqHead { text-align: left; }
+  .betterGrid { grid-template-columns: 1fr; gap: 32px; padding-top: 48px; padding-bottom: 56px; }
+  .betterArt { max-width: 260px; }
+  .betterCopy, .betterList { padding-left: 24px; }
+}
+.partnerRow li:first-child img { transform: scale(1.7); }

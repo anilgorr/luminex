@@ -101,7 +101,16 @@ export const fenova = {
   image: { src: "/images/brochure/upvc-french-door-lake-view.jpg", alt: "Black-framed uPVC French door opening onto a balcony with a mountain and lake view", w: 1150, h: 1560 },
 };
 
-export const performanceImage = { src: "/images/brochure/sliding-glass-wall-mountain-view.jpg", alt: "Floor-to-ceiling sliding glass wall opening onto a pool terrace at sunset", w: 1385, h: 860 };
+// Brochure page 9, closing band. Replaces the photo break above the FAQ (client, 29 Oct).
+export const betterBand = {
+  title: "Better in every way.",
+  accent: "Built for a better tomorrow.",
+  body: "Luminex systems combine innovation, precision and quality to deliver comfort, efficiency and elegance, today and for decades to come.",
+  points: ["Energy efficient", "Environment friendly", "Long-lasting value", "Sustainable living"],
+  image: { src: "/images/brochure/window-profile-line-drawing.jpg", alt: "Line drawing of a multi-chamber window profile in cross-section", w: 640, h: 558 },
+};
+
+export const performanceImage ={ src: "/images/brochure/sliding-glass-wall-mountain-view.jpg", alt: "Floor-to-ceiling sliding glass wall opening onto a pool terrace at sunset", w: 1385, h: 860 };
 
 // FAQs built from the brochure (plain text so they can feed FAQPage schema).
 export const brochureFaqs = {

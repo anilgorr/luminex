@@ -5,7 +5,7 @@ import HeroD from "./HeroD";
 import WindowExplodeV2 from "@/components/preview/WindowExplodeV2";
 import { PreviewHeader, PreviewFooter, PreviewWhatsApp, PreviewFaq } from "@/components/preview/PreviewChrome";
 import { classicReasons, clients, explodeSteps, latestPosts, partners, process, products, schuco } from "@/lib/home-v2";
-import { fenova, performance, performanceImage, schucoBrochure } from "@/lib/brochure";
+import { betterBand, fenova, performance, performanceImage, schucoBrochure } from "@/lib/brochure";
 import Swatches from "@/components/Swatches";
 import s from "./d.module.css";
 
@@ -154,7 +154,7 @@ export default function DesignDView({ light = false }: { light?: boolean }) {
 
       <section className={s.section} aria-labelledby="d-process">
         <div className={s.wrap}>
-          <h2 id="d-process" className={s.h2}>From first visit to after-sales</h2>
+          <h2 id="d-process" className={s.h2}>Complete Project Lifecycle Management</h2>
           <ol className={s.process}>
             {process.map((p, i) => (
               <li key={p.title}><span className={s.stepNum}>{i + 1}</span><h3>{p.title}</h3>{p.text.map((t) => <p key={t}>{t}</p>)}</li>
@@ -163,14 +163,22 @@ export default function DesignDView({ light = false }: { light?: boolean }) {
         </div>
       </section>
 
-      <div className={s.imageBreak} role="img" aria-label="Double-height hallway with a black-framed glazed wall and double doors opening to a garden">
-        <Image src="/images/luminex-banner.jpg" alt="" fill sizes="100vw" />
-      </div>
+      {/* Brochure page 9 closing band; replaces the repeated hallway photo (client, 29 Oct). */}
+      <section className={s.better} aria-labelledby="d-better">
+        <div className={`${s.wrap} ${s.betterGrid}`}>
+          <img src={betterBand.image.src} alt={betterBand.image.alt} width={betterBand.image.w} height={betterBand.image.h} loading="lazy" className={s.betterArt} />
+          <div className={s.betterCopy}>
+            <h2 id="d-better">{betterBand.title} <span>{betterBand.accent}</span></h2>
+            <p>{betterBand.body}</p>
+          </div>
+          <ul className={s.betterList}>{betterBand.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>
+        </div>
+      </section>
 
       <section className={`${s.section} ${s.faqSection}`} aria-labelledby="d-faq">
         <div className={`${s.wrap} ${s.faqGrid}`}>
-          <div>
-            <h2 id="d-faq" className={s.h2}>Questions before you order</h2>
+          <div className={s.faqHead}>
+            <h2 id="d-faq" className={s.h2}>The Luminex Guide</h2>
             <Link href="/faq" className={s.link}>All FAQs</Link>
           </div>
           <PreviewFaq className={s.faq} />
@@ -179,7 +187,8 @@ export default function DesignDView({ light = false }: { light?: boolean }) {
 
       <section className={s.partners} aria-labelledby="d-partners">
         <div className={s.wrap}>
-          <h2 id="d-partners" className={s.partnersTitle}>Profiles, glass and hardware from</h2>
+          <h2 id="d-partners" className={s.h2}>Our Network of Excellence</h2>
+          <p className={s.partnersTitle}>Profiles, glass and hardware from the brands we work with.</p>
           <ul className={s.partnerRow}>
             {partners.map((p) => <li key={p.alt}><img src={p.src} alt={p.alt} loading="lazy" /></li>)}
           </ul>
