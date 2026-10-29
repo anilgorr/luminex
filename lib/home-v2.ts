@@ -222,3 +222,19 @@ export const classicReasons = {
     { icon: "/images/I3.png", title: "Official Schüco Channel Partner", text: "Luminex is an official channel partner of Schüco, the German window, door and façade systems company, supplying and installing premium Schüco systems alongside our own profile ranges." },
   ],
 };
+
+// Client logos (supplied by Luminex, 29 Oct). Files cropped from the client's logo sheet.
+export const clients = [
+  { file: "lemon-tree-hotels", name: "Lemon Tree Hotels" },
+  { file: "delhi-public-school", name: "Delhi Public School" },
+  { file: "gyalsung-infra", name: "Gyalsung Infra" },
+  { file: "the-overland", name: "The Overland" },
+  { file: "khang-residency", name: "Khang Residency, Thimphu" },
+  { file: "zhiwaling-ascent", name: "Zhiwaling Ascent" },
+  { file: "rigsar", name: "Rigsar" },
+  { file: "drukgreen", name: "DrukGreen" },
+  { file: "jsw-law", name: "JSW Law" },
+  { file: "bhutan-network", name: "Bhutan Network" },
+  { file: "sigma-cables", name: "Sigma Cables" },
+  { file: "byd", name: "BYD" },
+].map((c) => ({ ...c, src: `/images/clients/${c.file}.png` }));

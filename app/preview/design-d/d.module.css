@@ -231,3 +231,22 @@
   .trustGrid { grid-template-columns: 1fr; gap: 32px; }
   .trustMark { justify-content: flex-start; }
 }
+
+/* Client logos (29 Oct): full colour on white, equal cells. */
+.clients { background: #ffffff; padding: 112px 0; border-top: 1px solid rgba(26, 25, 24, .08); }
+.clients .h2 { color: #1a1918; }
+.clientsHead { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 48px; }
+.clientsHead .h2 { margin: 0; }
+.clientsHead .body { margin: 0; max-width: 46ch; color: #6b645b; }
+.clientGrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid rgba(26, 25, 24, .1); border-left: 1px solid rgba(26, 25, 24, .1); }
+.clientGrid li { display: flex; align-items: center; justify-content: center; height: 150px; padding: 22px; border-right: 1px solid rgba(26, 25, 24, .1); border-bottom: 1px solid rgba(26, 25, 24, .1); }
+.clientGrid img { max-width: 100%; max-height: 92px; width: auto; height: auto; object-fit: contain; }
+@media (max-width: 1080px) { .clientGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 900px) {
+  .clients { padding: 72px 0; }
+  .clientsHead { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .clientGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .clientGrid li { height: 120px; padding: 16px; }
+  .clientGrid img { max-height: 72px; }
+}
+@media (max-width: 520px) { .clientGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

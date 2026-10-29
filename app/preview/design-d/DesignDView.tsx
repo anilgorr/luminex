@@ -4,7 +4,7 @@ import { Bodoni_Moda } from "next/font/google";
 import HeroD from "./HeroD";
 import WindowExplodeV2 from "@/components/preview/WindowExplodeV2";
 import { PreviewHeader, PreviewFooter, PreviewWhatsApp, PreviewFaq } from "@/components/preview/PreviewChrome";
-import { classicReasons, explodeSteps, latestPosts, partners, process, products, schuco } from "@/lib/home-v2";
+import { classicReasons, clients, explodeSteps, latestPosts, partners, process, products, schuco } from "@/lib/home-v2";
 import s from "./d.module.css";
 
 const bodoni = Bodoni_Moda({ subsets: ["latin"], weight: ["400", "500"], style: ["normal", "italic"], variable: "--font-d-display", display: "swap" });
@@ -41,6 +41,21 @@ export default function DesignDView({ light = false }: { light?: boolean }) {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Client logos (supplied by Luminex, 29 Oct). */}
+      <section className={s.clients} aria-labelledby="d-clients">
+        <div className={s.wrap}>
+          <div className={s.clientsHead}>
+            <h2 id="d-clients" className={s.h2}>Our clients</h2>
+            <p className={s.body}>Hotels, schools and businesses across India and Bhutan trust Luminex with their windows and doors.</p>
+          </div>
+          <ul className={s.clientGrid}>
+            {clients.map((c) => (
+              <li key={c.file}><img src={c.src} alt={c.name} loading="lazy" /></li>
+            ))}
+          </ul>
         </div>
       </section>
 
