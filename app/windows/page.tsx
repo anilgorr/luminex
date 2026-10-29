@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import ProductGroups from "@/components/ProductGroups";
 import CtaBox from "@/components/CtaBox";
 import { windowGroups } from "@/lib/content";
+import { ProfilesAndColours } from "@/components/BrochureBlocks";
 
 export const metadata: Metadata = {
   title: "uPVC & Aluminium Windows – Sliding, Casement, Tilt & Turn",
@@ -10,5 +11,5 @@ export const metadata: Metadata = {
   alternates: { canonical: "/windows" },
 };
 export default function Windows() {
-  return (<><PageHeader title="Windows" crumbs={[{ label: "Windows" }]} /><ProductGroups groups={windowGroups} /><CtaBox /></>);
+  return (<><PageHeader title="Windows" crumbs={[{ label: "Windows" }]} /><ProductGroups groups={windowGroups} /><ProfilesAndColours /><CtaBox /></>);
 }

@@ -18,6 +18,7 @@
 
 import { nav, site, waLink } from "./site";
 import { posts } from "./content";
+import { brochureFaqs } from "./brochure";
 
 export const facts = {
   leadTime: "30–60 days",
@@ -141,6 +142,8 @@ export const faqs = [
     q: "What warranty do Luminex windows come with?",
     a: "At Luminex, we stand behind the quality of our window and door systems with product-specific warranty coverage for added peace of mind.\n\nuPVC & Aluminium Profiles: Warranty coverage of up to 25 years, depending on the profile brand and applicable warranty terms.\n\nGlass: 15-year warranty, subject to the applicable product warranty conditions.\n\nHardware: 5-year warranty, covering eligible hardware components as specified in the warranty documentation.\n\nWarranty coverage is subject to the respective manufacturer's terms and conditions. Physical damage, unauthorised modifications, improper handling and damage resulting from misuse are excluded from coverage.",
   },
+  brochureFaqs.performance,
+  brochureFaqs.colours,
   {
     q: "Should I choose uPVC or system aluminium windows?",
     a: "uPVC suits most homes: it insulates well against heat, cold and noise and needs almost no maintenance. System aluminium suits very large openings, slim frames and commercial façades. Luminex recommends the system after measuring your openings.",

@@ -5,6 +5,8 @@ import HeroD from "./HeroD";
 import WindowExplodeV2 from "@/components/preview/WindowExplodeV2";
 import { PreviewHeader, PreviewFooter, PreviewWhatsApp, PreviewFaq } from "@/components/preview/PreviewChrome";
 import { classicReasons, clients, explodeSteps, latestPosts, partners, process, products, schuco } from "@/lib/home-v2";
+import { fenova, performance, performanceImage, schucoBrochure } from "@/lib/brochure";
+import Swatches from "@/components/Swatches";
 import s from "./d.module.css";
 
 const bodoni = Bodoni_Moda({ subsets: ["latin"], weight: ["400", "500"], style: ["normal", "italic"], variable: "--font-d-display", display: "swap" });
@@ -21,6 +23,26 @@ export default function DesignDView({ light = false }: { light?: boolean }) {
       <HeroD />
 
       <WindowExplodeV2 steps={explodeSteps} tone={light ? "light" : "dark"} className={s.explode} />
+
+      {/* Performance figures, brochure page 9 (29 Oct). */}
+      <section className={s.perf} aria-labelledby="d-perf">
+        <div className={`${s.wrap} ${s.perfGrid}`}>
+          <div className={s.perfHead}>
+            <h2 id="d-perf" className={s.h2}>{performance.title}</h2>
+            <p className={s.body}>{performance.intro}</p>
+            <Link href={performance.link.href} className={s.link}>{performance.link.label}</Link>
+          </div>
+          <dl className={s.perfStats}>
+            {performance.stats.map((st) => (
+              <div key={st.label}>
+                <dt>{st.label}</dt>
+                <dd><span className={s.perfUpto}>Up to</span><span className={s.perfNum}>{st.value}<small>{st.unit}</small></span></dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div className={s.perfPhoto}><Image src={performanceImage.src} alt={performanceImage.alt} fill sizes="100vw" /></div>
+      </section>
 
       {/* "So many reasons to choose Luminex": the previous site's block and fonts (client, 28 Oct). */}
       <section className={`section reasons ${s.classic}`} aria-labelledby="d-classic">
@@ -71,18 +93,62 @@ export default function DesignDView({ light = false }: { light?: boolean }) {
         </div>
       </section>
 
+      {/* Schüco, brochure page 11 (29 Oct). */}
       <section id="schuco" className={s.schuco} aria-labelledby="d-schuco">
-        {/* No product photo until Schüco supplies approved imagery (client: the old cut-out was not a Schüco window). */}
-        <div className={`${s.wrap} ${s.schucoSolo}`}>
-          <div className={s.schucoHead}>
+        <div className={`${s.wrap} ${s.partnerGrid}`}>
+          <div className={s.partnerCopy}>
+            <p className={s.partnerEyebrow}>{schucoBrochure.eyebrow}</p>
             <img src="/images/web/partner/schueco-vektor-data.svg" alt="Schüco" width={294} height={142} className={s.schucoLogo} />
-            <h2 id="d-schuco" className={s.h2}>{schuco.title}</h2>
+            <h2 id="d-schuco" className={s.h2}>{schucoBrochure.title}</h2>
+            <p className={s.partnerSub}>{schucoBrochure.subtitle}</p>
+            {schucoBrochure.body.map((p) => <p key={p} className={s.partnerBody}>{p}</p>)}
           </div>
-          <p className={s.schucoIntro}>{schuco.intro}</p>
-          <ul className={s.schucoList}>
-            {schuco.items.map((i) => <li key={i.title}><h3>{i.title}</h3><p>{i.text}</p></li>)}
+          <div className={s.partnerPhoto}>
+            <Image src={schucoBrochure.image.src} alt={schucoBrochure.image.alt} width={schucoBrochure.image.w} height={schucoBrochure.image.h} sizes="(max-width: 900px) 100vw, 40vw" />
+          </div>
+        </div>
+        <div className={s.wrap}>
+          <ul className={s.pointGrid}>
+            {schucoBrochure.points.map((pt) => <li key={pt.title}><h3>{pt.title}</h3><p>{pt.text}</p></li>)}
           </ul>
-          <p className={s.note}>{schuco.note}</p>
+          <div className={s.palette}>
+            <h3>{schucoBrochure.coloursTitle}</h3>
+            <Swatches colours={schucoBrochure.colours} />
+            <p className={s.note}>{schucoBrochure.coloursNote}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Fenova, brochure page 10 (29 Oct). */}
+      <section className={s.fenova} aria-labelledby="d-fenova">
+        <div className={`${s.wrap} ${s.partnerGrid} ${s.partnerFlip}`}>
+          <div className={s.partnerPhoto}>
+            <Image src={fenova.image.src} alt={fenova.image.alt} width={fenova.image.w} height={fenova.image.h} sizes="(max-width: 900px) 100vw, 40vw" />
+          </div>
+          <div className={s.partnerCopy}>
+            <p className={s.partnerEyebrow}>{fenova.eyebrow}</p>
+            <img src="/images/web/partner/fenova-logo-200.png" alt="Fenova" width={200} height={60} className={s.fenovaLogo} />
+            <h2 id="d-fenova" className={s.h2}>{fenova.title}</h2>
+            <p className={s.partnerSub}>{fenova.subtitle}</p>
+            {fenova.body.map((p) => <p key={p} className={s.partnerBody}>{p}</p>)}
+            <ul className={s.badges}>{fenova.badges.map((b) => <li key={b}>{b}</li>)}</ul>
+          </div>
+        </div>
+        <div className={s.wrap}>
+          <h3 className={s.compareTitle}>{fenova.compareTitle}</h3>
+          <div className={s.compare}>
+            {[fenova.coextruded, fenova.laminated].map((c, i) => (
+              <div key={c.title} className={i === 0 ? s.compareGood : s.compareBad}>
+                <h4>{c.title}</h4>
+                <p>{c.lead}</p>
+                <ul>{c.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>
+              </div>
+            ))}
+          </div>
+          <div className={s.palette}>
+            <h3>{fenova.coloursTitle}</h3>
+            <Swatches colours={fenova.colours} />
+          </div>
         </div>
       </section>
 

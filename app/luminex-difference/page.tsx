@@ -4,21 +4,14 @@ import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import CtaBox from "@/components/CtaBox";
 import { reasons } from "@/lib/site";
+import { ComparisonTable, PerformanceBand } from "@/components/BrochureBlocks";
 
 export const metadata: Metadata = {
   title: "The Luminex Difference – Why Choose Luminex Windows",
-  description: "Professional installation, a complete product range, weather-proof multi-chamber profiles, Schüco partnership and up to 25-year profile warranties — what sets Luminex windows and doors apart.",
+  description: "How Luminex uPVC and aluminium windows compare with standard aluminium and other uPVC windows: up to 40% better insulation, 38 dB noise reduction, 600 Pa air tightness and 2400 Pa wind load resistance.",
   alternates: { canonical: "/luminex-difference" },
 };
 
-const compare = [
-  ["Rust, rot & swelling", "Never", "Wood swells & rots", "Can corrode"],
-  ["Thermal insulation", "Excellent (multi-chamber)", "Good", "Poor without thermal break"],
-  ["Sound insulation", "Excellent", "Moderate", "Moderate"],
-  ["Maintenance", "Wipe clean", "Regular polishing / treatment", "Low"],
-  ["Warranty", "Profiles 15–25 yrs, glass 15 yrs, hardware 5 yrs", "Varies", "Varies"],
-  ["Price (standard sizes)", "uPVC from ₹495/sq ft", "Varies", "System aluminium from ₹950/sq ft"],
-];
 
 export default function Difference() {
   return (
@@ -34,23 +27,8 @@ export default function Difference() {
           </div>
         </div>
       </section>
-      <section className="section section-bg-lines">
-        <div className="container">
-          <SectionTitle eyebrow="Compare" title="uPVC vs wood vs aluminium windows" center />
-          <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 640 }}>
-              <thead><tr style={{ background: "var(--primary)", color: "#fff", textAlign: "left" }}>
-                {["", "Luminex uPVC", "Wood", "Basic aluminium"].map((h) => <th key={h} style={{ padding: 16 }}>{h}</th>)}
-              </tr></thead>
-              <tbody>{compare.map((r) => (
-                <tr key={r[0]} style={{ borderBottom: "1px solid var(--divider)" }}>
-                  {r.map((c, i) => <td key={i} style={{ padding: 16, fontWeight: i < 2 ? 600 : 400, color: i === 1 ? "var(--primary)" : undefined }}>{c}</td>)}
-                </tr>))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+      <PerformanceBand />
+      <ComparisonTable />
       <CtaBox />
     </>
   );

@@ -1,0 +1,49 @@
+/* Inner-page sections from the brochure, in the current site's styling (globals.css tokens). */
+.h2 { font-size: 32px; letter-spacing: -.02em; color: var(--black); margin: 0 0 16px; }
+.perf { background: var(--primary); color: #fff; padding: 72px 0; }
+.perf :global(.eyebrow) { color: #fff; }
+.perf :global(.eyebrow)::before { background: #fff; }
+.perf .h2 { color: #fff; }
+.perf p { color: rgba(255,255,255,.85); }
+.perfInner { display: grid; grid-template-columns: 4fr 7fr; gap: 56px; align-items: center; }
+.stats { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+.stats div { padding: 8px 18px; border-left: 1px solid rgba(255,255,255,.25); }
+.stats dt { font-size: 14px; color: rgba(255,255,255,.8); margin-bottom: 6px; }
+.stats dd { margin: 0; font-size: 44px; font-weight: 700; line-height: 1.05; }
+.stats dd small { display: block; font-size: 13px; font-weight: 500; color: rgba(255,255,255,.75); }
+.stats dd span { font-size: 20px; margin-left: 3px; }
+.compareHead { max-width: 760px; margin-bottom: 36px; }
+.tableWrap { overflow-x: auto; border: 1px solid var(--divider); }
+.table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 15px; }
+.table th, .table td { padding: 16px 18px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--divider); }
+.table thead th { background: var(--secondary); color: var(--black); font-weight: 700; }
+.table thead th.ours { background: var(--primary); color: #fff; }
+.table tbody th { font-weight: 600; color: var(--black); width: 20%; }
+.table td.ours { background: rgba(28, 71, 34, .06); color: var(--primary); font-weight: 600; }
+.photo { margin-top: 40px; }
+.photo img { width: 100%; height: auto; max-height: 520px; object-fit: cover; }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.duo > div { background: #fff; padding: 30px; border-top: 3px solid; }
+.good { border-top-color: var(--primary) !important; }
+.bad { border-top-color: #b4453a !important; }
+.duo h3 { font-size: 20px; margin-bottom: 8px; }
+.duo ul { display: grid; gap: 8px; margin-top: 14px; }
+.duo li { position: relative; padding-left: 26px; }
+.duo li::before { position: absolute; left: 0; font-weight: 700; }
+.good li::before { content: "✓"; color: var(--primary); }
+.bad li::before { content: "✕"; color: #b4453a; }
+.palettes { display: grid; gap: 40px; margin-bottom: 48px; }
+.palettes h3 { font-size: 20px; margin-bottom: 18px; }
+.note { margin-top: 14px; font-size: 14px; }
+.faq { border-top: 1px solid var(--divider); }
+.faq details { border-bottom: 1px solid var(--divider); }
+.faq summary { cursor: pointer; padding: 18px 0; font-weight: 600; font-size: 18px; color: var(--black); }
+.faq details p { margin: 0 0 18px; max-width: 75ch; }
+.more { margin-top: 28px; }
+.more a { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 991px) {
+  .perfInner, .duo { grid-template-columns: 1fr; gap: 32px; }
+  .stats { grid-template-columns: 1fr 1fr; row-gap: 20px; }
+  .stats div:nth-child(3) { border-left: 0; padding-left: 0; }
+  .stats div:first-child { border-left: 0; padding-left: 0; }
+}
