@@ -18,7 +18,7 @@ export default function WhatsAppButton() {
           <p>Chat with Luminex on WhatsApp</p>
           {(["india", "bhutan"] as const).map((r) => (
             <a key={r} role="menuitem" href={waLink(r)} target="_blank" rel="noopener noreferrer">
-              <WhatsAppIcon size={18} /> <span><strong>{site.whatsapp[r].label}</strong> {site.whatsapp[r].display}</span>
+              <WhatsAppIcon size={18} /> <span><strong>{site.whatsapp[r].label}</strong></span>
             </a>
           ))}
         </div>

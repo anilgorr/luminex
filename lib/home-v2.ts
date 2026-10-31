@@ -5,7 +5,7 @@
 //
 // Changes requested on the call:
 // - No prices anywhere on the homepage (they stay on the dedicated price pages).
-// - Lead time is 30–60 days (client, 28 Oct; earlier 30–60, originally 15–30).
+// - Lead time is 30–60 days (client, 28 Oct; earlier 30–45, originally 15–30).
 // - Profile warranty headline: up to 25 years.
 // - Guwahati / "Northeast" not promoted on the homepage (location pages stay, linked from the footer).
 // - Schüco gets its own nav tab; no Luminex × Schüco lockup in the logo.
@@ -16,7 +16,7 @@
 // TODO(client): handle reference photo; Schüco written OK + exact partner wording;
 //               real project photos to replace stock images.
 
-import { nav, site, waLink } from "./site";
+import { locations, nav, site, waLink } from "./site";
 import { posts } from "./content";
 import { brochureFaqs } from "./brochure";
 
@@ -35,27 +35,16 @@ export const whatsapp = {
 };
 
 // Header: the previous site menu, with Schüco in place of Renovations (client, 28 Oct).
-export const navV2 = [
-  { href: "/", label: "Home" },
-  { href: "/windows", label: "Windows" },
-  { href: "/doors", label: "Doors" },
-  // Points at the homepage section until the dedicated /schuco page is built and Schüco signs off the wording.
-  { href: "#schuco", label: "Schüco" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/luminex-difference", label: "Luminex Difference" },
-  { href: "/contact", label: "Contact Us" },
-];
+export const navV2 = nav;
 
 export const quoteHref = "/request-quote";
 
 // Locations live in the footer only (needed for AEO/GEO internal linking).
-export const footerLocations = (nav.find((n) => n.children)?.children ?? []).map((c) => ({
-  href: c.href,
-  label: c.label.replace(" · ", " – "),
-}));
+export const footerLocations = locations.map((l) => ({ href: l.href, label: l.label.replace(" · ", " – ") }));
 
 export const hero = {
-  h1: "uPVC and aluminium windows and doors for Siliguri, Sikkim and Bhutan",
+  // No regions in the H1 (client, 31 Oct: Luminex is not limited to them); the city pages carry the local terms.
+  h1: "Premium uPVC and system aluminium windows and doors, made in Siliguri",
   // 40–60 word answer block: the passage AI engines lift when asked "who makes windows in Siliguri / Bhutan".
   answer:
     "Luminex Windows makes premium uPVC and system aluminium windows and doors at its Siliguri facility and installs them with its own teams across North Bengal, Sikkim and Bhutan. Luminex is an official Schüco channel partner, glazes with Saint-Gobain glass, and delivers and installs in 30–60 days.",
@@ -100,9 +89,9 @@ export const schuco = {
 };
 
 export const products = [
-  { href: "/windows", title: "Windows", text: "Sliding, casement, tilt-and-turn, fixed and custom shapes in uPVC or system aluminium.", image: { src: "/images/hero-bg.jpg", alt: "Floor-to-ceiling windows in a living room" } },
-  { href: "/doors", title: "Doors", text: "Sliding patio doors, folding doors and entrance doors with multi-point locking.", image: { src: "/images/mission-vision-bg.jpg", alt: "Glass sliding door opening onto a terrace" } },
-  { href: "/renovations", title: "Replacements", text: "Old wooden or aluminium windows replaced with uPVC, fitted into the existing openings.", image: { src: "/images/our-testimonial-bg.jpg", alt: "Living room with wooden doors and windows" } },
+  { href: "/windows", title: "Windows", text: "Sliding, casement, tilt-and-turn, fixed and custom shapes in uPVC or system aluminium.", image: { src: "/images/schueco/schueco-tilt-turn-windows-living-room.jpg", alt: "Dark-framed tilt-and-turn windows in a bright white living room" } },
+  { href: "/doors", title: "Doors", text: "Sliding patio doors, folding doors and entrance doors with multi-point locking.", image: { src: "/images/schueco/schueco-sliding-door-kitchen-deck.jpg", alt: "Floor-to-ceiling sliding glass door between a kitchen and a timber deck" } },
+  { href: "/renovations", title: "Replacements", text: "Old wooden or aluminium windows replaced with uPVC, fitted into the existing openings.", image: { src: "/images/schueco/schueco-window-handle-detail.jpg", alt: "Close-up of a slim aluminium window frame and handle" } },
 ];
 
 export const reasons = [
@@ -225,6 +214,10 @@ export const classicReasons = {
     { icon: "/images/I3.png", title: "Official Schüco Channel Partner", text: "Luminex is an official channel partner of Schüco, the German window, door and façade systems company, supplying and installing premium Schüco systems alongside our own profile ranges." },
   ],
 };
+
+// Client copy, 31 Oct.
+export const clientsIntro =
+  "Luminex is proud to be associated with a diverse portfolio of clients across residential, commercial and hospitality projects. Here are a few of the names we've had the privilege of working with.";
 
 // Client logos (supplied by Luminex, 29 Oct). Files cropped from the client's logo sheet.
 export const clients = [

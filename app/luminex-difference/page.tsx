@@ -4,7 +4,7 @@ import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import CtaBox from "@/components/CtaBox";
 import { reasons } from "@/lib/site";
-import { ComparisonTable, PerformanceBand } from "@/components/BrochureBlocks";
+import { ComparisonTable, FenovaPartner, PerformanceBand } from "@/components/BrochureBlocks";
 
 export const metadata: Metadata = {
   title: "The Luminex Difference – Why Choose Luminex Windows",
@@ -29,6 +29,7 @@ export default function Difference() {
       </section>
       <PerformanceBand />
       <ComparisonTable />
+      <FenovaPartner />
       <CtaBox />
     </>
   );

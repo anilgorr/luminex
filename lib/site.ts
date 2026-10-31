@@ -10,9 +10,9 @@ export const site = {
   tagline: "Windows to the World, Doors to Your Dreams.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.luminexwindow.com",
   description:
-    "Luminex Windows, an official Schüco channel partner, supplies and installs premium uPVC and system aluminium windows and doors across North Bengal, the Northeast and Bhutan. uPVC windows from ₹495/sq ft, delivered and installed in 15–30 days.",
+    "Luminex Windows, an official Schüco channel partner, supplies and installs premium uPVC and system aluminium windows and doors across North Bengal, the Northeast and Bhutan. uPVC windows from ₹495/sq ft, delivered and installed in 30–60 days.",
   partner: "Official Schüco channel partner",
-  topbarText: "Official Schüco channel partner · Delivered and installed in 15–30 days",
+  topbarText: "There's no better time than now to upgrade your windows and doors",
   phones: {
     india: ["+91 96099 88749", "+91 99335 81666"],
     bhutan: ["+975 1772 8800"],
@@ -20,7 +20,7 @@ export const site = {
   primaryPhone: "+91 96099 88749",
   // WhatsApp is the primary enquiry channel (client instruction).
   whatsapp: {
-    india: { number: "919609988749", label: "India", display: "+91 96099 88749" },
+    india: { number: "919933581666", label: "India", display: "+91 99335 81666" },
     bhutan: { number: "97517728800", label: "Bhutan", display: "+975 1772 8800" },
   },
   emails: ["info@allyunitygroup.com", "ally.unity.group@gmail.com"],
@@ -47,7 +47,7 @@ export const site = {
     aluminiumFrom: 950,
     note: "Starting price per sq ft for standard sizes; the final price depends on size, window type, glass and hardware. Same price in India and Bhutan, quoted in rupees or ngultrum.",
   },
-  leadTime: "15–30 days",
+  leadTime: "30–60 days",
   warranty: {
     profile: "15–25 years, depending on the profile brand",
     hardware: "5 years",
@@ -68,31 +68,34 @@ export const waLink = (region: "india" | "bhutan", text = "Hi Luminex, I'd like 
   `https://wa.me/${site.whatsapp[region].number}?text=${encodeURIComponent(text)}`;
 
 export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };
+// Location pages, linked from the footer map and list (they carry the local SEO and AEO answers).
+// lat/lng place the map pins.
+export const locations = [
+  { href: "/siliguri/upvc-windows", label: "Siliguri · uPVC", place: "Siliguri", lat: 26.7271, lng: 88.3953 },
+  { href: "/siliguri/aluminium-windows", label: "Siliguri · aluminium", place: "Siliguri" },
+  { href: "/siliguri/window-replacement", label: "Siliguri · replacement", place: "Siliguri" },
+  { href: "/jalpaiguri", label: "Jalpaiguri", place: "Jalpaiguri", lat: 26.5167, lng: 88.7167 },
+  { href: "/darjeeling", label: "Darjeeling", place: "Darjeeling", lat: 27.041, lng: 88.2663 },
+  { href: "/gangtok", label: "Gangtok", place: "Gangtok", lat: 27.3314, lng: 88.6138 },
+  { href: "/guwahati/upvc-windows", label: "Guwahati · uPVC", place: "Guwahati", lat: 26.1445, lng: 91.7362 },
+  { href: "/guwahati/aluminium-windows-price", label: "Guwahati · aluminium prices", place: "Guwahati" },
+  { href: "/shillong", label: "Shillong", place: "Shillong", lat: 25.5788, lng: 91.8933 },
+  { href: "/bhutan", label: "Bhutan · all locations", place: "Bhutan" },
+  { href: "/bhutan/thimphu", label: "Thimphu", place: "Thimphu", lat: 27.4728, lng: 89.639 },
+  { href: "/bhutan/paro", label: "Paro", place: "Paro", lat: 27.4305, lng: 89.4133 },
+  { href: "/bhutan/phuentsholing", label: "Phuentsholing", place: "Phuentsholing", lat: 26.8516, lng: 89.3884 },
+];
+
+// Main menu: the previous site's header with Schüco added (client, 31 Oct). Locations live in the footer.
 export const nav: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/windows", label: "Windows" },
   { href: "/doors", label: "Doors" },
-  {
-    href: "/siliguri/upvc-windows",
-    label: "Locations",
-    children: [
-      { href: "/siliguri/upvc-windows", label: "Siliguri · uPVC" },
-      { href: "/siliguri/aluminium-windows", label: "Siliguri · aluminium" },
-      { href: "/siliguri/window-replacement", label: "Siliguri · replacement" },
-      { href: "/guwahati/upvc-windows", label: "Guwahati · uPVC" },
-      { href: "/guwahati/aluminium-windows-price", label: "Guwahati · aluminium prices" },
-      { href: "/bhutan", label: "Bhutan · all locations" },
-      { href: "/bhutan/thimphu", label: "Thimphu" },
-      { href: "/bhutan/paro", label: "Paro" },
-      { href: "/bhutan/phuentsholing", label: "Phuentsholing" },
-      { href: "/gangtok", label: "Gangtok" },
-      { href: "/darjeeling", label: "Darjeeling" },
-      { href: "/shillong", label: "Shillong" },
-      { href: "/jalpaiguri", label: "Jalpaiguri" },
-    ],
-  },
+  // Points at the homepage section until the dedicated /schuco page is built.
+  { href: "/#schuco", label: "Schüco" },
+  { href: "/renovations", label: "Renovations" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/luminex-difference", label: "Luminex Difference" },
-  { href: "/faq", label: "FAQs" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -126,8 +129,8 @@ export const reasons = [
   },
   {
     icon: "/images/I2.png",
-    title: "Delivered In 15–30 Days",
-    text: "From order to installation in 15–30 days across North Bengal, Sikkim, the Northeast and Bhutan. Bhutan customers need no extra paperwork — we deliver to site.",
+    title: "Delivered In 30–60 Days",
+    text: "From order to installation in 30–60 days across North Bengal, Sikkim, the Northeast and Bhutan. Bhutan customers need no extra paperwork — we deliver to site.",
   },
 ];
 
@@ -165,7 +168,7 @@ export const faqs = [
   },
   {
     q: "How long do delivery and installation take?",
-    a: "Delivery and installation take 15 to 30 days from order, depending on the size of the project. This applies across North Bengal, the Northeast and Bhutan. Bhutan customers do not need any extra paperwork — Luminex delivers to the site.",
+    a: "Delivery and installation take 30 to 60 days from order, depending on the size of the project. This applies across North Bengal, the Northeast and Bhutan. Bhutan customers do not need any extra paperwork — Luminex delivers to the site.",
   },
   {
     q: "Which glass options do you offer?",

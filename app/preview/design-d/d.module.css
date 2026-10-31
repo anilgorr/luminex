@@ -376,3 +376,25 @@
   .betterCopy, .betterList { padding-left: 24px; }
 }
 .partnerRow li:first-child img { transform: scale(1.7); }
+
+/* ---------- Client changes, 31 Oct ---------- */
+/* Site header (sticky, 94px + border) replaces the preview header in the white variant. */
+.root.light .explode { --x-pin-top: 95px; --x-pin-top-m: 77px; }
+.root :global(.header) { font-size: 16px; line-height: 1.6; }
+.schuco { scroll-margin-top: 100px; }
+
+/* Clients: intro under the heading, "And many more" under the logos. */
+.root .clientsHead { flex-direction: column; align-items: flex-start; gap: 14px; }
+.root .clientsHead .body { max-width: 72ch; }
+.clientsMore { margin: 22px 0 0; text-align: center; font-size: 16px; font-weight: 600; color: #1a1918; }
+
+/* Schüco: copy in two columns, then one wide photograph. */
+.schucoTop { display: grid; grid-template-columns: 5fr 6fr; gap: 80px; align-items: end; margin-bottom: 56px; }
+.schucoTop .h2 { margin-bottom: 18px; }
+.schucoTop .partnerSub { margin: -6px 0 0; }
+.schucoWide { position: relative; width: 100%; max-width: 1280px; margin: 0 auto 64px; aspect-ratio: 16 / 7; overflow: hidden; }
+.schucoWide img { object-fit: cover; object-position: center 55%; }
+@media (max-width: 900px) {
+  .schucoTop { grid-template-columns: 1fr; gap: 24px; margin-bottom: 36px; }
+  .schucoWide { aspect-ratio: 4 / 3; margin-bottom: 40px; }
+}

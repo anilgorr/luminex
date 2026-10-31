@@ -44,7 +44,7 @@ export const windowGroups: ProductGroup[] = [
     id: "upvc-windows",
     title: "uPVC Window Systems",
     intro:
-      "Luminex uPVC windows use multi-chamber profiles, airtight gaskets and quality hardware to deliver thermal insulation, soundproofing, dust protection and rainwater resistance — engineered for Indian weather. They never warp, rust or swell, and need almost no maintenance. uPVC windows start at ₹495 per sq ft for standard sizes and are delivered and installed in 15–30 days.",
+      "Luminex uPVC windows use multi-chamber profiles, airtight gaskets and quality hardware to deliver thermal insulation, soundproofing, dust protection and rainwater resistance — engineered for Indian weather. They never warp, rust or swell, and need almost no maintenance. uPVC windows start at ₹495 per sq ft for standard sizes and are delivered and installed in 30–60 days.",
     items: [
       { title: "Sliding Windows", image: "/images/luminex-whywork1.jpg", text: "Space-saving sashes that glide horizontally — ideal for balconies and wide openings." },
       { title: "Casement Windows", image: "/images/luminex-about.jpg", text: "Side-hinged sashes that open fully for ventilation and seal tightly when closed." },

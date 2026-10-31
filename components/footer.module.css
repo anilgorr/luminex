@@ -1,0 +1,46 @@
+/* Site footer: Luminex green #1C4722 to match the top strip (client, 31 Oct). */
+.footer { background: #1c4722; color: #fff; padding: 72px 0 0; font-family: var(--font-jakarta), "Plus Jakarta Sans", sans-serif; }
+.footer a { color: #fff; text-decoration: none; }
+.footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255, 255, 255, .2); }
+.head h2 { margin: 0; max-width: 560px; font-size: clamp(26px, 2.6vw, 36px); font-weight: 700; line-height: 1.2; letter-spacing: -.02em; color: #fff; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border: 1px solid rgba(255, 255, 255, .45); font-weight: 600; font-size: 15px; }
+.footer .btn:hover { text-decoration: none; border-color: #fff; background: rgba(255, 255, 255, .08); }
+.btnSolid { background: #fff; color: #1c4722 !important; border-color: #fff; }
+.footer .btnSolid:hover { background: #eef3ef; }
+.grid { display: grid; grid-template-columns: 1fr .75fr 1.7fr 1fr; gap: 44px; padding: 48px 0; }
+.grid h3 { margin: 0 0 18px; font-size: 15px; font-weight: 700; color: #fff; }
+.grid p { margin: 0 0 6px; font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, .82); }
+.logo { width: 140px; height: auto; margin-bottom: 18px; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 15px; }
+.label { margin-top: 14px !important; font-size: 13px !important; color: rgba(255, 255, 255, .6) !important; }
+.label:first-of-type { margin-top: 0 !important; }
+.grid address { font-style: normal; font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, .82); }
+.social { display: flex; gap: 10px; margin-top: 18px; }
+.social a { width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, .35); border-radius: 50%; }
+.copy { display: flex; justify-content: space-between; gap: 20px; padding: 22px 0 28px; border-top: 1px solid rgba(255, 255, 255, .2); font-size: 14px; color: rgba(255, 255, 255, .7); }
+.copy p { margin: 0; }
+
+/* Map */
+.map { height: 270px; background: #dfe6e0; border: 1px solid rgba(255, 255, 255, .25); isolation: isolate; }
+.map :global(.leaflet-popup-content) { font: 14px/1.6 var(--font-jakarta), "Plus Jakarta Sans", sans-serif; color: #1a1918; }
+.map :global(.leaflet-popup-content a) { color: #1c4722; text-decoration: underline; }
+.map :global(.leaflet-control-attribution) { font-size: 10px; }
+.map :global(.leaflet-tile-pane) { filter: grayscale(1) contrast(.92) brightness(1.04); }
+.map :global(.leaflet-control-attribution a) { color: #1c4722; }
+.pin span { display: block; width: 18px; height: 18px; border-radius: 50%; background: #1c4722; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, .35); }
+.places { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 0; font-size: 13px; color: rgba(255, 255, 255, .8); }
+.places li:not(:last-child)::after { content: "·"; margin: 0 8px; color: rgba(255, 255, 255, .45); }
+.places a { color: rgba(255, 255, 255, .88); }
+
+@media (max-width: 1080px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .where { grid-column: 1 / -1; grid-row: 1; }
+}
+@media (max-width: 760px) {
+  .head { flex-direction: column; align-items: flex-start; }
+  .grid { grid-template-columns: 1fr; }
+  .map { height: 240px; }
+}

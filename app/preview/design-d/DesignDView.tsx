@@ -4,8 +4,10 @@ import { Bodoni_Moda } from "next/font/google";
 import HeroD from "./HeroD";
 import WindowExplodeV2 from "@/components/preview/WindowExplodeV2";
 import { PreviewHeader, PreviewFooter, PreviewWhatsApp, PreviewFaq } from "@/components/preview/PreviewChrome";
-import { classicReasons, clients, explodeSteps, latestPosts, partners, process, products, schuco } from "@/lib/home-v2";
-import { betterBand, fenova, performance, performanceImage, schucoBrochure } from "@/lib/brochure";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { classicReasons, clients, clientsIntro, explodeSteps, latestPosts, partners, process, products, schuco } from "@/lib/home-v2";
+import { betterBand, performance, performanceImage, schucoBrochure } from "@/lib/brochure";
 import Swatches from "@/components/Swatches";
 import s from "./d.module.css";
 
@@ -15,10 +17,12 @@ const bodoni = Bodoni_Moda({ subsets: ["latin"], weight: ["400", "500"], style: 
 // Design D view. `light` renders the white-background variant (client request, 28 Oct).
 // Design D, "Obsidian": warm black, ivory and anodised bronze — the colours of slim black
 // and bronze aluminium frames. Full-bleed cinematic photography, Bodoni Moda headlines.
-export default function DesignDView({ light = false }: { light?: boolean }) {
+// `chrome={false}` leaves the header, footer and WhatsApp button to the site layout (used when
+// this view is the real homepage). The white variant uses the site header and footer (client, 31 Oct).
+export default function DesignDView({ light = false, chrome = true }: { light?: boolean; chrome?: boolean }) {
   return (
     <div className={`${s.root} ${light ? s.light : ""} ${bodoni.variable}`}>
-      <PreviewHeader logo={light ? "green" : "white"} />
+      {chrome && (light ? <Header /> : <PreviewHeader logo="white" />)}
 
       <HeroD />
 
@@ -71,13 +75,14 @@ export default function DesignDView({ light = false }: { light?: boolean }) {
         <div className={s.wrap}>
           <div className={s.clientsHead}>
             <h2 id="d-clients" className={s.h2}>Our clients</h2>
-            <p className={s.body}>Hotels, schools and businesses across India and Bhutan trust Luminex with their windows and doors.</p>
+            <p className={s.body}>{clientsIntro}</p>
           </div>
           <ul className={s.clientGrid}>
             {clients.map((c) => (
               <li key={c.file}><img src={c.src} alt={c.name} loading="lazy" /></li>
             ))}
           </ul>
+          <p className={s.clientsMore}>And many more</p>
         </div>
       </section>
 
@@ -93,19 +98,19 @@ export default function DesignDView({ light = false }: { light?: boolean }) {
         </div>
       </section>
 
-      {/* Schüco, brochure page 11 (29 Oct). */}
+      {/* Schüco, brochure page 11 (29 Oct); wide photo for more impact (client, 31 Oct). */}
       <section id="schuco" className={s.schuco} aria-labelledby="d-schuco">
-        <div className={`${s.wrap} ${s.partnerGrid}`}>
-          <div className={s.partnerCopy}>
+        <div className={`${s.wrap} ${s.schucoTop}`}>
+          <div>
             <p className={s.partnerEyebrow}>{schucoBrochure.eyebrow}</p>
             <img src="/images/web/partner/schueco-vektor-data.svg" alt="Schüco" width={294} height={142} className={s.schucoLogo} />
             <h2 id="d-schuco" className={s.h2}>{schucoBrochure.title}</h2>
             <p className={s.partnerSub}>{schucoBrochure.subtitle}</p>
-            {schucoBrochure.body.map((p) => <p key={p} className={s.partnerBody}>{p}</p>)}
           </div>
-          <div className={s.partnerPhoto}>
-            <Image src={schucoBrochure.image.src} alt={schucoBrochure.image.alt} width={schucoBrochure.image.w} height={schucoBrochure.image.h} sizes="(max-width: 900px) 100vw, 40vw" />
-          </div>
+          <div>{schucoBrochure.body.map((p) => <p key={p} className={s.partnerBody}>{p}</p>)}</div>
+        </div>
+        <div className={s.schucoWide}>
+          <Image src={schucoBrochure.image.src} alt={schucoBrochure.image.alt} fill sizes="(max-width: 1340px) 100vw, 1280px" />
         </div>
         <div className={s.wrap}>
           <ul className={s.pointGrid}>
@@ -115,39 +120,6 @@ export default function DesignDView({ light = false }: { light?: boolean }) {
             <h3>{schucoBrochure.coloursTitle}</h3>
             <Swatches colours={schucoBrochure.colours} />
             <p className={s.note}>{schucoBrochure.coloursNote}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Fenova, brochure page 10 (29 Oct). */}
-      <section className={s.fenova} aria-labelledby="d-fenova">
-        <div className={`${s.wrap} ${s.partnerGrid} ${s.partnerFlip}`}>
-          <div className={s.partnerPhoto}>
-            <Image src={fenova.image.src} alt={fenova.image.alt} width={fenova.image.w} height={fenova.image.h} sizes="(max-width: 900px) 100vw, 40vw" />
-          </div>
-          <div className={s.partnerCopy}>
-            <p className={s.partnerEyebrow}>{fenova.eyebrow}</p>
-            <img src="/images/web/partner/fenova-logo-200.png" alt="Fenova" width={200} height={60} className={s.fenovaLogo} />
-            <h2 id="d-fenova" className={s.h2}>{fenova.title}</h2>
-            <p className={s.partnerSub}>{fenova.subtitle}</p>
-            {fenova.body.map((p) => <p key={p} className={s.partnerBody}>{p}</p>)}
-            <ul className={s.badges}>{fenova.badges.map((b) => <li key={b}>{b}</li>)}</ul>
-          </div>
-        </div>
-        <div className={s.wrap}>
-          <h3 className={s.compareTitle}>{fenova.compareTitle}</h3>
-          <div className={s.compare}>
-            {[fenova.coextruded, fenova.laminated].map((c, i) => (
-              <div key={c.title} className={i === 0 ? s.compareGood : s.compareBad}>
-                <h4>{c.title}</h4>
-                <p>{c.lead}</p>
-                <ul>{c.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>
-              </div>
-            ))}
-          </div>
-          <div className={s.palette}>
-            <h3>{fenova.coloursTitle}</h3>
-            <Swatches colours={fenova.colours} />
           </div>
         </div>
       </section>
@@ -213,8 +185,8 @@ export default function DesignDView({ light = false }: { light?: boolean }) {
         </div>
       </section>
 
-      <PreviewFooter />
-      <PreviewWhatsApp />
+      {chrome && (light ? <Footer /> : <PreviewFooter />)}
+      {chrome && <PreviewWhatsApp />}
     </div>
   );
 }

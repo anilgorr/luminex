@@ -1,7 +1,7 @@
 // Step 3 — Bhutan pages. Facts confirmed by Luminex (9 Oct 2026): offices with installation teams
 // in Thimphu, Paro and Phuentsholing; 24x7 service team in Thimphu; service calls attended within
 // 2 business days; same prices as India, quoted in rupees or ngultrum; no extra paperwork for the
-// customer; delivered to site in 15–30 days. TODO(client): street addresses for each Bhutan office.
+// customer; delivered to site in 30–60 days. TODO(client): street addresses for each Bhutan office.
 
 import { site } from "./site";
 import { P, example, type LocationPage } from "./location-common";
@@ -31,7 +31,7 @@ const bhutanCityFaqs = (city: string) => [
   },
   {
     q: `How long does delivery to ${city} take?`,
-    a: `Luminex delivers and installs windows in ${city} within 15–30 days of order. There is no extra paperwork for the customer — the windows are delivered to your site.`,
+    a: `Luminex delivers and installs windows in ${city} within 30–60 days of order. There is no extra paperwork for the customer — the windows are delivered to your site.`,
   },
   {
     q: `Who services Luminex windows in ${city}?`,
@@ -52,9 +52,9 @@ export const bhutanPages: LocationPage[] = [
     h1: "uPVC Windows and Doors in Bhutan",
     metaTitle: "uPVC Windows & Doors in Bhutan — Thimphu Desk, Local Teams",
     metaDescription:
-      "Luminex supplies and installs uPVC and system aluminium windows and doors across Bhutan, with a coordination desk in Thimphu and teams in Paro and Phuentsholing. From ₹495/sq ft, delivered in 15–30 days, no paperwork for you.",
+      "Luminex supplies and installs uPVC and system aluminium windows and doors across Bhutan, with a coordination desk in Thimphu and teams in Paro and Phuentsholing. From ₹495/sq ft, delivered in 30–60 days, no paperwork for you.",
     answer:
-      "Luminex Windows supplies and installs uPVC and system aluminium windows and doors across Bhutan, with a liaison and coordination desk in Changbangdu, Thimphu, and installation teams serving Thimphu, Paro and Phuentsholing. uPVC windows start at ₹495 per sq ft — the same as in India — delivered to site in 15–30 days with no paperwork for the customer.",
+      "Luminex Windows supplies and installs uPVC and system aluminium windows and doors across Bhutan, with a liaison and coordination desk in Changbangdu, Thimphu, and installation teams serving Thimphu, Paro and Phuentsholing. uPVC windows start at ₹495 per sq ft — the same as in India — delivered to site in 30–60 days with no paperwork for the customer.",
     facts: bhutanFacts("Thimphu, Paro and Phuentsholing"),
     sections: [
       {
@@ -78,7 +78,7 @@ export const bhutanPages: LocationPage[] = [
       {
         h2: "Window installation in Bhutan",
         body: [
-          "Every window is measured, supplied and installed by Luminex's own teams. Delivery to site and installation take 15–30 days from order, and there is no import paperwork for the customer.",
+          "Every window is measured, supplied and installed by Luminex's own teams. Delivery to site and installation take 30–60 days from order, and there is no import paperwork for the customer.",
         ],
       },
       {
@@ -105,7 +105,7 @@ export const bhutanPages: LocationPage[] = [
       },
       {
         q: "Do I need any paperwork to buy windows from Luminex in Bhutan?",
-        a: "No. There is no additional paperwork for the customer. Luminex delivers the windows to your site and installs them within 15–30 days of order.",
+        a: "No. There is no additional paperwork for the customer. Luminex delivers the windows to your site and installs them within 30–60 days of order.",
       },
       {
         q: "How does window warranty service work in Bhutan?",
@@ -134,9 +134,9 @@ export const bhutanPages: LocationPage[] = [
     h1: "uPVC and Aluminium Windows in Thimphu",
     metaTitle: "uPVC Windows in Thimphu — Local Desk & 24x7 Service, From ₹495/sq ft",
     metaDescription:
-      "uPVC, aluminium, sliding and casement windows in Thimphu from Luminex — Bhutan coordination desk in Changbangdu, own installation team and 24x7 service. From ₹495/sq ft, installed in 15–30 days.",
+      "uPVC, aluminium, sliding and casement windows in Thimphu from Luminex — Bhutan coordination desk in Changbangdu, own installation team and 24x7 service. From ₹495/sq ft, installed in 30–60 days.",
     answer:
-      "Luminex Windows has its Bhutan Liaison & Coordination Desk in Changbangdu, Thimphu, with an installation team and a 24x7 service team. It supplies uPVC windows from ₹495 per sq ft and system aluminium windows from ₹950 per sq ft — sliding and casement — installed within 15–30 days. Luminex is an official Schüco channel partner.",
+      "Luminex Windows has its Bhutan Liaison & Coordination Desk in Changbangdu, Thimphu, with an installation team and a 24x7 service team. It supplies uPVC windows from ₹495 per sq ft and system aluminium windows from ₹950 per sq ft — sliding and casement — installed within 30–60 days. Luminex is an official Schüco channel partner.",
     facts: bhutanFacts("Bhutan Liaison & Coordination Desk, Changbangdu, Thimphu · installation team · 24x7 service team"),
     sections: [
       {
@@ -196,9 +196,9 @@ export const bhutanPages: LocationPage[] = [
     h1: "uPVC and Aluminium Windows in Phuentsholing",
     metaTitle: "uPVC & Aluminium Windows in Phuentsholing — Local Installation Team",
     metaDescription:
-      "uPVC windows from ₹495/sq ft and system aluminium from ₹950/sq ft in Phuentsholing. Luminex's own installation team, delivered in 15–30 days.",
+      "uPVC windows from ₹495/sq ft and system aluminium from ₹950/sq ft in Phuentsholing. Luminex's own installation team, delivered in 30–60 days.",
     answer:
-      "Luminex Windows supplies and installs windows in Phuentsholing with its own installation team, coordinated from its Thimphu desk. uPVC windows start at ₹495 per sq ft and system aluminium windows at ₹950 per sq ft, quoted in rupees or ngultrum, and are installed within 15–30 days of order. Luminex is an official Schüco channel partner.",
+      "Luminex Windows supplies and installs windows in Phuentsholing with its own installation team, coordinated from its Thimphu desk. uPVC windows start at ₹495 per sq ft and system aluminium windows at ₹950 per sq ft, quoted in rupees or ngultrum, and are installed within 30–60 days of order. Luminex is an official Schüco channel partner.",
     facts: bhutanFacts("Installation team serving Phuentsholing · coordination desk in Changbangdu, Thimphu"),
     sections: [
       {
@@ -245,9 +245,9 @@ export const bhutanPages: LocationPage[] = [
     h1: "uPVC Windows and Doors in Paro",
     metaTitle: "uPVC Windows & Doors in Paro — Local Dealer and Installer",
     metaDescription:
-      "uPVC and aluminium windows and doors in Paro from Luminex — own installation team, from ₹495/sq ft, delivered in 15–30 days. Official Schüco channel partner.",
+      "uPVC and aluminium windows and doors in Paro from Luminex — own installation team, from ₹495/sq ft, delivered in 30–60 days. Official Schüco channel partner.",
     answer:
-      "Luminex Windows supplies and installs windows in Paro with its own installation team, supplying uPVC and system aluminium windows and doors — including sliding windows. uPVC windows start at ₹495 per sq ft and are installed within 15–30 days. Luminex is an official Schüco channel partner, with a 24x7 service team in Thimphu.",
+      "Luminex Windows supplies and installs windows in Paro with its own installation team, supplying uPVC and system aluminium windows and doors — including sliding windows. uPVC windows start at ₹495 per sq ft and are installed within 30–60 days. Luminex is an official Schüco channel partner, with a 24x7 service team in Thimphu.",
     facts: bhutanFacts("Installation team serving Paro · coordination desk in Changbangdu, Thimphu"),
     sections: [
       {

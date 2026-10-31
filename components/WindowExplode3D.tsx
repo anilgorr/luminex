@@ -22,7 +22,7 @@ const STEPS = [
   { title: "Airtight weather seals", text: "Continuous seals keep monsoon rain, dust and draughts out." },
   { title: "Saint-Gobain glass", text: "Double glazing, low-E, toughened or acoustic — matched to your climate, noise and budget." },
   { title: "Sashes and hardware", text: "Smooth sliding sashes with Schüco, Pego and Kinlong hardware for secure locking." },
-  { title: "Installed by our own team", text: "Delivered and installed in 15–30 days, with up to 25 years' warranty on profiles." },
+  { title: "Installed by our own team", text: "Delivered and installed in 30–60 days, with up to 25 years' warranty on profiles." },
 ];
 
 const clamp = (v: number) => Math.min(1, Math.max(0, v));

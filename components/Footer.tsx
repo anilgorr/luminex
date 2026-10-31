@@ -1,71 +1,74 @@
 import Link from "next/link";
 import Image from "next/image";
-import { site, telHref, waLink } from "@/lib/site";
+import { locations, site, telHref, waLink } from "@/lib/site";
 import { FacebookIcon, InstagramIcon } from "./Icons";
-import Newsletter from "./Newsletter";
+import { WhatsAppIcon } from "./WhatsAppButton";
+import LocationsMap from "./LocationsMap";
+import s from "./footer.module.css";
 
+// Site footer (client, 31 Oct): Luminex green to match the top strip; "Where we work" is a map
+// with a pin per city. The location pages stay linked in plain HTML under the map, because
+// these links carry the local SEO and the answers AI engines quote.
 export default function Footer() {
   return (
-    <>
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-head">
-            <h2>Let&apos;s make your custom product!</h2>
-            <Link href="/contact" className="btn btn-light">Contact Us Today</Link>
-          </div>
-          <div className="footer-grid">
-            <div>
-              <div className="footer-logo"><Image src="/images/web/luminex-white.png" alt="Luminex" width={600} height={220} /></div>
-              <p>{site.tagline}</p>
-              <div className="footer-social">
-                <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FacebookIcon /></a>
-                <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon /></a>
-              </div>
-            </div>
-            <div className="footer-links">
-              <h3>Quick Links</h3>
-              <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/about">About Us</Link></li>
-                <li><Link href="/windows">Windows</Link></li>
-                <li><Link href="/doors">Doors</Link></li>
-                <li><Link href="/renovations">Renovations</Link></li>
-                <li><Link href="/gallery">Gallery</Link></li>
-                <li><Link href="/siliguri/upvc-windows">uPVC windows Siliguri</Link></li>
-                <li><Link href="/guwahati/upvc-windows">uPVC windows Guwahati</Link></li>
-                <li><Link href="/bhutan">Windows in Bhutan</Link></li>
-                <li><Link href="/warranty">Warranty</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/contact">Contact Us</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h3>Contact Us</h3>
-              <div className="contact-row">
-                <img src="/images/icon-phone.svg" alt="" />
-                <div>
-                  <p><strong>India</strong> · <a href={waLink("india")} target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
-                  {site.phones.india.map((p) => <p key={p}><a href={telHref(p)}>{p}</a></p>)}
-                  <p><strong>Bhutan</strong> · <a href={waLink("bhutan")} target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
-                  {site.phones.bhutan.map((p) => <p key={p}><a href={telHref(p)}>{p}</a></p>)}
-                  <p style={{ marginTop: 10 }}>Siliguri · Bhutan Liaison &amp; Coordination Desk, Changbangdu, Thimphu</p>
-                </div>
-              </div>
-              <div className="contact-row">
-                <img src="/images/icon-mail.svg" alt="" />
-                <div>{site.emails.map((e) => <p key={e}><a href={`mailto:${e}`}>{e}</a></p>)}</div>
-              </div>
-            </div>
-            <div>
-              <h3>Get The Latest Trending News</h3>
-              <Newsletter />
-            </div>
+    <footer className={s.footer}>
+      <div className={s.wrap}>
+        <div className={s.head}>
+          <h2>Planning windows for a new build or a replacement?</h2>
+          <div className={s.btns}>
+            <a href={waLink("india")} target="_blank" rel="noopener noreferrer" className={s.btn}><WhatsAppIcon size={18} /> WhatsApp India</a>
+            <a href={waLink("bhutan")} target="_blank" rel="noopener noreferrer" className={s.btn}><WhatsAppIcon size={18} /> WhatsApp Bhutan</a>
+            <Link href="/request-quote" className={`${s.btn} ${s.btnSolid}`}>Request a quote</Link>
           </div>
         </div>
-        <div className="copyright">
-          <div className="container"><p>Copyright © {new Date().getFullYear()} {site.name}. All Rights Reserved. · <Link href="/privacy-policy">Privacy Policy</Link></p></div>
+        <div className={s.grid}>
+          <div>
+            <Image src="/images/web/luminex-white.png" alt="Luminex" width={600} height={220} className={s.logo} />
+            <p>{site.tagline}</p>
+            <div className={s.social}>
+              <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Luminex on Facebook"><FacebookIcon size={18} /></a>
+              <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Luminex on Instagram"><InstagramIcon size={18} /></a>
+            </div>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <ul className={s.list}>
+              <li><Link href="/windows">Windows</Link></li>
+              <li><Link href="/doors">Doors</Link></li>
+              <li><Link href="/#schuco">Schüco</Link></li>
+              <li><Link href="/renovations">Renovations</Link></li>
+              <li><Link href="/luminex-difference">Luminex Difference</Link></li>
+              <li><Link href="/warranty">Warranty</Link></li>
+              <li><Link href="/gallery">Gallery</Link></li>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/faq">FAQs</Link></li>
+            </ul>
+          </div>
+          <div className={s.where}>
+            <h3>Where we work</h3>
+            <LocationsMap />
+            <ul className={s.places}>
+              {locations.map((l) => <li key={l.href}><Link href={l.href}>{l.label.replace(" · ", " – ")}</Link></li>)}
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <p className={s.label}>India</p>
+            {site.phones.india.map((p) => <p key={p}><a href={telHref(p)}>{p}</a></p>)}
+            <p className={s.label}>Bhutan</p>
+            {site.phones.bhutan.map((p) => <p key={p}><a href={telHref(p)}>{p}</a></p>)}
+            <p className={s.label}>Email</p>
+            <p><a href={`mailto:${site.emails[0]}`}>{site.emails[0]}</a></p>
+            <p className={s.label}>Siliguri office</p>
+            <address>{site.address.street}, {site.address.locality}, {site.address.region} {site.address.postalCode}</address>
+          </div>
         </div>
-      </footer>
-    </>
+        <div className={s.copy}>
+          <p>© {new Date().getFullYear()} {site.name}</p>
+          <Link href="/privacy-policy">Privacy policy</Link>
+        </div>
+      </div>
+    </footer>
   );
 }

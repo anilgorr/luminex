@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 // AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended) are explicitly allowed for GEO visibility.

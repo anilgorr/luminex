@@ -16,7 +16,7 @@ export default function Header() {
     on(); window.addEventListener("scroll", on, { passive: true });
     return () => window.removeEventListener("scroll", on);
   }, []);
-  const isActive = (href: string) => (href === "/" ? path === "/" : path.startsWith(href));
+  const isActive = (href: string) => (href === "/" ? path === "/" : !href.includes("#") && path.startsWith(href));
   return (
     <>
       <div className="topbar">
@@ -27,20 +27,11 @@ export default function Header() {
       </div>
       <header className={`header${scrolled ? " scrolled" : ""}`}>
         <div className="container">
-          <Link href="/" className="logo" aria-label="Luminex × Schüco — Luminex Windows home">
+          <Link href="/" className="logo" aria-label="Luminex Windows home">
             <Image src="/images/web/Luminex.png" alt="Luminex – windows, doors, facade" width={600} height={220} priority />
-            <span className="logo-x" aria-hidden="true">×</span>
-            <img className="logo-partner" src="/images/web/partner/schueco-vektor-data.svg" alt="Schüco" width={294} height={142} />
           </Link>
           <nav className="nav" aria-label="Main">
-            {nav.map((n) => n.children ? (
-              <div className="nav-drop" key={n.label}>
-                <button type="button" className={n.children.some((c) => path.startsWith(c.href)) ? "active" : ""} aria-haspopup="true">{n.label} ▾</button>
-                <div className="nav-menu">{n.children.map((c) => <Link key={c.href} href={c.href}>{c.label}</Link>)}</div>
-              </div>
-            ) : (
-              <Link key={n.href} href={n.href} className={isActive(n.href) ? "active" : ""}>{n.label}</Link>
-            ))}
+            {nav.map((n) => <Link key={n.href} href={n.href} className={isActive(n.href) ? "active" : ""}>{n.label}</Link>)}
           </nav>
           <div className="header-social">
             <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FacebookIcon size={18} /></a>
@@ -50,7 +41,8 @@ export default function Header() {
             <span /><span /><span />
           </button>
           <nav className={`mobile-nav${open ? " open" : ""}`} aria-label="Mobile">
-            {nav.flatMap((n) => n.children ? n.children : [n]).map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
+            {nav.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
+            <Link href="/request-quote">Get Your Free Quote</Link>
           </nav>
         </div>
       </header>

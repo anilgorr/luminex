@@ -61,6 +61,42 @@ export function ComparisonTable() {
   );
 }
 
+// Fenova partnership, profiles comparison and uPVC colours, moved here from the homepage (client, 31 Oct).
+export function FenovaPartner() {
+  return (
+    <section className="section section-bg-lines" aria-labelledby="fenova-title">
+      <div className="container">
+        <div className={s.fenovaGrid}>
+          <div className={s.fenovaPhoto}>
+            <Image src={fenova.image.src} alt={fenova.image.alt} width={fenova.image.w} height={fenova.image.h} sizes="(max-width: 991px) 100vw, 45vw" />
+          </div>
+          <div>
+            <span className="eyebrow">{fenova.eyebrow}</span>
+            <img src="/images/web/partner/fenova-logo-200.png" alt="Fenova" width={200} height={60} className={s.fenovaLogo} />
+            <h2 id="fenova-title" className={s.h2}>{fenova.title}</h2>
+            <p className={s.sub}>{fenova.subtitle}</p>
+            {fenova.body.map((p) => <p key={p}>{p}</p>)}
+            <ul className={s.badges}>{fenova.badges.map((b) => <li key={b}>{b}</li>)}</ul>
+          </div>
+        </div>
+        <h3 className={s.h3}>{fenova.compareTitle}</h3>
+        <div className={s.duo}>
+          {[fenova.coextruded, fenova.laminated].map((c, i) => (
+            <div key={c.title} className={i === 0 ? s.good : s.bad}>
+              <h3>{c.title}</h3>
+              <p>{c.lead}</p>
+              <ul>{c.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>
+            </div>
+          ))}
+        </div>
+        <div className={s.palettes} style={{ marginTop: 48, marginBottom: 0 }}>
+          <div><h3>{fenova.coloursTitle}</h3><Swatches colours={fenova.colours} /></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function ProfilesAndColours() {
   const faqs = [brochureFaqs.coextruded, brochureFaqs.upvcColours, brochureFaqs.aluminiumColours, brochureFaqs.performance];
   return (

@@ -11,7 +11,7 @@ const hillFaqs = (city: string) => [
   },
   {
     q: `Who installs uPVC windows in ${city}?`,
-    a: `Luminex Windows, an official Schüco channel partner, supplies and installs uPVC windows and doors in ${city} with its own team, served from its office in Siliguri. Delivery and installation take 15–30 days from order.`,
+    a: `Luminex Windows, an official Schüco channel partner, supplies and installs uPVC windows and doors in ${city} with its own team, served from its office in Siliguri. Delivery and installation take 30–60 days from order.`,
   },
   {
     q: `Does Luminex make uPVC doors for ${city}?`,
@@ -77,8 +77,8 @@ export const hillPages: LocationPage[] = [
     "shillong",
     "Meghalaya",
     "uPVC Windows in Shillong — Rain-Tight, From ₹495/sq ft",
-    "uPVC windows and doors in Shillong from ₹495 per sq ft. Rain-tight, double-glazed options from Luminex, an official Schüco channel partner, installed in 15–30 days.",
-    "Luminex Windows supplies and installs uPVC windows and doors in Shillong, served from its Siliguri office. Standard uPVC windows start at ₹495 per sq ft and are installed by Luminex's own team within 15–30 days of order. Luminex is an official Schüco channel partner using Schüco, Luminex and Fenova profiles.",
+    "uPVC windows and doors in Shillong from ₹495 per sq ft. Rain-tight, double-glazed options from Luminex, an official Schüco channel partner, installed in 30–60 days.",
+    "Luminex Windows supplies and installs uPVC windows and doors in Shillong, served from its Siliguri office. Standard uPVC windows start at ₹495 per sq ft and are installed by Luminex's own team within 30–60 days of order. Luminex is an official Schüco channel partner using Schüco, Luminex and Fenova profiles.",
     {
       h2: "Windows for Shillong's rain and cold",
       body: "Meghalaya is one of the wettest regions in India, and Shillong's hill climate brings cool, damp nights. Windows there should keep water out and warmth in:",
@@ -108,8 +108,8 @@ export const hillPages: LocationPage[] = [
     "gangtok",
     "Sikkim",
     "uPVC Windows & Doors in Gangtok — From ₹495/sq ft",
-    "uPVC windows and doors in Gangtok from ₹495 per sq ft, double glazed for hill winters. Supplied and installed by Luminex, an official Schüco channel partner, in 15–30 days.",
-    "Luminex Windows supplies and installs uPVC windows and doors in Gangtok from its Siliguri office. Standard uPVC windows start at ₹495 per sq ft, double glazing is available for cold winters, and Luminex's own team installs within 15–30 days. Luminex is an official Schüco channel partner.",
+    "uPVC windows and doors in Gangtok from ₹495 per sq ft, double glazed for hill winters. Supplied and installed by Luminex, an official Schüco channel partner, in 30–60 days.",
+    "Luminex Windows supplies and installs uPVC windows and doors in Gangtok from its Siliguri office. Standard uPVC windows start at ₹495 per sq ft, double glazing is available for cold winters, and Luminex's own team installs within 30–60 days. Luminex is an official Schüco channel partner.",
     {
       h2: "Windows for Gangtok's hill climate",
       body: "Gangtok sits on steep hillsides at well over 1,000 m, with cold winters and a long monsoon. The right windows make a noticeable difference to comfort:",
@@ -133,7 +133,7 @@ export const hillPages: LocationPage[] = [
     "West Bengal",
     "uPVC Windows & Doors in Darjeeling — From ₹495/sq ft",
     "uPVC windows, doors and sliding windows in Darjeeling from ₹495 per sq ft. Replace old timber windows with double-glazed uPVC from Luminex, an official Schüco channel partner.",
-    "Luminex Windows supplies and installs uPVC windows, sliding windows and doors in Darjeeling, served from its Siliguri office. Standard uPVC windows start at ₹495 per sq ft, with double glazing for Darjeeling's cold, damp weather, installed by Luminex's own team within 15–30 days.",
+    "Luminex Windows supplies and installs uPVC windows, sliding windows and doors in Darjeeling, served from its Siliguri office. Standard uPVC windows start at ₹495 per sq ft, with double glazing for Darjeeling's cold, damp weather, installed by Luminex's own team within 30–60 days.",
     {
       h2: "Windows for Darjeeling's cold and damp",
       body: "At around 2,000 m, Darjeeling is cold, foggy and damp for much of the year, and many homes, hotels and homestays still have old timber windows. Replacing them with uPVC brings:",
@@ -163,8 +163,8 @@ export const hillPages: LocationPage[] = [
     "jalpaiguri",
     "West Bengal",
     "uPVC Windows & Doors in Jalpaiguri — Near Siliguri, From ₹495/sq ft",
-    "uPVC windows, sliding windows and doors in Jalpaiguri from ₹495 per sq ft, from Luminex's nearby Siliguri office. Official Schüco channel partner, installed in 15–30 days.",
-    "Luminex Windows supplies and installs uPVC windows, sliding windows and doors in Jalpaiguri from its nearby office in Siliguri. Standard uPVC windows start at ₹495 per sq ft and Luminex's own team installs within 15–30 days of order. Luminex is an official Schüco channel partner.",
+    "uPVC windows, sliding windows and doors in Jalpaiguri from ₹495 per sq ft, from Luminex's nearby Siliguri office. Official Schüco channel partner, installed in 30–60 days.",
+    "Luminex Windows supplies and installs uPVC windows, sliding windows and doors in Jalpaiguri from its nearby office in Siliguri. Standard uPVC windows start at ₹495 per sq ft and Luminex's own team installs within 30–60 days of order. Luminex is an official Schüco channel partner.",
     {
       h2: "Windows for Jalpaiguri's humid plains climate",
       body: "Jalpaiguri is hot and humid, with a heavy monsoon and river flooding in some areas. Windows there need to handle moisture:",
@@ -281,9 +281,9 @@ export const hillPages: LocationPage[] = [
     h1: "Buying Windows from India for Your Bhutan Project",
     metaTitle: "Importing Windows to Bhutan from India — How It Works with Luminex",
     metaDescription:
-      "Buying windows from India for a home or hotel in Bhutan? With Luminex there is no paperwork for you: same prices as India, quotes in rupees or ngultrum, delivered to site in 15–30 days.",
+      "Buying windows from India for a home or hotel in Bhutan? With Luminex there is no paperwork for you: same prices as India, quotes in rupees or ngultrum, delivered to site in 30–60 days.",
     answer:
-      "With Luminex, buying windows from India for a project in Bhutan needs no paperwork from the customer. Prices are the same as in India, quoted in rupees or ngultrum, and the windows are delivered to your site and installed by Luminex's Bhutan teams within 15–30 days of order.",
+      "With Luminex, buying windows from India for a project in Bhutan needs no paperwork from the customer. Prices are the same as in India, quoted in rupees or ngultrum, and the windows are delivered to your site and installed by Luminex's Bhutan teams within 30–60 days of order.",
     facts: [
       ["Paperwork for the customer", "None"],
       ["Prices", `Same as India — uPVC from ₹${P.upvcFrom}/sq ft, system aluminium from ₹${P.aluminiumFrom}/sq ft`],
@@ -320,7 +320,7 @@ export const hillPages: LocationPage[] = [
     faqs: [
       {
         q: "Can I buy windows from India for a house in Bhutan?",
-        a: "Yes. Luminex supplies windows to Bhutan with no paperwork needed from the customer, delivers to site within 15–30 days, and installs with its own teams in Thimphu, Paro and Phuentsholing.",
+        a: "Yes. Luminex supplies windows to Bhutan with no paperwork needed from the customer, delivers to site within 30–60 days, and installs with its own teams in Thimphu, Paro and Phuentsholing.",
       },
       {
         q: "Are window prices in Bhutan higher than in India?",

@@ -7,7 +7,7 @@ import { ProfilesAndColours } from "@/components/BrochureBlocks";
 
 export const metadata: Metadata = {
   title: "uPVC & Aluminium Windows – Sliding, Casement, Tilt & Turn",
-  description: "Luminex uPVC and system aluminium windows: sliding, casement, tilt & turn, fixed and custom shapes. Energy efficient, soundproof, dust- and rain-proof, from ₹495/sq ft, installed in 15–30 days by an official Schüco channel partner.",
+  description: "Luminex uPVC and system aluminium windows: sliding, casement, tilt & turn, fixed and custom shapes. Energy efficient, soundproof, dust- and rain-proof, from ₹495/sq ft, installed in 30–60 days by an official Schüco channel partner.",
   alternates: { canonical: "/windows" },
 };
 export default function Windows() {

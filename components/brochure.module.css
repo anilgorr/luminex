@@ -41,7 +41,15 @@
 .faq details p { margin: 0 0 18px; max-width: 75ch; }
 .more { margin-top: 28px; }
 .more a { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.fenovaGrid { display: grid; grid-template-columns: 5fr 6fr; gap: 64px; align-items: center; margin-bottom: 64px; }
+.fenovaPhoto img { width: 100%; height: auto; max-height: 600px; object-fit: cover; display: block; }
+.fenovaLogo { display: block; width: 160px; height: auto; margin: 14px 0 22px; mix-blend-mode: multiply; }
+.sub { font-size: 18px; font-weight: 600; color: var(--black); margin: -6px 0 16px; }
+.badges { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.badges li { padding: 8px 14px; border: 1px solid rgba(0, 0, 0, .2); font-size: 14px; font-weight: 600; color: var(--black); }
+.h3 { font-size: 22px; letter-spacing: -.01em; color: var(--black); margin: 0 0 22px; }
 @media (max-width: 991px) {
+  .fenovaGrid { grid-template-columns: 1fr; gap: 32px; }
   .perfInner, .duo { grid-template-columns: 1fr; gap: 32px; }
   .stats { grid-template-columns: 1fr 1fr; row-gap: 20px; }
   .stats div:nth-child(3) { border-left: 0; padding-left: 0; }

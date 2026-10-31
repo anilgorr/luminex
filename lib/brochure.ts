@@ -66,7 +66,8 @@ export const schucoBrochure = {
     { name: "Wood finish", hex: "#6E2B1F", wood: true },
   ] as Swatch[],
   coloursNote: "Custom colours on request.",
-  image: { src: "/images/brochure/schuco-corner-glazing-living-room.jpg", alt: "Living room with floor-to-ceiling black-framed corner glazing looking out over mountains and a lake", w: 1220, h: 1960 },
+  // Wide Schüco photo for more impact (client, 31 Oct; from schueco.com, as the client suggested).
+  image: { src: "/images/schueco/schueco-sliding-glazing-house-at-dusk.jpg", alt: "Timber-clad house with full-height Schüco sliding glazing catching the evening sun among pine trees", w: 1440, h: 810 },
 };
 
 // Brochure page 10. Fenova's own award and "first and only" claims are left out on purpose.
@@ -110,7 +111,8 @@ export const betterBand = {
   image: { src: "/images/brochure/window-profile-line-drawing.jpg", alt: "Line drawing of a multi-chamber window profile in cross-section", w: 640, h: 558 },
 };
 
-export const performanceImage ={ src: "/images/brochure/sliding-glass-wall-mountain-view.jpg", alt: "Floor-to-ceiling sliding glass wall opening onto a pool terrace at sunset", w: 1385, h: 860 };
+// The brochure sunset photo is already used in the catalogue (client, 31 Oct), so this is a Schüco image.
+export const performanceImage = { src: "/images/schueco/schueco-glazed-villa-with-pool.jpg", alt: "Two-storey villa with tall glazed walls and folding doors opening onto a pool courtyard", w: 1440, h: 810 };
 
 // FAQs built from the brochure (plain text so they can feed FAQPage schema).
 export const brochureFaqs = {
