@@ -30,7 +30,8 @@ export default function About() {
           <Reveal>
             <div className="about-images about-photo">
               <div className="arch">
-                <Image src="/images/luminex-banner.jpg" alt="Floor-to-ceiling glazed wall and double doors with slim black frames, filling a modern hallway with daylight" width={2400} height={1600} sizes="(max-width: 991px) 90vw, 430px" />
+                {/* Not the hallway photo: that one is the first homepage slide (client, 2 Nov). */}
+                <Image src="/images/luminex-about.jpg" alt="Corner of a house with white multi-pane uPVC casement windows" width={430} height={623} sizes="(max-width: 991px) 90vw, 430px" />
               </div>
               <div className="customer-badge"><strong>98%</strong><span>Happy Customer</span></div>
             </div>
