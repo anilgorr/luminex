@@ -68,7 +68,7 @@ const phase1: LocationPage[] = [
       },
       {
         q: "Where can I buy uPVC windows in Siliguri?",
-        a: "Luminex Windows is based at Ground Floor, Jeewandeep Building, Salugara, Siliguri 734008. You can see samples there and order directly — Luminex measures, supplies and installs the windows with its own team.",
+        a: "Luminex Windows is based at Ground Floor, Jeevandeep Building, Salugara, Siliguri 734008. You can see samples there and order directly — Luminex measures, supplies and installs the windows with its own team.",
       },
       {
         q: "How long does uPVC window installation take in Siliguri?",

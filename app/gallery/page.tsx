@@ -3,6 +3,8 @@ import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import CtaBox from "@/components/CtaBox";
+import SectionTitle from "@/components/SectionTitle";
+import PressCoverage from "@/components/PressCoverage";
 
 export const metadata: Metadata = {
   title: "Project Gallery – Windows & Doors Installed by Luminex",
@@ -28,6 +30,13 @@ export default function Gallery() {
               <figure><Image src={src} alt={`${cap} – Luminex project`} width={800} height={800} sizes="(max-width: 767px) 100vw, 33vw" /><figcaption>{cap}</figcaption></figure>
             </Reveal>
           ))}
+        </div>
+      </section>
+      {/* Press coverage (client, 4 Nov); the full list lives on /press. */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle eyebrow="In the news" title="Press coverage" />
+          <PressCoverage headingLevel={3} />
         </div>
       </section>
       <CtaBox />

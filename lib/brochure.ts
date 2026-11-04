@@ -6,7 +6,7 @@
 export const performance = {
   title: "Performance that speaks",
   intro:
-    "Luminex systems are engineered with precision, tested for performance and built to deliver unmatched value for years to come.",
+    "Luminex® systems are engineered with precision, tested for performance and built to deliver unmatched value for years to come.",
   stats: [
     { value: "40", unit: "%", label: "Better thermal insulation", detail: "Up to 40% better insulation for energy efficiency" },
     { value: "38", unit: "dB", label: "Noise reduction", detail: "Up to 38 dB noise reduction for a quieter indoors" },
@@ -34,7 +34,8 @@ export const comparison = {
   ],
 };
 
-export type Swatch = { name: string; code?: string; hex: string; wood?: boolean };
+// `image` is a photo of the real finish (client supplied, 4 Nov); hex is the fallback/average.
+export type Swatch = { name: string; code?: string; hex: string; wood?: boolean; image?: string };
 
 // Brochure page 11.
 export const schucoBrochure = {
@@ -63,7 +64,8 @@ export const schucoBrochure = {
     { name: "Jet Black", code: "RAL 9005", hex: "#0A0A0A" },
     { name: "Bronze", hex: "#6A4A2E" },
     { name: "Champagne", hex: "#D2B791" },
-    { name: "Wood finish", hex: "#6E2B1F", wood: true },
+    // Plain RAL-style shade, no woodgrain (client, 4 Nov).
+    { name: "Wood finish", hex: "#6B3E26" },
   ] as Swatch[],
   coloursNote: "Custom colours on request.",
   // Wide Schüco photo for more impact (client, 31 Oct; from schueco.com, as the client suggested).
@@ -95,7 +97,8 @@ export const fenova = {
   colours: [
     { name: "White", hex: "#FFFFFF" },
     { name: "Black", hex: "#111111" },
-    { name: "Walnut D-Brown", hex: "#5E2A1C", wood: true },
+    { name: "Walnut D-Brown", hex: "#63402F", image: "/images/swatches/fenova-walnut-d-brown.jpg" },
+    { name: "C Brown", hex: "#D28542", image: "/images/swatches/fenova-c-brown.jpg" },
     { name: "Grey", hex: "#9E9E9E" },
     { name: "Graphite Grey", hex: "#4A4A4A" },
   ] as Swatch[],
@@ -122,15 +125,16 @@ export const brochureFaqs = {
   },
   colours: {
     q: "What colours do Luminex windows and doors come in?",
-    a: "Schüco aluminium systems come in RAL 9016 Traffic White, RAL 9006 White Aluminium, RAL 7035 Light Grey, RAL 7016 Anthracite Grey, RAL 9005 Jet Black, bronze, champagne and wood finish, with custom colours on request. Fenova uPVC profiles come in white, black, walnut D-brown, grey and graphite grey.",
+    a: "Schüco aluminium systems come in RAL 9016 Traffic White, RAL 9006 White Aluminium, RAL 7035 Light Grey, RAL 7016 Anthracite Grey, RAL 9005 Jet Black, bronze, champagne and wood finish, with custom colours on request. Fenova uPVC profiles come in white, black, walnut D-brown, C brown, grey and graphite grey.",
   },
   coextruded: {
     q: "What is the difference between laminated and co-extruded uPVC profiles?",
-    a: "A laminated uPVC profile has a woodgrain or colour film pasted on its surface, which can peel, bubble or chip over time. A co-extruded profile, such as Fenova's, fuses the colour layer with the uPVC during extrusion, so there is no film to peel and the colour and finish last with virtually no maintenance.",
+    // Client copy, 4 Nov. TODO(client): the WhatsApp message was cut off after "delaminate."; add the rest.
+    a: "In a laminated uPVC profile, a decorative film or foil is applied to the surface of an already manufactured white uPVC profile. Over time the decorative foil can start separating from the uPVC surface. Prolonged exposure to intense sunlight can cause certain laminates to fade, discolour or lose their original appearance, and scratches, cuts or physical damage to the decorative film can be difficult to repair seamlessly.\n\nIn a co-extruded profile, such as Fenova's, the coloured outer layer is manufactured simultaneously with the main uPVC profile through a specialised extrusion process. The colour layer becomes an integral part of the profile's surface, and no separate decorative foil or post-production lamination is required. Since there is no separately applied decorative film, there is no lamination layer that can peel or delaminate.",
   },
   upvcColours: {
     q: "What colours do uPVC windows come in?",
-    a: "Luminex uPVC windows and doors use Fenova co-extruded profiles in white, black, walnut D-brown, grey and graphite grey.",
+    a: "Luminex uPVC windows and doors use Fenova co-extruded profiles in white, black, walnut D-brown, C brown, grey and graphite grey.",
   },
   aluminiumColours: {
     q: "What colours do aluminium windows come in?",

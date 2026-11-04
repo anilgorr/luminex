@@ -25,7 +25,9 @@ export const site = {
   },
   emails: ["info@allyunitygroup.com", "ally.unity.group@gmail.com"],
   address: {
-    street: "Ground Floor, Jeewandeep Building, Salugara",
+    // Showroom name (client, 4 Nov). The building shows on Google Maps as "Jeevandeep Building".
+    showroom: "Shyam Decor Studio",
+    street: "Ground Floor, Jeevandeep Building, Salugara",
     locality: "Siliguri",
     region: "West Bengal",
     postalCode: "734008",
@@ -99,6 +101,9 @@ export const nav: NavItem[] = [
   { href: "/contact", label: "Contact Us" },
 ];
 
+// Registered trade mark (client, 4 Nov): use on prominent brand mentions in visible copy, not in titles or schema.
+export const brandMark = "Luminex®";
+
 export const telHref = (p: string) => "tel:" + p.replace(/[^\d+]/g, "");
 
 export const reasons = [
@@ -140,7 +145,7 @@ export const reasons = [
 export const faqs = [
   {
     q: "Where are you based?",
-    a: "Luminex Windows is based in Siliguri, West Bengal, at Ground Floor, Jeewandeep Building, Salugara (PIN 734008). We also have a liaison and coordination desk in Changbangdu, Thimphu, and installation teams serving Thimphu, Paro and Phuentsholing in Bhutan, and serve North Bengal, Sikkim, the Northeast — including Guwahati, Shillong, Gangtok and Darjeeling — from Siliguri.",
+    a: "Luminex Windows is based in Siliguri, West Bengal, at Ground Floor, Jeevandeep Building, Salugara (PIN 734008). We also have a liaison and coordination desk in Changbangdu, Thimphu, and installation teams serving Thimphu, Paro and Phuentsholing in Bhutan, and serve North Bengal, Sikkim, the Northeast — including Guwahati, Shillong, Gangtok and Darjeeling — from Siliguri.",
   },
   {
     q: "Do you have a partner or dealer in Bhutan?",
@@ -164,7 +169,7 @@ export const faqs = [
   },
   {
     q: "Where is your showroom in Siliguri?",
-    a: "Our Siliguri office is at Ground Floor, Jeewandeep Building, Salugara, Siliguri, West Bengal 734008. Message us on WhatsApp at +91 96099 88749 before you visit so the team can have samples ready for you.",
+    a: "Our Siliguri showroom, Shyam Decor Studio, is at Ground Floor, Jeevandeep Building, Salugara, Siliguri, West Bengal 734008. Message us on WhatsApp at +91 96099 88749 before you visit so the team can have samples ready for you.",
   },
   {
     q: "How long do delivery and installation take?",

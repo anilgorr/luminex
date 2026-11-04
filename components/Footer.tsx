@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { locations, site, telHref, waLink } from "@/lib/site";
+import { brandMark, locations, site, telHref, waLink } from "@/lib/site";
 import { FacebookIcon, InstagramIcon } from "./Icons";
 import { WhatsAppIcon } from "./WhatsAppButton";
 import LocationsMap from "./LocationsMap";
@@ -40,6 +40,7 @@ export default function Footer() {
               <li><Link href="/luminex-difference">Luminex Difference</Link></li>
               <li><Link href="/warranty">Warranty</Link></li>
               <li><Link href="/gallery">Gallery</Link></li>
+              <li><Link href="/press">Press coverage</Link></li>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/faq">FAQs</Link></li>
@@ -60,12 +61,12 @@ export default function Footer() {
             {site.phones.bhutan.map((p) => <p key={p}><a href={telHref(p)}>{p}</a></p>)}
             <p className={s.label}>Email</p>
             <p><a href={`mailto:${site.emails[0]}`}>{site.emails[0]}</a></p>
-            <p className={s.label}>Siliguri office</p>
-            <address>{site.address.street}, {site.address.locality}, {site.address.region} {site.address.postalCode}</address>
+            <p className={s.label}>Siliguri showroom</p>
+            <address>{site.address.showroom}, {site.address.street}, {site.address.locality}, {site.address.region} {site.address.postalCode}</address>
           </div>
         </div>
         <div className={s.copy}>
-          <p>© {new Date().getFullYear()} {site.name}</p>
+          <p>© {new Date().getFullYear()} {brandMark} Windows</p>
           <Link href="/privacy-policy">Privacy policy</Link>
         </div>
       </div>

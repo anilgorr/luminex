@@ -7,7 +7,7 @@ export default function Swatches({ colours }: { colours: Swatch[] }) {
     <ul className={s.list}>
       {colours.map((c) => (
         <li key={c.name} className={s.item}>
-          <span className={`${s.chip}${c.wood ? ` ${s.wood}` : ""}`} style={{ background: c.wood ? undefined : c.hex, ["--wood" as string]: c.hex }} aria-hidden="true" />
+          <span className={`${s.chip}${c.wood ? ` ${s.wood}` : ""}`} style={{ background: c.image ? `${c.hex} url(${c.image}) center / cover` : c.wood ? undefined : c.hex, ["--wood" as string]: c.hex }} aria-hidden="true" />
           <span className={s.label}>
             {c.code && <span className={s.code}>{c.code}</span>}
             <span>{c.name}</span>

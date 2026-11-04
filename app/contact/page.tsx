@@ -22,7 +22,7 @@ export default function Contact() {
           <SectionTitle eyebrow="Contact details" title="Happy to answer all your questions" center />
           <div className="grid-3">
             <Reveal><div className="info-card"><figure><Image src="/images/contact-info-img-1.jpg" alt="" width={413} height={400} /></figure><h3>Our Offices:</h3>
-              <address style={{ fontStyle: "normal" }}><p><strong>Siliguri:</strong> {a.street}, {a.locality}, {a.region} {a.postalCode}, {a.countryName}</p>
+              <address style={{ fontStyle: "normal" }}><p><strong>Siliguri showroom:</strong> {a.showroom}, {a.street}, {a.locality}, {a.region} {a.postalCode}, {a.countryName}</p>
               <p><strong>Bhutan Liaison &amp; Coordination Desk:</strong> Changbangdu, Thimphu</p></address></div></Reveal>
             <Reveal delay={100}><div className="info-card"><figure><Image src="/images/contact-info-img-2.jpg" alt="" width={413} height={400} /></figure><h3>Emails:</h3>
               {site.emails.map((e) => <p key={e}><a href={`mailto:${e}`}>{e}</a></p>)}</div></Reveal>
@@ -47,7 +47,7 @@ export default function Contact() {
             ]} />
           </div>
           <iframe className="map" style={{ height: "100%", minHeight: 450 }} loading="lazy" title="Luminex Windows location map"
-            src={`https://maps.google.com/maps?q=${encodeURIComponent(`${a.street}, ${a.locality}, ${a.region} ${a.postalCode}`)}&output=embed`} />
+            src={`https://maps.google.com/maps?q=${encodeURIComponent(`${a.showroom}, Jeevandeep Building, Salugara, ${a.locality}, ${a.region} ${a.postalCode}`)}&output=embed`} />
         </div>
       </section>
     </>

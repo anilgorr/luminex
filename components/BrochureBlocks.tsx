@@ -131,7 +131,7 @@ export function ProfilesAndColours() {
           </div>
           <div className={s.faq}>
             {faqs.map((f) => (
-              <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>
+              <details key={f.q}><summary>{f.q}</summary>{f.a.split("\n\n").map((para) => <p key={para}>{para}</p>)}</details>
             ))}
           </div>
           <p className={s.more}><Link href="/luminex-difference">See how Luminex compares with other windows</Link></p>

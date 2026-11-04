@@ -38,7 +38,7 @@ export default function About() {
           </Reveal>
           <div>
             <SectionTitle eyebrow="About us" title="Expertise in windows & doors for every style">
-              <p>Partner with a company dedicated to excellence in window and door installations, ensuring each project is handled with precision and care. From design and manufacturing to installation, Luminex delivers windows and doors that look beautiful and perform for decades.</p>
+              <p>Partner with a company dedicated to excellence in window and door installations, ensuring each project is handled with precision and care. From design and manufacturing to installation, Luminex® delivers windows and doors that look beautiful and perform for decades.</p>
             </SectionTitle>
             <div style={{ display: "grid", gap: 20, marginBottom: 30 }}>
               <Reveal><div className="mv-card"><img src="/images/icon-about-item-1.svg" alt="" /><div><h3>Our mission</h3><p>We aim to transform homes and businesses with high-quality window and door solutions that enhance aesthetics and improve energy efficiency.</p></div></div></Reveal>

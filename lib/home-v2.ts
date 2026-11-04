@@ -194,7 +194,7 @@ export const trust = {
   title: "A lifetime of possibilities",
   body: [
     "With over two decades of experience and established relationships in Bhutan, our leadership brings a deep understanding of the region's needs, expectations and evolving architectural landscape.",
-    "Today, that experience finds new expression through Luminex — a brand dedicated to premium system aluminium and uPVC doors and windows. Luminex combines years of industry insight with contemporary design, precision engineering and a commitment to lasting quality.",
+    "Today, that experience finds new expression through Luminex® — a brand dedicated to premium system aluminium and uPVC doors and windows. Luminex combines years of industry insight with contemporary design, precision engineering and a commitment to lasting quality.",
   ],
   cta: { href: "/about", label: "Learn more" },
 };
@@ -203,7 +203,7 @@ export const trust = {
 // Titles and copy follow the old site; the warranty line is updated and the duplicated
 // "Excellent Weather Insulation" card is replaced with the Schüco partnership.
 export const classicReasons = {
-  title: "So many reasons to choose Luminex",
+  title: "So many reasons to choose Luminex®",
   intro: "Luminex is proud to offer the expert guidance and peace-of-mind warranties needed to make your project a \u201chappily ever after\u201d.",
   items: [
     { icon: "/images/I1.png", title: "Professional Installation", text: "Even the highest quality windows and doors will underperform if they are installed incorrectly; this can lead to exposure to the elements, thermal heat loss, or issues with structural integrity." },

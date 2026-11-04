@@ -55,7 +55,8 @@ export const windowGroups: ProductGroup[] = [
     id: "aluminium-windows",
     title: "System Aluminium Windows",
     intro:
-      "For large spans, slim sightlines and contemporary façades, Luminex system aluminium windows combine structural strength with thermal-break profiles, Schüco systems and Schüco, Pego and Kinlong hardware. System aluminium windows start at ₹950 per sq ft.",
+      // Client copy, 4 Nov (no price here).
+      "Luminex® System Aluminium brings together architectural elegance, precision engineering and superior performance. Featuring advanced systems from globally renowned brands like Schüco, we offer sleek profiles, expansive glass views, exceptional structural strength and enhanced thermal and acoustic insulation, redefining modern spaces through design and innovation.",
     items: [
       { title: "Slim Sliding Systems", image: "/images/mission-image.jpg", text: "Minimal frames for floor-to-ceiling glass." },
       { title: "Fixed & Combination Windows", image: "/images/vision-image.jpg", text: "Fixed lights combined with opening sashes for custom elevations." },
