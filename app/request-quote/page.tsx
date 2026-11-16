@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Quote() {
   return (
     <>
-      <PageHeader title="Request A Quote" crumbs={[{ label: "Request a quote" }]} />
+      <PageHeader image="/images/headers/quote-planning.jpg" title="Request A Quote" crumbs={[{ label: "Request a quote" }]} />
       <section className="section section-bg-lines">
         <div className="container" style={{ maxWidth: 960 }}>
           <div className="form-wrap">

@@ -26,7 +26,6 @@ export type LocationPage = {
 };
 
 export const P = site.pricing;
-const wa = "WhatsApp +91 96099 88749";
 
 // Indicative starting price for a common window size, so answers can quote a rupee figure.
 export const example = (rate: number, w = 4, h = 5) => `₹${(rate * w * h).toLocaleString("en-IN")}`;
@@ -34,11 +33,10 @@ export const example = (rate: number, w = 4, h = 5) => `₹${(rate * w * h).toLo
 export const sharedFacts = (served: string): [string, string][] => [
   ["Partner status", site.partner],
   ["Delivery and installation", `${site.leadTime} from order`],
-  ["Warranty", "Profiles 15–25 years (by brand) · glass 15 years · hardware 5 years"],
+  ["Warranty", "Profiles 15–25 years (by brand) · glass 15 years · hardware 5 years, from the date of installation"],
   ["Profiles", site.brands.profiles.join(", ")],
   ["Glass", `${site.brands.glass.join(", ")} — double glazing, low-E, toughened, acoustic`],
   ["Hardware", site.brands.hardware.join(", ")],
   ["Served from", served],
-  ["Enquiries", `${wa} or call +91 99335 81666`],
 ];
 

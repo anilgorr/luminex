@@ -11,5 +11,5 @@ export const metadata: Metadata = {
   alternates: { canonical: "/windows" },
 };
 export default function Windows() {
-  return (<><PageHeader title="Windows" crumbs={[{ label: "Windows" }]} /><ProductGroups groups={windowGroups} /><ProfilesAndColours /><CtaBox /></>);
+  return (<><PageHeader image="/images/headers/windows-facade.jpg" title="Windows" crumbs={[{ label: "Windows" }]} /><ProductGroups groups={windowGroups} /><ProfilesAndColours /><CtaBox /></>);
 }

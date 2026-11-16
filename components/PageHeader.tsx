@@ -3,11 +3,12 @@ import Link from "next/link";
 import JsonLd from "./JsonLd";
 import { site } from "@/lib/site";
 
-export default function PageHeader({ title, crumbs }: { title: string; crumbs: { label: string; href?: string }[] }) {
+// Each menu page has its own header photo (client, 16 Nov: the same chairs photo was on almost every page).
+export default function PageHeader({ title, crumbs, image = "/images/page-header-bg.jpg" }: { title: string; crumbs: { label: string; href?: string }[]; image?: string }) {
   const all = [{ label: "Home", href: "/" }, ...crumbs];
   return (
     <section className="page-header">
-      <Image src="/images/page-header-bg.jpg" alt="" fill priority sizes="100vw" />
+      <Image src={image} alt="" fill priority sizes="100vw" />
       <div className="container">
         <h1>{title}</h1>
         <ol className="breadcrumb">

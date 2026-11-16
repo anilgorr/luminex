@@ -16,7 +16,7 @@ const a = site.address;
 export default function Contact() {
   return (
     <>
-      <PageHeader title="Contact us" crumbs={[{ label: "Contact us" }]} />
+      <PageHeader image="/images/headers/contact-residential-buildings.jpg" title="Contact us" crumbs={[{ label: "Contact us" }]} />
       <section className="section section-bg-lines">
         <div className="container">
           <SectionTitle eyebrow="Contact details" title="Happy to answer all your questions" center />

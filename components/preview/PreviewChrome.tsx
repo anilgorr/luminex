@@ -28,7 +28,7 @@ export function PreviewHeader({ logo = "green" }: { logo?: "green" | "white" }) 
       <header className={c.header}>
         <div className={`${c.wrap} ${c.headerRow}`}>
           <Link href="/" className={c.logo} aria-label="Luminex Windows home">
-            <Image src={logo === "white" ? "/images/web/luminex-white.png" : "/images/web/Luminex.png"} alt="Luminex" width={600} height={220} priority />
+            <Image src={logo === "white" ? "/images/web/luminex-white.png" : "/images/web/Luminex.png"} alt="Luminex" width={644} height={220} priority />
           </Link>
           <nav className={c.nav} aria-label="Main">
             {navV2.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
@@ -61,7 +61,7 @@ export function PreviewFooter() {
         </div>
         <div className={c.footGrid}>
           <div>
-            <Image src="/images/web/luminex-white.png" alt="Luminex" width={600} height={220} className={c.footLogo} />
+            <Image src="/images/web/luminex-white.png" alt="Luminex" width={644} height={220} className={c.footLogo} />
             <p>{site.tagline}</p>
             <div className={c.social}>
               <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Luminex on Facebook"><FacebookIcon size={18} /></a>

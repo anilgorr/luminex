@@ -1,0 +1,16 @@
+# Netlify: permanent redirects from the previous PHP site so old links and Google's index land on the new pages.
+/index.php              /                    301
+/about.php              /about               301
+/contact.php            /contact             301
+/windows.php            /windows             301
+/doors.php              /doors               301
+/gallery.php            /gallery             301
+/luminex-difference.php /luminex-difference  301
+/renovations.php        /renovations         301
+/request-quote.php      /request-quote       301
+/insert-request.php     /request-quote       301
+/services.php           /windows             301
+/blog.php               /blog                301
+/blog-single.php        /blog                301
+# Preview routes are not part of the live site.
+/preview/*              /                    301

@@ -24,7 +24,7 @@ const facilities = [
 export default function About() {
   return (
     <>
-      <PageHeader title="About us" crumbs={[{ label: "About us" }]} />
+      <PageHeader image="/images/headers/about-glazed-interior.jpg" title="About us" crumbs={[{ label: "About us" }]} />
       <section className="section section-bg-lines">
         <div className="container grid-2">
           <Reveal>

@@ -108,7 +108,7 @@ export default function WindowExplodeV2({
                 <Label l={LAYERS[4]} />
               </div>
               <div className={s.layer} style={{ transform: "translateZ(var(--z-handle))" }}>
-                {/* uPVC handle: rose plate with a key cylinder, and a lever standing proud of it */}
+                {/* Black uPVC casement handle (client photo, 16 Nov): rounded rose, boss and a downward lever */}
                 <div className={s.handle}>
                   <span className={s.rose} />
                   <span className={s.roseDepth} />

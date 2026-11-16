@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function Difference() {
   return (
     <>
-      <PageHeader title="Luminex Difference" crumbs={[{ label: "Luminex Difference" }]} />
+      <PageHeader image="/images/headers/difference-glazed-pavilion.jpg" title="Luminex Difference" crumbs={[{ label: "Luminex Difference" }]} />
       <section className="section reasons">
         <div className="container">
           <SectionTitle eyebrow="Choose Luminex" title="So many reasons to choose Luminex" center />

@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
         <div className={s.grid}>
           <div>
-            <Image src="/images/web/luminex-white.png" alt="Luminex" width={600} height={220} className={s.logo} />
+            <Image src="/images/web/luminex-white.png" alt="Luminex" width={644} height={220} className={s.logo} />
             <p>{site.tagline}</p>
             <div className={s.social}>
               <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Luminex on Facebook"><FacebookIcon size={18} /></a>

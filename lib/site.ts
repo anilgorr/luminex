@@ -2,7 +2,7 @@
 // JSON-LD schema, sitemap and llms.txt.
 // Facts below were confirmed by Luminex on 9 Oct 2026.
 // TODO(client): Bhutan office street addresses, Siliguri showroom + factory address,
-// warranty start point (manufacture vs installation), confirm website email.
+// confirm website email. (Warranty runs from installation: client, 16 Nov.)
 
 export const site = {
   name: "Luminex Windows",
@@ -55,7 +55,8 @@ export const site = {
     hardware: "5 years",
     glass: "15 years",
     exclusions: "Physical damage, modification and mishandling are not covered.",
-    summary: "Up to 25 years on profiles, 15 years on glass, 5 years on hardware",
+    starts: "from the date of installation", // client, 16 Nov
+    summary: "Up to 25 years on profiles, 15 years on glass, 5 years on hardware, from the date of installation",
   },
   brands: {
     profiles: ["Schüco", "Luminex", "Fenova"],
@@ -157,7 +158,7 @@ export const faqs = [
   },
   {
     q: "What warranty do Luminex windows come with?",
-    a: "Window profiles carry a 15 to 25 year warranty depending on the profile brand, glass is covered for 15 years and hardware for 5 years. The warranty does not cover physical damage, modification or mishandling. In Bhutan, our Thimphu service team attends warranty calls within 2 business days.",
+    a: "Window profiles carry a 15 to 25 year warranty depending on the profile brand, glass is covered for 15 years and hardware for 5 years, all from the date of installation. The warranty does not cover physical damage, modification or mishandling. In Bhutan, our Thimphu service team attends warranty calls within 2 business days.",
   },
   {
     q: "How is Luminex different from other window brands?",
@@ -165,11 +166,11 @@ export const faqs = [
   },
   {
     q: "Can I see a sample before ordering?",
-    a: "Yes. You can see window and door samples at our Siliguri office, or message us on WhatsApp — India +91 96099 88749, Bhutan +975 1772 8800 — to arrange a sample viewing near you before you order.",
+    a: "Yes. You can see window and door samples at our Siliguri office, or message us on WhatsApp — India +91 99335 81666, Bhutan +975 1772 8800 — to arrange a sample viewing near you before you order.",
   },
   {
     q: "Where is your showroom in Siliguri?",
-    a: "Our Siliguri showroom, Shyam Decor Studio, is at Ground Floor, Jeevandeep Building, Salugara, Siliguri, West Bengal 734008. Message us on WhatsApp at +91 96099 88749 before you visit so the team can have samples ready for you.",
+    a: "Our Siliguri showroom, Shyam Decor Studio, is at Ground Floor, Jeevandeep Building, Salugara, Siliguri, West Bengal 734008. Message us on WhatsApp at +91 99335 81666 before you visit so the team can have samples ready for you.",
   },
   {
     q: "How long do delivery and installation take?",

@@ -16,21 +16,21 @@ export const performance = {
   link: { href: "/luminex-difference", label: "See how Luminex compares" },
 };
 
-// Brochure page 9: "The Difference You Deserve" comparison.
+// Brochure page 9: "The Difference You Deserve" comparison; wording revised by the client 16 Nov
+// (other uPVC rated below average, security = European standard burglary resistance, no maintenance row).
 export const comparison = {
   title: "The difference you deserve",
   intro:
     "Luminex systems are engineered with precision, tested for performance and built to deliver unmatched value for years to come. From materials to manufacturing, every Luminex system is designed to outperform and outlast conventional solutions.",
   columns: ["Luminex systems (uPVC & aluminium)", "Other standard aluminium windows", "Other uPVC windows"],
   rows: [
-    { feature: "Thermal insulation", luminex: "Up to 40% better insulation for energy efficiency", aluminium: "Average insulation, higher heat transfer", upvc: "Good insulation but less durable" },
-    { feature: "Acoustic performance", luminex: "Up to 38 dB noise reduction for a quieter indoors", aluminium: "Limited noise reduction", upvc: "Moderate noise reduction" },
-    { feature: "Air tightness", luminex: "Up to 600 Pa air tightness for superior comfort", aluminium: "Lower air tightness", upvc: "Average performance" },
-    { feature: "Wind load resistance", luminex: "Up to 2400 Pa for high-rise and extreme conditions", aluminium: "Moderate wind resistance", upvc: "Limited for high-rise applications" },
+    { feature: "Thermal insulation", luminex: "Up to 40% better insulation for energy efficiency", aluminium: "Average insulation, higher heat transfer", upvc: "Below-average insulation" },
+    { feature: "Acoustic performance", luminex: "Up to 38 dB noise reduction for a quieter indoors", aluminium: "Limited noise reduction", upvc: "Below-average noise reduction" },
+    { feature: "Air tightness", luminex: "Up to 600 Pa air tightness for superior comfort", aluminium: "Lower air tightness", upvc: "Below-average air tightness" },
+    { feature: "Wind load resistance", luminex: "Up to 2400 Pa for high-rise and extreme conditions", aluminium: "Moderate wind resistance", upvc: "Low wind resistance" },
     { feature: "Durability", luminex: "Powder coated, corrosion resistant and built to last", aluminium: "Prone to corrosion over time", upvc: "May warp, crack or fade over time" },
-    { feature: "Design flexibility", luminex: "Slim profiles, large openings and modern aesthetics", aluminium: "Limited sizes and thick profiles", upvc: "Limited design possibilities" },
-    { feature: "Security", luminex: "Multi-point locking and advanced hardware", aluminium: "Basic locking mechanisms", upvc: "Standard locking systems" },
-    { feature: "Maintenance", luminex: "Low maintenance, easy to clean", aluminium: "Requires regular maintenance", upvc: "High maintenance, prone to wear" },
+    { feature: "Design flexibility", luminex: "Large openings and modern aesthetics", aluminium: "Limited sizes", upvc: "Limited design possibilities" },
+    { feature: "Security", luminex: "European standard burglary resistance", aluminium: "Minimal resistance against forced entry", upvc: "Standard locking systems" },
   ],
 };
 

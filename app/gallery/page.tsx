@@ -22,7 +22,7 @@ const items = [
 export default function Gallery() {
   return (
     <>
-      <PageHeader title="Gallery" crumbs={[{ label: "Gallery" }]} />
+      <PageHeader image="/images/our-testimonial-bg.jpg" title="Gallery" crumbs={[{ label: "Gallery" }]} />
       <section className="section section-bg-lines">
         <div className="container gallery-grid">
           {items.map(([src, cap], i) => (

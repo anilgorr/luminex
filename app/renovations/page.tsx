@@ -22,7 +22,7 @@ const steps = [
 export default function Renovations() {
   return (
     <>
-      <PageHeader title="Renovations" crumbs={[{ label: "Renovations" }]} />
+      <PageHeader image="/images/headers/renovations-window-installation.jpg" title="Renovations" crumbs={[{ label: "Renovations" }]} />
       <section className="section section-bg-lines">
         <div className="container grid-2">
           <div>

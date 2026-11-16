@@ -28,7 +28,7 @@ export default function Header() {
       <header className={`header${scrolled ? " scrolled" : ""}`}>
         <div className="container">
           <Link href="/" className="logo" aria-label="Luminex Windows home">
-            <Image src="/images/web/Luminex.png" alt="Luminex – windows, doors, facade" width={600} height={220} priority />
+            <Image src="/images/web/Luminex.png" alt="Luminex – windows, doors, facade" width={644} height={220} priority />
           </Link>
           <nav className="nav" aria-label="Main">
             {nav.map((n) => <Link key={n.href} href={n.href} className={isActive(n.href) ? "active" : ""}>{n.label}</Link>)}

@@ -14,10 +14,9 @@ const bhutanFacts = (office: string): [string, string][] => [
   ["Delivery and installation", `${site.leadTime} from order, delivered to your site`],
   ["Paperwork", "None for the customer — Luminex handles delivery to site"],
   ["Service", "24x7 service team in Thimphu; calls attended within 2 business days"],
-  ["Warranty", "Profiles 15–25 years (by brand) · glass 15 years · hardware 5 years"],
+  ["Warranty", "Profiles 15–25 years (by brand) · glass 15 years · hardware 5 years, from the date of installation"],
   ["Brands", "Schüco, Luminex and Fenova profiles · Saint-Gobain glass · Schüco, Pego, Kinlong hardware"],
   ["Partner status", site.partner],
-  ["Enquiries", BT_WA],
 ];
 
 const bhutanCityFaqs = (city: string) => [
@@ -307,8 +306,7 @@ export const bhutanPages: LocationPage[] = [
       ["Prices", `uPVC from ₹${P.upvcFrom}/sq ft · system aluminium from ₹${P.aluminiumFrom}/sq ft; project pricing on request`],
       ["Delivery", `${site.leadTime} from order, delivered to site, no paperwork for the client`],
       ["Project references", "Hotel and commercial project catalog available on request"],
-      ["Enquiries", BT_WA],
-    ],
+        ],
     sections: [
       {
         h2: "What hotel projects need from windows",
@@ -379,7 +377,7 @@ export const bhutanPages: LocationPage[] = [
       ["Hardware", site.warranty.hardware],
       ["Not covered", "Physical damage, modification, mishandling"],
       ["Service in Bhutan", "24x7 team in Thimphu; calls attended within 2 business days"],
-      ["Service contact", "India: WhatsApp +91 96099 88749 · Bhutan: WhatsApp +975 1772 8800"],
+      ["Service contact", "India: WhatsApp +91 99335 81666 · Bhutan: WhatsApp +975 1772 8800"],
     ],
     sections: [
       {

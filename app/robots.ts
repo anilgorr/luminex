@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
   if (!isProduction) return { rules: [{ userAgent: "*", disallow: "/" }] };
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: ["/api/"] },
+      { userAgent: "*", allow: "/", disallow: ["/api/", "/preview"] },
       { userAgent: ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-Web", "PerplexityBot", "Google-Extended", "Bingbot"], allow: "/" },
     ],
     sitemap: `${site.url}/sitemap.xml`,

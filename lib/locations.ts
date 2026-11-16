@@ -8,7 +8,7 @@ import { hillPages } from "./locations-hills";
 
 import { P, example, sharedFacts, type LocationPage } from "./location-common";
 export type { LocationPage, Section } from "./location-common";
-const wa = "WhatsApp +91 96099 88749";
+const wa = "WhatsApp +91 99335 81666";
 
 const phase1: LocationPage[] = [
   // ---------------------------------------------------------------- Siliguri
@@ -245,7 +245,9 @@ const phase1: LocationPage[] = [
       "Luminex Windows supplies and installs uPVC windows in Guwahati, served from its office in Siliguri. Standard uPVC windows start at ₹495 per sq ft, delivery and installation take 30–60 days from order, and profiles carry a 15–25 year warranty. Luminex is an official Schüco channel partner.",
     facts: [
       ["Price", `uPVC windows from ₹${P.upvcFrom} per sq ft (standard sizes)`],
-      ...sharedFacts("Luminex office, Siliguri (no Guwahati office)"),
+      ...sharedFacts("Luminex, Siliguri"),
+      // Client, 16 Nov: Guwahati work is mainly commercial projects.
+      ["Projects", "Commercial projects preferred"],
     ],
     sections: [
       {
@@ -312,7 +314,9 @@ const phase1: LocationPage[] = [
       "System aluminium windows in Guwahati start at ₹950 per sq ft with Luminex Windows, so a 4 ft × 5 ft window starts at about ₹19,000. Size, profile system, glass and hardware decide the final price. Luminex, an official Schüco channel partner, delivers and installs in Guwahati within 30–60 days.",
     facts: [
       ["Price", `System aluminium windows from ₹${P.aluminiumFrom} per sq ft (standard sizes)`],
-      ...sharedFacts("Luminex office, Siliguri (no Guwahati office)"),
+      ...sharedFacts("Luminex, Siliguri"),
+      // Client, 16 Nov: Guwahati work is mainly commercial projects.
+      ["Projects", "Commercial projects preferred"],
     ],
     sections: [
       {

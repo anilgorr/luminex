@@ -10,5 +10,5 @@ export const metadata: Metadata = {
   alternates: { canonical: "/doors" },
 };
 export default function Doors() {
-  return (<><PageHeader title="Doors" crumbs={[{ label: "Doors" }]} /><ProductGroups groups={doorGroups} /><CtaBox /></>);
+  return (<><PageHeader image="/images/headers/doors-courtyard-sliding.jpg" title="Doors" crumbs={[{ label: "Doors" }]} /><ProductGroups groups={doorGroups} /><CtaBox /></>);
 }
