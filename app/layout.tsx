@@ -12,6 +12,8 @@ import { site } from "@/lib/site";
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"], variable: "--font-jakarta", display: "swap" });
 
 export const metadata: Metadata = {
+  // Google Search Console ownership (Anil, 23 Nov 2026).
+  verification: { google: "JZ7g5OgBze-ohsVpdtpZHBWcV2_21K2oRsnLhwXwAh4" },
   metadataBase: new URL(site.url),
   title: { default: "uPVC & Aluminium Windows and Doors in India & Bhutan | Luminex Windows", template: "%s | Luminex Windows" },
   description: site.description,
