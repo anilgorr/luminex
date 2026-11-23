@@ -12,8 +12,12 @@ import { useEffect } from "react";
 // - Visits from ChatGPT, Perplexity, Gemini and Claude show up in GA4 as referral traffic
 //   (chatgpt.com, perplexity.ai, gemini.google.com, claude.ai), which is how AI-search wins are measured.
 
+// Google Tag Manager container (Digipuush, 23 Nov 2026). GA4 is configured inside GTM;
+// this code only pushes events (generate_lead etc.) to the dataLayer for GTM triggers.
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-5Z6KB9TX";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-const ENABLED = Boolean(GA_ID) && process.env.NEXT_PUBLIC_SITE_ENV === "production";
+const PROD = process.env.NEXT_PUBLIC_SITE_ENV === "production";
+const ENABLED = PROD && Boolean(GA_ID) && !GTM_ID;
 
 type Params = Record<string, string | number | undefined>;
 declare global { interface Window { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void } }
@@ -48,6 +52,18 @@ export default function Analytics() {
     return () => document.removeEventListener("click", onClick, { capture: true });
   }, []);
 
+  if (PROD && GTM_ID) {
+    return (
+      <>
+        <Script id="gtm" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          (function(){ function g(){ window.dataLayer.push(arguments); } g('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' }); })();
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');
+        `}</Script>
+        <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style={{ display: "none", visibility: "hidden" }} title="Google Tag Manager" /></noscript>
+      </>
+    );
+  }
   if (!ENABLED) return null;
   return (
     <>
