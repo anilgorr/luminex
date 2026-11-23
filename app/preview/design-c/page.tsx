@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/Img";
 import Link from "next/link";
 import { Familjen_Grotesk } from "next/font/google";
 import HeroC from "./HeroC";

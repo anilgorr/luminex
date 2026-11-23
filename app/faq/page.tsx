@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import { metaFor } from "@/lib/meta";
 import PageHeader from "@/components/PageHeader";
 import SectionTitle from "@/components/SectionTitle";
 import Faq from "@/components/Faq";
 import CtaBox from "@/components/CtaBox";
 
-export const metadata: Metadata = {
-  title: "FAQs — uPVC & Aluminium Windows, Prices, Warranty, Bhutan",
+export const metadata: Metadata = metaFor("/faq", {
+  title: "FAQs — uPVC & Aluminium Windows, Prices, Warranty, Bhutan | Luminex Windows",
   description: "Answers to the questions Luminex customers ask most: where we are based, Bhutan service, prices from ₹495/sq ft, warranty, glass options, delivery time and maintenance.",
-  alternates: { canonical: "/faq" },
-};
+});
 
 export default function FaqPage() {
   return (

@@ -196,7 +196,7 @@ export const trust = {
     "With over two decades of experience and established relationships in Bhutan, our leadership brings a deep understanding of the region's needs, expectations and evolving architectural landscape.",
     "Today, that experience finds new expression through Luminex® — a brand dedicated to premium system aluminium and uPVC doors and windows. Luminex combines years of industry insight with contemporary design, precision engineering and a commitment to lasting quality.",
   ],
-  cta: { href: "/about", label: "Learn more" },
+  cta: { href: "/about", label: "Learn more about Luminex" },
 };
 
 // "So many reasons to choose Luminex", restored from the previous site's design (client, 28 Oct).

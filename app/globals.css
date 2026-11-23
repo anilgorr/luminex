@@ -40,7 +40,7 @@ button, input, textarea, select { font-family: inherit; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .section { padding: 100px 0; }
-.section-bg-lines { background: url("/images/section-bg-shape.png") repeat-y top center / 100% auto; }
+.section-bg-lines { background: url("/images/section-bg-shape.webp") repeat-y top center / 100% auto; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -140,7 +140,7 @@ button, input, textarea, select { font-family: inherit; }
 .customer-badge span { font-size: 16px; margin-top: 10px; line-height: 1.3em; }
 
 /* ---------- Reasons / services ---------- */
-.reasons { position: relative; background: url("/images/our-service-bg.jpg") center / cover no-repeat; }
+.reasons { position: relative; background: url("/images/our-service-bg.webp") center / cover no-repeat; }
 .reasons::before { content: ""; position: absolute; inset: 0; background: rgba(241,239,240,.9); }
 .reasons .container { position: relative; }
 .reason-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 40px; }
@@ -223,7 +223,7 @@ button, input, textarea, select { font-family: inherit; }
 .product-card:hover .overlay p { max-height: 120px; }
 
 /* ---------- CTA box ---------- */
-.cta-box { position: relative; background: url("/images/cta-bg.jpg") center / cover; padding: 80px 0; }
+.cta-box { position: relative; background: url("/images/cta-bg.webp") center / cover; padding: 80px 0; }
 .cta-box::before { content: ""; position: absolute; inset: 0; background: rgba(28,71,34,.88); }
 .cta-box .container { position: relative; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
 .cta-box h2 { color: #fff; font-size: 40px; margin-bottom: 20px; }

@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "@/components/Img";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { hero, trust } from "@/lib/home-v2";
@@ -25,7 +25,7 @@ export default function HeroD() {
       <div className={s.stage} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
         {hero.slides.map((sl, k) => (
           <div key={sl.src} className={`${s.slide}${k === i ? ` ${s.on}` : ""}`} aria-hidden={k !== i}>
-            <Image src={sl.src} alt={sl.alt} fill priority={k === 0} sizes="100vw" />
+            <Image src={sl.src} alt={sl.alt} fill priority={k === 0} fetchPriority={k === 0 ? "high" : "low"} sizes="100vw" />
           </div>
         ))}
         <div className={s.progress}>
@@ -41,7 +41,7 @@ export default function HeroD() {
           The keyword H1 stays as the small line above the title, for search and AI answers. */}
       <div className={s.trust}>
         <div className={`${s.wrap} ${s.trustGrid}`}>
-          <p className={s.trustMark} aria-label={`${trust.years} ${trust.unit.toLowerCase()} ${trust.tagline}`}>
+          <p className={s.trustMark}>
             <span className={s.trustNum} aria-hidden="true">{trust.years}</span>
             <span className={s.trustWords} aria-hidden="true">
               <span className={s.trustUnit}>{trust.unit}</span>

@@ -1,6 +1,5 @@
-import Image from "next/image";
+import Image from "@/components/Img";
 import Link from "next/link";
-import { Bodoni_Moda } from "next/font/google";
 import HeroD from "./HeroD";
 import WindowExplodeV2 from "@/components/preview/WindowExplodeV2";
 import { PreviewHeader, PreviewFooter, PreviewWhatsApp, PreviewFaq } from "@/components/preview/PreviewChrome";
@@ -9,9 +8,9 @@ import Footer from "@/components/Footer";
 import { classicReasons, clients, clientsIntro, explodeSteps, latestPosts, partners, process, products, schuco } from "@/lib/home-v2";
 import { betterBand, performance, performanceImage, schucoBrochure } from "@/lib/brochure";
 import Swatches from "@/components/Swatches";
+import Testimonials from "@/components/Testimonials";
 import s from "./d.module.css";
 
-const bodoni = Bodoni_Moda({ subsets: ["latin"], weight: ["400", "500"], style: ["normal", "italic"], variable: "--font-d-display", display: "swap" });
 
 
 // Design D view. `light` renders the white-background variant (client request, 28 Oct).
@@ -21,7 +20,7 @@ const bodoni = Bodoni_Moda({ subsets: ["latin"], weight: ["400", "500"], style: 
 // this view is the real homepage). The white variant uses the site header and footer (client, 31 Oct).
 export default function DesignDView({ light = false, chrome = true }: { light?: boolean; chrome?: boolean }) {
   return (
-    <div className={`${s.root} ${light ? s.light : ""} ${bodoni.variable}`}>
+    <div className={`${s.root} ${light ? s.light : ""}`}>
       {chrome && (light ? <Header /> : <PreviewHeader logo="white" />)}
 
       <HeroD />
@@ -62,7 +61,7 @@ export default function DesignDView({ light = false, chrome = true }: { light?: 
           <div className="reason-grid">
             {classicReasons.items.map((r) => (
               <div className="reason" key={r.title}>
-                <div className="icon"><img src={r.icon} alt="" width={52} height={52} /></div>
+                <div className="icon"><img src={r.icon} alt="" aria-hidden="true" width={52} height={52} /></div>
                 <div><h3>{r.title}</h3><p>{r.text}</p></div>
               </div>
             ))}
@@ -85,6 +84,9 @@ export default function DesignDView({ light = false, chrome = true }: { light?: 
           <p className={s.clientsMore}>And many more</p>
         </div>
       </section>
+
+      {/* Customer quotes: hidden until real testimonials are added to lib/testimonials.ts. */}
+      <Testimonials />
 
       <section className={s.productsSection} aria-labelledby="d-products">
         <div className={s.wrap}><h2 id="d-products" className={s.h2}>What we make</h2></div>
@@ -176,7 +178,7 @@ export default function DesignDView({ light = false, chrome = true }: { light?: 
           <div className={s.posts}>
             {latestPosts.map((p) => (
               <article key={p.slug}>
-                <Link href={`/blog/${p.slug}`} className={s.postImg}><Image src={p.image} alt="" width={1366} height={768} sizes="(max-width: 900px) 100vw, 33vw" /></Link>
+                <Link href={`/blog/${p.slug}`} className={s.postImg} aria-hidden="true" tabIndex={-1}><Image src={p.image} alt="" aria-hidden="true" width={1200} height={630} sizes="(max-width: 900px) 100vw, 33vw" /></Link>
                 <h3><Link href={`/blog/${p.slug}`}>{p.title}</Link></h3>
                 <p>{p.excerpt}</p>
               </article>

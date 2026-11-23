@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { metaFor } from "@/lib/meta";
+import Image from "@/components/Img";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import MissionTabs from "@/components/MissionTabs";
 
-export const metadata: Metadata = {
-  title: "About Us – uPVC Window & Door Manufacturer",
+export const metadata: Metadata = metaFor("/about", {
+  title: "About Us – uPVC Window & Door Manufacturer | Luminex Windows",
   description: "Luminex Windows manufactures premium uPVC and system aluminium windows and doors for homes and businesses across India and Bhutan. Official Schüco channel partner with an office in Siliguri and a Bhutan liaison desk in Thimphu.",
-  alternates: { canonical: "/about" },
-};
+});
 
 const facilities = [
   ["icon-about-facility-1.svg", "Energy saving technologies"],
@@ -41,8 +41,8 @@ export default function About() {
               <p>Partner with a company dedicated to excellence in window and door installations, ensuring each project is handled with precision and care. From design and manufacturing to installation, Luminex® delivers windows and doors that look beautiful and perform for decades.</p>
             </SectionTitle>
             <div style={{ display: "grid", gap: 20, marginBottom: 30 }}>
-              <Reveal><div className="mv-card"><img src="/images/icon-about-item-1.svg" alt="" /><div><h3>Our mission</h3><p>We aim to transform homes and businesses with high-quality window and door solutions that enhance aesthetics and improve energy efficiency.</p></div></div></Reveal>
-              <Reveal delay={100}><div className="mv-card"><img src="/images/icon-about-item-2.svg" alt="" /><div><h3>Our vision</h3><p>We believe in integrity and sustainability. Our focus is on delivering not just products but solutions that improve homes and reduce energy use.</p></div></div></Reveal>
+              <Reveal><div className="mv-card"><img src="/images/icon-about-item-1.svg" alt="" aria-hidden="true" /><div><h3>Our mission</h3><p>We aim to transform homes and businesses with high-quality window and door solutions that enhance aesthetics and improve energy efficiency.</p></div></div></Reveal>
+              <Reveal delay={100}><div className="mv-card"><img src="/images/icon-about-item-2.svg" alt="" aria-hidden="true" /><div><h3>Our vision</h3><p>We believe in integrity and sustainability. Our focus is on delivering not just products but solutions that improve homes and reduce energy use.</p></div></div></Reveal>
             </div>
             <Link href="/contact" className="btn">Contact Now</Link>
           </div>
@@ -52,7 +52,7 @@ export default function About() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container feature-list">
           {facilities.map(([ic, t], i) => (
-            <Reveal key={t} delay={(i % 3) * 100}><div className="feature"><img src={`/images/${ic}`} alt="" /><p>{t}</p></div></Reveal>
+            <Reveal key={t} delay={(i % 3) * 100}><div className="feature"><img src={`/images/${ic}`} alt="" aria-hidden="true" /><p>{t}</p></div></Reveal>
           ))}
         </div>
       </section>

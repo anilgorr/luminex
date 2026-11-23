@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { metaFor } from "@/lib/meta";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import { site } from "@/lib/site";
@@ -6,11 +7,10 @@ import { site } from "@/lib/site";
 // Plain-language policy written for the site as built (WhatsApp enquiries, newsletter, GA4).
 // Have the client (or their lawyer) review it before launch, and add the registered company name.
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
+export const metadata: Metadata = metaFor("/privacy-policy", {
+  title: "Privacy Policy | Luminex Windows",
   description: "How Luminex Windows collects, uses and protects the details you share through our website, WhatsApp enquiries and newsletter.",
-  alternates: { canonical: "/privacy-policy" },
-};
+});
 
 const UPDATED = "10 October 2026";
 

@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "@/components/Img";
 import { useState } from "react";
 const tabs = [
   { key: "mission", label: "Our mission", icon: "/images/icon-mission-nav.svg", img: "/images/mission-image.jpg",
@@ -18,7 +18,7 @@ export default function MissionTabs() {
       <div className="tabs" role="tablist" style={{ justifyContent: "center" }}>
         {tabs.map((x, i) => (
           <button key={x.key} role="tab" aria-selected={i === a} className={i === a ? "active" : ""} onClick={() => setA(i)}>
-            <img src={x.icon} alt="" />{x.label}
+            <img src={x.icon} alt="" aria-hidden="true" />{x.label}
           </button>
         ))}
       </div>

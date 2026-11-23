@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
+import { metaFor } from "@/lib/meta";
 import PageHeader from "@/components/PageHeader";
 import ProductGroups from "@/components/ProductGroups";
 import CtaBox from "@/components/CtaBox";
 import { windowGroups } from "@/lib/content";
 import { ProfilesAndColours } from "@/components/BrochureBlocks";
 
-export const metadata: Metadata = {
-  title: "uPVC & Aluminium Windows – Sliding, Casement, Tilt & Turn",
+export const metadata: Metadata = metaFor("/windows", {
+  title: "uPVC & Aluminium Windows – Sliding, Casement, Tilt & Turn | Luminex Windows",
   description: "Luminex uPVC and system aluminium windows: sliding, casement, tilt & turn, fixed and custom shapes. Energy efficient, soundproof, dust- and rain-proof, from ₹495/sq ft, installed in 30–60 days by an official Schüco channel partner.",
-  alternates: { canonical: "/windows" },
-};
+});
 export default function Windows() {
   return (<><PageHeader image="/images/headers/windows-facade.jpg" title="Windows" crumbs={[{ label: "Windows" }]} /><ProductGroups groups={windowGroups} /><ProfilesAndColours /><CtaBox /></>);
 }

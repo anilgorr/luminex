@@ -19,7 +19,7 @@ export default function LeadForm({ fields, type, submitLabel = "Send on WhatsApp
     const text = `Hi Luminex, ${type === "quote" ? "I'd like a quote" : "I have an enquiry"}.\n\n${lines.join("\n")}`;
     // Opened synchronously inside the submit handler so browsers don't block it as a pop-up.
     window.open(waLink(region, text), "_blank", "noopener,noreferrer");
-    track("generate_lead", { form: type, region });
+    track("generate_lead", { method: "quote_form", form: type, region });
     setState("ok");
     fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type, ...data }) }).catch(() => {});
     form.reset();

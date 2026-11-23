@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { metaFor } from "@/lib/meta";
+import Image from "@/components/Img";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import CtaBox from "@/components/CtaBox";
 
-export const metadata: Metadata = {
-  title: "Window & Door Replacement and Renovation",
-  description: "Replace old wooden or aluminium windows with Luminex uPVC — measured, removed and installed by our own team with minimal disruption. Free consultation and quote.",
-  alternates: { canonical: "/renovations" },
-};
+export const metadata: Metadata = metaFor("/renovations", {
+  title: "Window & Door Replacement and Renovation | Luminex Windows",
+  description: "Replace old wooden or aluminium windows with Luminex uPVC, measured, removed and installed by our own team with minimal disruption. Free quote.",
+});
 
 const steps = [
   ["Free consultation", "We visit your home, understand your needs and recommend the right window and door systems."],

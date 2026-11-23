@@ -9,10 +9,10 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# 1. One canonical address: https://www.luminexwindow.com
+# 1. One canonical address: https://luminexwindow.com (no www)
 RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^ https://www.luminexwindow.com%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://luminexwindow.com%{REQUEST_URI} [L,R=301]
 
 # 2. Old PHP pages -> new pages (keeps their Google rankings). Trailing "?" drops old query strings.
 RewriteRule ^index\.php$ /? [L,R=301,NC]
@@ -26,6 +26,12 @@ RewriteRule ^renovations\.php$ /renovations? [L,R=301,NC]
 RewriteRule ^(request-quote|insert-request)\.php$ /request-quote? [L,R=301,NC]
 RewriteRule ^services\.php$ /windows? [L,R=301,NC]
 RewriteRule ^blog(-single)?\.php$ /blog? [L,R=301,NC]
+RewriteRule ^faqs\.php$ /faq? [L,R=301,NC]
+RewriteRule ^portfolio\.php$ /gallery? [L,R=301,NC]
+RewriteRule ^service-single\.php$ /renovations? [L,R=301,NC]
+RewriteRule ^team-single\.php$ /about? [L,R=301,NC]
+# Any other old .php page
+RewriteRule ^.+\.php$ /? [L,R=301,NC]
 RewriteRule ^preview(/.*)?$ /? [L,R=301,NC]
 
 # 3. No ".html" and no trailing slash in public URLs

@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { metaFor } from "@/lib/meta";
+import ProjectCards from "@/components/ProjectCards";
+import Testimonials from "@/components/Testimonials";
+import { projectsFor } from "@/lib/projects";
+import Image from "@/components/Img";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/PageHeader";
@@ -20,12 +24,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { loc } = await params;
   const l = getLocationByPath(loc);
   if (!l) return {};
-  return {
-    title: { absolute: `${l.metaTitle} | Luminex Windows` },
-    description: l.metaDescription,
-    alternates: { canonical: locationPath(l) },
-    openGraph: { title: l.metaTitle, description: l.metaDescription, images: [l.image], type: "website" },
-  };
+  return metaFor(locationPath(l), { title: `${l.metaTitle} | Luminex Windows`, description: l.metaDescription, image: l.image });
 }
 
 export default async function LocationPageView({ params }: Params) {
@@ -34,6 +33,7 @@ export default async function LocationPageView({ params }: Params) {
   if (!l) notFound();
   const url = site.url + locationPath(l);
   const updated = "October 2026";
+  const cityProjects = projectsFor(l.city, l.country, l.placeType === "Country");
   const isBhutan = l.country === "Bhutan" || l.region === "Bhutan";
   const minPrice = l.price === "aluminium" ? site.pricing.aluminiumFrom : l.price === "upvc" ? site.pricing.upvcFrom : undefined;
   const place = l.placeType === "Country"
@@ -86,6 +86,16 @@ export default async function LocationPageView({ params }: Params) {
           </aside>
         </div>
       </section>
+
+      {cityProjects.length > 0 && (
+        <section className="section" style={{ paddingTop: 0 }}>
+          <div className="container">
+            <h2>Luminex projects in {l.city}</h2>
+            <ProjectCards items={cityProjects} filter={false} />
+          </div>
+        </section>
+      )}
+      <Testimonials city={l.city} title={`What customers in ${l.city} say`} />
 
       <section className="section faqs">
         <div className="container" style={{ maxWidth: 960 }}>

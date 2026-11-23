@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { metaFor } from "@/lib/meta";
+import Image from "@/components/Img";
 import PageHeader from "@/components/PageHeader";
 import SectionTitle from "@/components/SectionTitle";
 import Reveal from "@/components/Reveal";
 import LeadForm from "@/components/LeadForm";
 import { site, telHref, waLink } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Contact Us – Luminex Windows, Siliguri",
+export const metadata: Metadata = metaFor("/contact", {
+  title: "Contact Us – Luminex Windows, Siliguri | Luminex Windows",
   description: "Contact Luminex Windows in Siliguri, West Bengal for uPVC and aluminium windows and doors in India and Bhutan. Call, email or send us a message for a free consultation.",
-  alternates: { canonical: "/contact" },
-};
+});
 
 const a = site.address;
 export default function Contact() {
@@ -21,12 +21,14 @@ export default function Contact() {
         <div className="container">
           <SectionTitle eyebrow="Contact details" title="Happy to answer all your questions" center />
           <div className="grid-3">
-            <Reveal><div className="info-card"><figure><Image src="/images/contact-info-img-1.jpg" alt="" width={413} height={400} /></figure><h3>Our Offices:</h3>
-              <address style={{ fontStyle: "normal" }}><p><strong>Siliguri showroom:</strong> {a.showroom}, {a.street}, {a.locality}, {a.region} {a.postalCode}, {a.countryName}</p>
+            <Reveal><div className="info-card"><figure><Image src="/images/contact-info-img-1.jpg" alt="" aria-hidden="true" width={413} height={400} /></figure><h3>Our Offices:</h3>
+              <address style={{ fontStyle: "normal" }}><p><strong>Siliguri office:</strong> {a.line}</p>
+                <p><strong>Showroom:</strong> {a.showroom}</p>
+                <p><a href={a.mapsUrl} target="_blank" rel="noopener">Get directions on Google Maps</a></p>
               <p><strong>Bhutan Liaison &amp; Coordination Desk:</strong> Changbangdu, Thimphu</p></address></div></Reveal>
-            <Reveal delay={100}><div className="info-card"><figure><Image src="/images/contact-info-img-2.jpg" alt="" width={413} height={400} /></figure><h3>Emails:</h3>
+            <Reveal delay={100}><div className="info-card"><figure><Image src="/images/contact-info-img-2.jpg" alt="" aria-hidden="true" width={413} height={400} /></figure><h3>Emails:</h3>
               {site.emails.map((e) => <p key={e}><a href={`mailto:${e}`}>{e}</a></p>)}</div></Reveal>
-            <Reveal delay={200}><div className="info-card"><figure><Image src="/images/contact-info-img-3.jpg" alt="" width={413} height={400} /></figure><h3>Phone &amp; WhatsApp:</h3>
+            <Reveal delay={200}><div className="info-card"><figure><Image src="/images/contact-info-img-3.jpg" alt="" aria-hidden="true" width={413} height={400} /></figure><h3>Phone &amp; WhatsApp:</h3>
               {site.phones.india.map((p) => <p key={p}>India: <a href={telHref(p)}>{p}</a></p>)}
               {site.phones.bhutan.map((p) => <p key={p}>Bhutan: <a href={telHref(p)}>{p}</a></p>)}
               <p style={{ marginTop: 12 }}><a href={waLink("india")} target="_blank" rel="noopener noreferrer"><strong>WhatsApp India →</strong></a></p>
@@ -47,7 +49,7 @@ export default function Contact() {
             ]} />
           </div>
           <iframe className="map" style={{ height: "100%", minHeight: 450 }} loading="lazy" title="Luminex Windows location map"
-            src={`https://maps.google.com/maps?q=${encodeURIComponent(`${a.showroom}, Jeevandeep Building, Salugara, ${a.locality}, ${a.region} ${a.postalCode}`)}&output=embed`} />
+            src={a.mapsEmbed} />
         </div>
       </section>
     </>

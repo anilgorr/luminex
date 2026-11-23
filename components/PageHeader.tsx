@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/Img";
 import Link from "next/link";
 import JsonLd from "./JsonLd";
 import { site } from "@/lib/site";
@@ -8,7 +8,7 @@ export default function PageHeader({ title, crumbs, image = "/images/page-header
   const all = [{ label: "Home", href: "/" }, ...crumbs];
   return (
     <section className="page-header">
-      <Image src={image} alt="" fill priority sizes="100vw" />
+      <Image src={image} alt="" aria-hidden="true" fill priority sizes="100vw" />
       <div className="container">
         <h1>{title}</h1>
         <ol className="breadcrumb">

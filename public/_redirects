@@ -12,5 +12,11 @@
 /services.php           /windows             301
 /blog.php               /blog                301
 /blog-single.php        /blog                301
+/faqs.php               /faq                 301
+/portfolio.php          /gallery             301
+/service-single.php     /renovations         301
+/team-single.php        /about               301
+# Netlify only allows "*" at the end of a path, so there is no ".php" catch-all here;
+# every old URL found on the previous site is listed above. (.htaccess has a catch-all for Apache.)
 # Preview routes are not part of the live site.
 /preview/*              /                    301

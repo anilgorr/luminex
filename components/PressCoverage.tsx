@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/Img";
 import { press } from "@/lib/press";
 import JsonLd from "./JsonLd";
 import s from "./press.module.css";

@@ -69,8 +69,10 @@ export type Post = {
   slug: string;
   title: string;
   excerpt: string;
-  image: string;
+  image: string; // 1200×630 photo (shows in Google Images and social previews)
   date: string;
+  updated?: string; // shown as "Last updated" and used as dateModified
+  author?: string; // key in lib/authors.ts; without it the post is credited to Luminex Windows
   body: { h?: string; p: string }[];
 };
 
@@ -80,8 +82,9 @@ export const posts: Post[] = [
     slug: "energy-efficient-door-design",
     title: "Enhancing Energy Efficiency in Door Design",
     excerpt: "Discover eco-friendly door solutions that improve insulation and reduce energy costs…",
-    image: "/images/blog/cover-energy.svg",
+    image: "/images/blog/cover-energy.jpg",
     date: "2026-01-15",
+    updated: "2026-11-23",
     body: [
       { p: "Doors are one of the biggest sources of heat gain and air leakage in a home. Choosing an insulated door system with proper seals can noticeably reduce air-conditioning load." },
       { h: "What makes a door energy efficient?", p: "An insulated core, multi-chamber frame, continuous weather gaskets and double-glazed panels all reduce heat transfer. Correct installation that seals the gap between frame and wall matters just as much." },
@@ -92,8 +95,9 @@ export const posts: Post[] = [
     slug: "window-aesthetics-trends",
     title: "Exploring the Latest Trends in Window Aesthetics and Styles",
     excerpt: "From classic to contemporary, see how different styles enhance your home's appeal…",
-    image: "/images/blog/cover-trends.svg",
+    image: "/images/blog/cover-trends.jpg",
     date: "2026-02-10",
+    updated: "2026-11-23",
     body: [
       { p: "Windows shape how a home looks from the street and how it feels inside. Today's trends favour larger glass, slimmer frames and colours beyond plain white." },
       { h: "Slim frames and big glass", p: "System aluminium and reinforced uPVC profiles make floor-to-ceiling windows practical without sacrificing insulation." },
@@ -104,8 +108,9 @@ export const posts: Post[] = [
     slug: "durable-window-frame-materials",
     title: "Durable Materials for Lasting Window Frames",
     excerpt: "Learn about materials like aluminum and wood, each bringing unique benefits…",
-    image: "/images/blog/cover-materials.svg",
+    image: "/images/blog/cover-materials.jpg",
     date: "2026-03-05",
+    updated: "2026-11-23",
     body: [
       { p: "The frame material decides how long a window lasts, how much maintenance it needs and how well it insulates." },
       { h: "uPVC", p: "Rot-proof, rust-proof and low maintenance with excellent insulation — the best all-round choice for most Indian homes." },

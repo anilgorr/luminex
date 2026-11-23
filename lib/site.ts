@@ -8,7 +8,8 @@ export const site = {
   name: "Luminex Windows",
   shortName: "Luminex",
   tagline: "Windows to the World, Doors to Your Dreams.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.luminexwindow.com",
+  // Single official address: no www (Digipuush guide, 23 Nov 2026). www 301-redirects here.
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://luminexwindow.com",
   description:
     "Luminex Windows, an official Schüco channel partner, supplies and installs premium uPVC and system aluminium windows and doors across North Bengal, the Northeast and Bhutan. uPVC windows from ₹495/sq ft, delivered and installed in 30–60 days.",
   partner: "Official Schüco channel partner",
@@ -27,6 +28,12 @@ export const site = {
   address: {
     // Showroom name (client, 4 Nov). The building shows on Google Maps as "Jeevandeep Building".
     showroom: "Shyam Decor Studio",
+    // Google Business Profile pin (Digipuush guide, 23 Nov 2026).
+    geo: { lat: 26.7650764, lng: 88.4453784 },
+    mapsUrl: "https://maps.google.com/?cid=2929329457189937067",
+    mapsEmbed: "https://maps.google.com/maps?cid=2929329457189937067&output=embed",
+    // One address format everywhere: footer, Contact page, schema (guide, 23 Nov 2026).
+    line: "Ground Floor, Jeevandeep Building, Salugara, Siliguri, West Bengal 734008",
     street: "Ground Floor, Jeevandeep Building, Salugara",
     locality: "Siliguri",
     region: "West Bengal",

@@ -1,0 +1,14 @@
+.filter { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+.filter button { padding: 8px 16px; border: 1px solid var(--divider); background: #fff; font: inherit; font-size: 15px; font-weight: 600; color: var(--black); cursor: pointer; }
+.filter button[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: #fff; }
+.grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
+.card { border: 1px solid var(--divider); background: #fff; }
+.photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.photos img { width: 100%; height: 140px; object-fit: cover; display: block; }
+.photos img:first-child { grid-column: 1 / -1; height: 240px; }
+.text { padding: 22px 24px 26px; }
+.text h3 { margin: 4px 0 6px; font-size: 21px; color: var(--black); }
+.meta { margin: 0; font-size: 14px; font-weight: 600; color: var(--primary); }
+.product { margin: 0 0 10px; font-weight: 600; color: var(--black); }
+.source { font-size: 14px; }
+.source a { color: var(--primary); text-decoration: underline; }

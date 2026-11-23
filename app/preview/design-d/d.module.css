@@ -183,7 +183,7 @@
 .root.light .stage { background: #e9e5df; }
 .root.light .stage::after { height: 22%; background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.35)); }
 .root.light .heroBand { border-bottom: 1px solid var(--pv-line); }
-.root.light .note { color: #8a837a; }
+.root.light .note { color: #5f5952; }
 .root.light .product { background: var(--panel); }
 .root.light .productImg img { filter: none; }
 .root.light .productMore { color: var(--bronze); }

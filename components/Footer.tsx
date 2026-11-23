@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/components/Img";
 import { brandMark, locations, site, telHref, waLink } from "@/lib/site";
 import { FacebookIcon, InstagramIcon } from "./Icons";
 import { WhatsAppIcon } from "./WhatsAppButton";
@@ -61,8 +61,10 @@ export default function Footer() {
             {site.phones.bhutan.map((p) => <p key={p}><a href={telHref(p)}>{p}</a></p>)}
             <p className={s.label}>Email</p>
             <p><a href={`mailto:${site.emails[0]}`}>{site.emails[0]}</a></p>
-            <p className={s.label}>Siliguri showroom</p>
-            <address>{site.address.showroom}, {site.address.street}, {site.address.locality}, {site.address.region} {site.address.postalCode}</address>
+            <p className={s.label}>Siliguri office</p>
+            <address>{site.address.line}</address>
+            <p className={s.label}>Showroom</p>
+            <p>{site.address.showroom}</p>
           </div>
         </div>
         <div className={s.copy}>

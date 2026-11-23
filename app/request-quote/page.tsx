@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
+import { metaFor } from "@/lib/meta";
 import PageHeader from "@/components/PageHeader";
 import SectionTitle from "@/components/SectionTitle";
 import LeadForm from "@/components/LeadForm";
 
-export const metadata: Metadata = {
-  title: "Request a Free Quote – uPVC Windows & Doors",
+export const metadata: Metadata = metaFor("/request-quote", {
+  title: "Request a Free Quote – uPVC Windows & Doors | Luminex Windows",
   description: "Get a free, no-obligation quote for Luminex uPVC and aluminium windows and doors for new construction or renovation projects in India and Bhutan.",
-  alternates: { canonical: "/request-quote" },
-};
+});
 
 export default function Quote() {
   return (

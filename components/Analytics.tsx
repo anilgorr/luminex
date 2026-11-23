@@ -6,7 +6,8 @@ import { useEffect } from "react";
 // - GA4 loads only when NEXT_PUBLIC_GA_ID is set AND NEXT_PUBLIC_SITE_ENV=production,
 //   so previews and local runs never send data.
 // - Events always go to window.dataLayer, so Google Tag Manager can be added later without code changes.
-// - Tracked: whatsapp_click (India/Bhutan), phone_click, email_click, generate_lead (form sent to WhatsApp).
+// - Tracked: whatsapp_click (India/Bhutan), phone_click, email_click, and generate_lead with method
+//   whatsapp / phone / quote_form.
 //   Mark whatsapp_click and generate_lead as key events in GA4 to count enquiries.
 // - Visits from ChatGPT, Perplexity, Gemini and Claude show up in GA4 as referral traffic
 //   (chatgpt.com, perplexity.ai, gemini.google.com, claude.ai), which is how AI-search wins are measured.
@@ -33,8 +34,14 @@ export default function Analytics() {
       if (!a) return;
       const href = a.getAttribute("href") || "";
       const label = (a.textContent || "").trim().slice(0, 60);
-      if (href.includes("wa.me/") || href.includes("api.whatsapp.com")) track("whatsapp_click", { region: regionOf(href), link_text: label });
-      else if (href.startsWith("tel:")) track("phone_click", { region: regionOf(href), link_text: label });
+      // generate_lead with a method, as the Digipuush KPI report expects (guide, 23 Nov 2026).
+      if (href.includes("wa.me/") || href.includes("api.whatsapp.com")) {
+        track("whatsapp_click", { region: regionOf(href), link_text: label });
+        track("generate_lead", { method: "whatsapp", region: regionOf(href) });
+      } else if (href.startsWith("tel:")) {
+        track("phone_click", { region: regionOf(href), link_text: label });
+        track("generate_lead", { method: "phone", region: regionOf(href) });
+      }
       else if (href.startsWith("mailto:")) track("email_click", { link_text: label });
     };
     document.addEventListener("click", onClick, { capture: true });

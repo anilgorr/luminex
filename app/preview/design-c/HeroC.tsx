@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "@/components/Img";
 import Link from "next/link";
 import { useRef } from "react";
 import { hero, quoteHref, whatsapp } from "@/lib/home-v2";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/components/Img";
 import Reveal from "./Reveal";
 import type { ProductGroup } from "@/lib/content";
 export default function ProductGroups({ groups }: { groups: ProductGroup[] }) {
